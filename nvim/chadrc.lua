@@ -11,10 +11,8 @@ M.ui = {
     theme = "minimal",
     separator_style = "round",
   }
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
 }
+
+M.mappings = require("custom.mappings")
 
 return M
