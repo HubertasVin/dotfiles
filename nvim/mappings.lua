@@ -33,4 +33,4 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "<leader>fj", "<cmd>HopWord<CR>", { desc = "Hop Hop to word" })
 
 -- Map a key to toggle the horizontal terminal, e.g., <leader>th
-map("n", "<M-h>", toggle_horizontal_terminal, { desc = "Toggle Toggleable horizontal term" })
+map("n", "<M-h>", toggle_horizontal_terminal, { desc = "Terminal Toggleable horizontal term" })
