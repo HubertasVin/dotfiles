@@ -58,9 +58,3 @@ label=<b>BAT: </b>
 [date]
 command=date +"%Y %m %d %T" | awk '{ printf "%s-%s-%s  %s\n", $1, $2, $3, $4 }'
 interval=1
-
-[power_button]
-command=if [ $button ]; then rofi -show power-menu -modi power-menu:~/.local/bin/rofi-power-menu && echo ""; fi
-interval=once
-label=󰐥 
-instance=power_button

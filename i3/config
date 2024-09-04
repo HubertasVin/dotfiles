@@ -41,7 +41,7 @@ bindsym $mod+t exec terminator -e tmux
 bindsym $mod+q kill
 
 # Start rofi
-bindsym $mod+d exec rofi -show drun -columns 3
+bindsym $mod+d exec ~/.config/rofi/launcher.sh
 
 # Start firefox
 bindsym $mod+b exec firefox
@@ -98,7 +98,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # displays power menu
-bindsym $mod+Shift+e exec rofi -show power-menu -modi power-menu:~/.local/bin/rofi-power-menu
+bindsym $mod+Shift+e exec ~/.config/rofi/powermenu.sh
 
 # Name the workspaces
 set $workspace1 "1:  "
