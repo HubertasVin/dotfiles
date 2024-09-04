@@ -34,3 +34,7 @@ map("n", "<leader>fj", "<cmd>HopWord<CR>", { desc = "Hop Hop to word" })
 
 -- Map a key to toggle the horizontal terminal, e.g., <leader>th
 map("n", "<M-h>", toggle_horizontal_terminal, { desc = "Terminal Toggleable horizontal term" })
+
+-- Paste without affecting clipboard
+map("v", "P", "p", { desc = "Clipboard Paste by copying selected text" })
+map("v", "p", "P", { desc = "Clipboard Paste without affecting clipboard" })
