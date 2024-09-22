@@ -1,0 +1,26 @@
+[global]
+background = "#282c34"
+foreground = "#abb2bf"
+frame_color = "#c678dd"
+
+# Padding inside the notification window
+padding = 10
+# Notification border size
+frame_width = 2
+corner_radius = 6
+
+# Time (in milliseconds) a notification is displayed
+timeout = 5
+
+# Specify font, similar to Polybar
+font = JetBrainsMono Nerd Font 10
+
+word_wrap = false
+
+# Specify geometry
+width = (300, 500)
+height = 50
+origin = top-right
+
+[notifications]
+min_icon_size = 32
