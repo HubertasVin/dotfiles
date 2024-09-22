@@ -16,8 +16,8 @@ window-y=303
 display-mode='list'
 
 [com/uploadedlobster/peek]
-persist-save-folder='/home/hubertas/Documents/BackupFolder/Programming/spaceAppDemo'
-persist-window-geometry=(464, 184, 1014, 838)
+persist-save-folder='/home/hubertas/Videos/Camera'
+persist-window-geometry=(1516, 124, 396, 841)
 recording-output-format='mp4'
 
 [desktop/ibus/general]
@@ -28,7 +28,7 @@ version='1.5.28'
 favorites=['€']
 
 [org/blueman/general]
-window-properties=[956, 1051, 962, 27]
+window-properties=[956, 1053, 962, 25]
 
 [org/gnome/Disks]
 image-dir-uri='file:///home/hubertas/Documents'
@@ -464,8 +464,8 @@ show-sidebar=false
 sidebar-page='thumbnails'
 sidebar-size=132
 sizing-mode='free'
-window-ratio=(1.3166666666666667, 1.2481481481481482)
-zoom=0.36339483679639317
+window-ratio=(0.044065059407082711, 0.081561112409441458)
+zoom=0.057555251582843955
 
 [org/gnome/evolution-data-server]
 migrated=true
@@ -527,7 +527,7 @@ search-filter-time-type='last_modified'
 search-view='list-view'
 
 [org/gnome/nautilus/window-state]
-initial-size=(960, 1177)
+initial-size=(576, 1057)
 maximized=false
 
 [org/gnome/nm-applet/eap/04b0f064-83d8-4e98-aa71-f76ded5d6c45]
@@ -667,12 +667,12 @@ pomodoro-duration=1500.0
 short-break-duration=300.0
 
 [org/gnome/pomodoro/state]
-timer-date='2024-09-01T09:41:36+0000'
+timer-date='2024-09-04T10:06:43+0000'
 timer-elapsed=0.0
 timer-paused=false
 timer-score=0.0
 timer-state='null'
-timer-state-date='2024-09-01T09:41:36+0000'
+timer-state-date='2024-09-04T10:06:43+0000'
 timer-state-duration=0.0
 
 [org/gnome/portal/filechooser/com.discordapp.Discord]
@@ -1136,14 +1136,14 @@ toggle-quick-settings=@as []
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1725208370
+check-timestamp=int64 1725809081
 first-run=false
-flatpak-purge-timestamp=int64 1725190897
-install-timestamp=int64 1722708311
+flatpak-purge-timestamp=int64 1725816204
+install-timestamp=int64 1725208936
 online-updates-timestamp=int64 1695972091
-packagekit-historical-updates-timestamp=uint64 1722708311
+packagekit-historical-updates-timestamp=uint64 1725208936
 security-timestamp=int64 1725118764770296
-update-notification-timestamp=int64 1725208623
+update-notification-timestamp=int64 1725809009
 upgrade-notification-timestamp=int64 1714577604
 
 [org/gnome/system/location]
@@ -1496,7 +1496,7 @@ sort-column='modified'
 sort-directories-first=false
 sort-order='descending'
 type-format='category'
-window-position=(355, 85)
+window-position=(356, 158)
 window-size=(1207, 906)
 
 [system/proxy]
