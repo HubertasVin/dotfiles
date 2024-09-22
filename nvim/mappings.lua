@@ -38,3 +38,7 @@ map("n", "<M-h>", toggle_horizontal_terminal, { desc = "Terminal Toggleable hori
 -- Paste without affecting clipboard
 map("v", "P", "p", { desc = "Clipboard Paste by copying selected text" })
 map("v", "p", "P", { desc = "Clipboard Paste without affecting clipboard" })
+
+-- Remap '>' and '<' to keep selection in visual mode
+map("v", "<", "<gv", { noremap = true, silent = true })
+map("v", ">", ">gv", { noremap = true, silent = true })
