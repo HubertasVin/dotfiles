@@ -57,7 +57,7 @@ bindsym $mod+b exec firefox
 # kill focused window
 bindsym $mod+q kill
 
-bindsym $mod+x exec --no-startup-id ~/.config/rofi/launcher.sh
+bindsym $mod+x exec --no-startup-id ~/.config/rofi/bin/launcher
 bindsym $mod+Shift+q exec --no-startup-id ~/.config/rofi/bin/powermenu
 bindsym Print exec --no-startup-id flameshot gui
 
@@ -189,7 +189,7 @@ bindsym $mod+r mode "resize"
 
 # Autostart Applications
 exec_always --no-startup-id picom -f
-exec_always --no-startup-id /usr/bin/polybar
+exec_always --no-startup-id killall polybar && /usr/bin/polybar
 
 
 # Inner gaps for all windows

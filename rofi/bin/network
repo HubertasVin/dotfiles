@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+rofi_command="rofi -theme $HOME/.config/rofi/config/network.rasi"
+
+# Get Network Information
+IFACE="$(nmcli device status | grep -i 'connected' | awk '{print $1}' | head -n 1)"
+STATUS="$(nmcli radio wifi)"
+_SSID="$(nmcli -t -f GENERAL.CONNECTION device show "$IFACE" | cut -d':' -f2)"
+_LIP="$(nmcli -g IP4.ADDRESS device show "$IFACE" | cut -d'/' -f1)"
+_PIP="$(curl -s ifconfig.me)"
+
+active=""
+urgent=""
+
+# Check internet connection by pinging a website
+if ping -c 1 google.com &>/dev/null; then
+    if [[ $STATUS == "enabled" ]]; then
+        if [[ $IFACE == e* ]]; then
+            connected="直 Connected to Internet"
+        else
+            connected="直 Connected to Internet (Wi-Fi)"
+        fi
+        active="-a 0"
+        SSID="$_SSID"
+        PIP="$_PIP"
+    fi
+else
+    urgent="-u 0"
+    SSID="Disconnected"
+    PIP="NA"
+    connected="睊 Offline"
+fi
+
+# Icons for options
+bmon=" Open Bandwidth Monitor"
+launch_cli="󰛳 Open Network Manager"
+
+# Rofi options
+options="$connected\n$bmon\n$launch_cli"
+
+# Main Rofi Menu
+chosen="$(echo -e "$options" | $rofi_command -p "$SSID : $PIP" -dmenu $active $urgent -selected-row 1)"
+case $chosen in
+    $connected)
+        # Toggle Wi-Fi state
+        if [[ $STATUS == "enabled" ]]; then
+            nmcli radio wifi off
+        else
+            nmcli radio wifi on
+        fi
+        ;;
+    $bmon)
+        # Open bandwidth monitor in a terminal
+        terminator -e bmon
+        ;;
+    $launch_cli)
+        # Open network manager TUI (nmtui) in a terminal
+        terminator -e nmtui
+        ;;
+esac
