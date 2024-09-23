@@ -188,8 +188,13 @@ bindsym $mod+r mode "resize"
 #}
 
 # Autostart Applications
+exec --no-startup-id sh -c "autorandr --change; nitrogen --restore"
+exec --no-startup-id setxkbmap -layout us,gb,lt -option 'grp:alt_shift_toggle'
+exec --no-startup-id xinput --set-prop "pointer:Logitech G703 LS" "libinput Accel Speed" -0.5
 exec_always --no-startup-id picom -f
-exec_always --no-startup-id killall polybar && /usr/bin/polybar
+exec_always --no-startup-id if pgrep polybar; then killall polybar; fi && /usr/bin/polybar
+exec --no-startup-id xset s 3600 3600
+exec --no-startup-id xset dpms 3600 3600 3600
 
 
 # Inner gaps for all windows
