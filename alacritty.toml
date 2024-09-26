@@ -1,0 +1,42 @@
+[window]
+decorations = "none"
+opacity = 0.85
+dynamic_title = false
+
+[font]
+normal = { family = "JetBrainsMonoNL Nerd Font", style = "Regular" }
+size = 10
+
+[colors]
+[colors.primary]
+background = "#282828"
+foreground = "#ebdbb2"
+
+[colors.normal]
+black = "#000000"
+red = "#e06c75"
+green = "#98c379"
+yellow = "#d19a66"
+blue = "#61afef"
+magenta = "#c678dd"
+cyan = "#56b6c2"
+white = "#abb2bf"
+
+[colors.bright]
+black = "#5c6370"
+red = "#e06c75"
+green = "#98c379"
+yellow = "#d19a66"
+blue = "#61afef"
+magenta = "#c678dd"
+cyan = "#56b6c2"
+white = "#fffefe"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[keyboard]
+bindings = [
+  { key = "Q", mods = "Command", action = "Quit" }
+]
