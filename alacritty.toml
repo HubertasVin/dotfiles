@@ -1,7 +1,7 @@
 [window]
-decorations = "none"
-opacity = 0.85
-dynamic_title = false
+decorations = "none"  # Hide the title bar
+opacity = 0.85        # Use window.opacity instead of background_opacity
+dynamic_title = false # Use window.dynamic_title instead of dynamic_title
 
 [font]
 normal = { family = "JetBrainsMonoNL Nerd Font", style = "Regular" }
@@ -9,28 +9,30 @@ size = 10
 
 [colors]
 [colors.primary]
-background = "#282828"
-foreground = "#ebdbb2"
+background = '#282c34'
+foreground = '#abb2bf'
 
+# Normal colors
 [colors.normal]
-black = "#000000"
-red = "#e06c75"
-green = "#98c379"
-yellow = "#d19a66"
-blue = "#61afef"
-magenta = "#c678dd"
-cyan = "#56b6c2"
-white = "#abb2bf"
+black   = '#1e2127'
+red     = '#e06c75'
+green   = '#98c379'
+yellow  = '#d19a66'
+blue    = '#61afef'
+magenta = '#c678dd'
+cyan    = '#56b6c2'
+white   = '#abb2bf'
 
+# Bright colors
 [colors.bright]
-black = "#5c6370"
-red = "#e06c75"
-green = "#98c379"
-yellow = "#d19a66"
-blue = "#61afef"
-magenta = "#c678dd"
-cyan = "#56b6c2"
-white = "#fffefe"
+black   = '#5c6370'
+red     = '#e06c75'
+green   = '#98c379'
+yellow  = '#d19a66'
+blue    = '#61afef'
+magenta = '#c678dd'
+cyan    = '#56b6c2'
+white   = '#e4e4e4'
 
 [scrolling]
 history = 10000
