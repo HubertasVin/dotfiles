@@ -2,3 +2,4 @@
 "\e[3;5~": kill-word
 "\e[A": history-search-backward
 "\e[B": history-search-forward
+"\C-p": ""
