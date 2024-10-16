@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=IBKR Desktop
-Exec=sudo virsh start "win10"; virt-manager --connect qemu:///system --show-domain-console "win10"
+Exec=virt-manager --connect qemu:///system --show-domain-console "win10"
 Icon=/home/hubertas/dotfiles/icons/ibkr.png
 Type=Application
 Categories=Finance;
