@@ -65,7 +65,7 @@ window-maximized=true
 accuracy=9
 angle-units='degrees'
 base=10
-button-mode='basic'
+button-mode='programming'
 number-format='automatic'
 show-thousands=false
 show-zeroes=false
@@ -74,7 +74,7 @@ source-units='degree'
 target-currency=''
 target-units='radian'
 window-maximized=false
-window-size=(668, 593)
+window-size=(939, 1020)
 word-size=64
 
 [org/gnome/calendar]
@@ -408,16 +408,16 @@ move-to-monitor-down=['<Super><Shift>Down']
 move-to-monitor-left=['<Super><Shift>Left']
 move-to-monitor-right=['<Super><Shift>Right']
 move-to-monitor-up=['<Super><Shift>Up']
-move-to-workspace-1=['<Alt><Super>1']
-move-to-workspace-2=['<Alt><Super>2']
-move-to-workspace-3=['<Alt><Super>3']
-move-to-workspace-4=['<Alt><Super>4']
-move-to-workspace-5=['<Alt><Super>5']
-move-to-workspace-6=['<Alt><Super>6']
-move-to-workspace-7=['<Control><Alt>d']
-move-to-workspace-8=['<Control><Alt>f']
-move-to-workspace-left=['<Alt><Super>Left']
-move-to-workspace-right=['<Alt><Super>Right']
+move-to-workspace-1=['<Shift><Super>1']
+move-to-workspace-2=['<Shift><Super>2']
+move-to-workspace-3=['<Shift><Super>3']
+move-to-workspace-4=['<Shift><Super>4']
+move-to-workspace-5=['<Shift><Super>5']
+move-to-workspace-6=['<Shift><Super>6']
+move-to-workspace-7=['<Shift><Super>7']
+move-to-workspace-8=['<Shift><Super>8']
+move-to-workspace-left=['<Shift><Super>Left']
+move-to-workspace-right=['<Shift><Super>Right']
 switch-applications=@as []
 switch-applications-backward=@as []
 switch-group=['<Super>Above_Tab', '<Alt>Above_Tab']
@@ -428,8 +428,8 @@ switch-to-workspace-3=['<Super>3']
 switch-to-workspace-4=['<Super>4']
 switch-to-workspace-5=['<Super>5']
 switch-to-workspace-6=['<Super>6']
-switch-to-workspace-7=['<Control><Super>d']
-switch-to-workspace-8=['<Control><Super>f']
+switch-to-workspace-7=['<Super>7']
+switch-to-workspace-8=['<Super>8']
 switch-to-workspace-last=['<Super>End']
 switch-to-workspace-left=@as []
 switch-to-workspace-right=@as []
@@ -464,8 +464,8 @@ show-sidebar=false
 sidebar-page='thumbnails'
 sidebar-size=132
 sizing-mode='free'
-window-ratio=(1.560033585222502, 1.1991689231728087)
-zoom=0.40310783999999994
+window-ratio=(1.0226700251889169, 1.1991689231728087)
+zoom=0.4902738869450744
 
 [org/gnome/evolution-data-server]
 migrated=true
@@ -527,7 +527,7 @@ search-filter-time-type='last_modified'
 search-view='list-view'
 
 [org/gnome/nautilus/window-state]
-initial-size=(939, 1020)
+initial-size=(555, 1020)
 maximized=false
 
 [org/gnome/nm-applet/eap/04b0f064-83d8-4e98-aa71-f76ded5d6c45]
@@ -1496,8 +1496,8 @@ sort-column='modified'
 sort-directories-first=false
 sort-order='descending'
 type-format='category'
-window-position=(-1, 125)
-window-size=(1207, 906)
+window-position=(397, 167)
+window-size=(1124, 822)
 
 [system/proxy]
 mode='auto'

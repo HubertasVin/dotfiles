@@ -24,6 +24,7 @@ alias xr144="xrandr --output DP-1 --mode 1920x1080 --rate 144"
 alias prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
 alias ..="cd .."
 alias sshopi="ssh orangepi@10.15.5.176"
+alias sshuosis="ssh -L 5555:linux:3389 huvi8958@uosis.mif.vu.lt"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # Create new directory and change the current directory to it
