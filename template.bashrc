@@ -5,6 +5,10 @@ export HISTFILESIZE=10000
 export VISUAL=nvim
 export EDITOR=nvim
 
+# Setup PATHs
+export PATH=~/.npm-global/bin:$PATH
+export PATH=$PATH:~/go/bin
+
 # Configure bash auto-completion
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
@@ -46,24 +50,16 @@ mkcd() {
 
 # Start ble.sh
 source ~/.local/share/blesh/ble.sh
-
 # Path to the bash it configuration
 export BASH_IT="/home/hubertas/.bash_it"
-
 # Lock and Load a custom theme file.
 export BASH_IT_THEME='hubertas'
-
 # Don't check mail when opening terminal.
 unset MAILCHECK
-
-# Change this to your console based IRC client of choice.
-export IRC_CLIENT='irssi'
-
-# Set this to the command you use for todo.txt-cli
-export TODO="t"
-
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
-
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
+
+# Enable brew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
