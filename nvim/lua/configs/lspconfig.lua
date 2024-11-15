@@ -35,13 +35,7 @@ lspconfig.html.setup {
   cmd = { "vscode-html-language-server", "--stdio" },
 }
 
-lspconfig.csharp_ls.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-  filetypes = { "cs" },
-  cmd = { "csharp-ls" },
-}
+lspconfig.csharp_ls.setup {}
 
 lspconfig.hls.setup {
   on_attach = on_attach,
