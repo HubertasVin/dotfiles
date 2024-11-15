@@ -36,8 +36,8 @@ vim.api.nvim_create_autocmd("FileType", {
       vim.bo.expandtab = true
     elseif vim.bo.filetype == "html" then
       -- For HTML files
-      vim.bo.shiftwidth = 2
-      vim.bo.tabstop = 2
+      vim.bo.shiftwidth = 4
+      vim.bo.tabstop = 4
       vim.bo.expandtab = true
     elseif vim.bo.filetype == "java" then
       -- For Java files
@@ -86,8 +86,8 @@ vim.api.nvim_create_autocmd("FileType", {
       vim.bo.expandtab = true
     elseif vim.bo.filetype == "xml" then
       -- For XML files
-      vim.bo.shiftwidth = 4
-      vim.bo.tabstop = 4
+      vim.bo.shiftwidth = 2
+      vim.bo.tabstop = 2
       vim.bo.expandtab = true
     elseif vim.bo.filetype == "sh" or vim.bo.filetype == "bash" or vim.bo.filetype == "zsh" then
       -- For Shell files
