@@ -693,13 +693,13 @@ pomodoro-duration=1500.0
 short-break-duration=300.0
 
 [org/gnome/pomodoro/state]
-timer-date='2025-01-09T19:22:24+0000'
-timer-elapsed=3.0007321834564209
-timer-paused=true
-timer-score=2.0
-timer-state='pomodoro'
-timer-state-date='2025-01-09T19:22:13+0000'
-timer-state-duration=1500.0
+timer-date='2025-01-10T18:10:25+0000'
+timer-elapsed=0.0
+timer-paused=false
+timer-score=1.8334604773521423
+timer-state='null'
+timer-state-date='2025-01-10T18:10:25+0000'
+timer-state-duration=0.0
 
 [org/gnome/portal/filechooser/com.discordapp.Discord]
 last-folder-path='/home/hubertas/Downloads'
@@ -1177,13 +1177,13 @@ toggle-quick-settings=@as []
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1736409941
+check-timestamp=int64 1736508934
 first-run=false
-flatpak-purge-timestamp=int64 1736413542
+flatpak-purge-timestamp=int64 1736502059
 install-timestamp=int64 1735753366
 online-updates-timestamp=int64 1695972091
 packagekit-historical-updates-timestamp=uint64 1735753366
-security-timestamp=int64 1736409942758773
+security-timestamp=int64 1736508943133712
 update-notification-timestamp=int64 1735753433
 upgrade-notification-timestamp=int64 1731017021
 
