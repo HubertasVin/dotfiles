@@ -1,9 +1,12 @@
-require "nvchad.mappings"
+require("nvchad.mappings")
 
 -- add yours here
 
 local map = vim.keymap.set
 
+map("n", "K", vim.lsp.buf.hover, opts)
+map("n", "gd", vim.lsp.buf.definition, opts)
+map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
 -- Open CMD line without holding shift
 map("n", ";", ":", { desc = "CMD enter command mode" })
