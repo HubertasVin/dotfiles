@@ -53,3 +53,8 @@ function fish_prompt
     echo -n -s $suffix_color $suffix ' ' $normal_color
 end
 
+# Enable Ctrl+Backspace to delete the previous word
+bind \e\[3\;5~ kill-word
+# Enable Ctrl+Delete to delete the next word
+bind \b backward-kill-word
+
