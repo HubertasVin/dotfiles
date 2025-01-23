@@ -1783,6 +1783,12 @@ window-size=(1124, 822)
 desktop-layout='true::false'
 show-desktop-icons=false
 
+[org/nemo/window-state]
+geometry='800x550+23+15'
+maximized=false
+sidebar-bookmark-breakpoint=5
+start-with-sidebar=true
+
 [org/ubuntubudgie/plugins/budgie-dropby]
 popup-corner=4
 
