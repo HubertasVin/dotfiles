@@ -8,8 +8,7 @@ export EDITOR=nvim
 export JAVA_HOME=/usr/lib/jvm/java-23-openjdk   # Set JAVA_HOME to fix mvn Java version error
 
 # Setup PATHs
-export PATH=~/.npm-global/bin:$PATH
-export PATH=$PATH:~/go/bin
+export PATH=$HOME/.npm-global/bin:$PATH:$HOME/.dotnet/tools:$HOME/go/bin
 
 export HISTCONTROL=  # Ensure no overwrites of historical entries
 
