@@ -5,15 +5,47 @@ return {
   },
 
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = { "asm", "awk", "bash", "c", "c_sharp", "cmake", "cpp", "css", "go", "haskell", "html", "json", "java","javascript", "lua", "luadoc", "make", "markdown", "php", "phpdoc", "python", "ruby", "rust", "sql", "toml", "tsx", "typescript", "xml", "yaml", "vim", "vimdoc" },
-  	},
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "asm",
+        "awk",
+        "bash",
+        "c",
+        "c_sharp",
+        "cmake",
+        "cpp",
+        "css",
+        "go",
+        "haskell",
+        "html",
+        "json",
+        "java",
+        "javascript",
+        "lua",
+        "luadoc",
+        "make",
+        "markdown",
+        "php",
+        "phpdoc",
+        "python",
+        "ruby",
+        "rust",
+        "sql",
+        "toml",
+        "tsx",
+        "typescript",
+        "xml",
+        "yaml",
+        "vim",
+        "vimdoc",
+      },
+    },
   },
 
   {
     "stevearc/conform.nvim",
-    event = 'BufWritePre',
+    event = "BufWritePre",
     config = function()
       require "configs.conform"
     end,
@@ -28,12 +60,36 @@ return {
   },
 
   {
-  	"williamboman/mason.nvim",
-  	opts = {
-  		ensure_installed = {
-  			"lua-language-server", "stylua", "html-lsp", "css-lsp", "clangd", "prettier", "typescript-language-server", "csharp-language-server", "haskell-language-server", "jdtls", "tailwindcss-language-server", "yaml-language-server", "python-lsp-server", "json-lsp", "lemmin"
-  		},
-  	},
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "angular-language-server",
+        "ansible-language-server",
+        "ansible-lint",
+        "bash-language-server",
+        "clangd",
+        "csharp-language-server",
+        "css-lsp",
+        "dockerfile-language-server",
+        "docker-compose-language-service",
+        "html-lsp",
+        "java-language-server",
+        "json-lsp",
+        "lemminx",
+        "lua-language-server",
+        "sqlls",
+        "stylua",
+        "prettier",
+        "python-lsp-server",
+        "pyink",
+        "rust-analyzer",
+        "typescript-language-server",
+        "tailwindcss-language-server",
+        "taplo",
+        "yaml-language-server",
+        "yamllint",
+      },
+    },
   },
 
   {
@@ -41,6 +97,6 @@ return {
     config = function()
       require("hop").setup()
     end,
-    event = "BufRead",  -- Lazy load on buffer read
+    event = "BufRead", -- Lazy load on buffer read
   },
 }

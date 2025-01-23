@@ -1,6 +1,11 @@
+[apps/update-manager]
+first-run=false
+launch-count=2
+launch-time=int64 1737395338
+
 [ca/desrt/dconf-editor]
-saved-pathbar-path='/org/gnome/desktop/notifications/'
-saved-view='/org/gnome/desktop/notifications/'
+saved-pathbar-path='/org/gnome/desktop/wm/keybindings/switch-to-workspace-5'
+saved-view='/org/gnome/desktop/wm/keybindings/switch-to-workspace-5'
 show-warning=false
 window-height=675
 window-is-maximized=false
@@ -15,6 +20,87 @@ window-y=303
 [com/github/maoschanz/DynamicWallpaperEditor]
 display-mode='list'
 
+[com/solus-project/budgie-panel]
+builtin-theme=true
+confirm-remove-applet=false
+migration-level=1
+panels=['029c1204-d89f-11ef-8fc2-046c59f67e03']
+
+[com/solus-project/budgie-panel/applets/{029c1205-d89f-11ef-8fc2-046c59f67e03}]
+alignment='start'
+name='AppMenu'
+position=0
+
+[com/solus-project/budgie-panel/applets/{029c1206-d89f-11ef-8fc2-046c59f67e03}]
+alignment='start'
+name='ShowTime'
+position=1
+
+[com/solus-project/budgie-panel/applets/{029c1207-d89f-11ef-8fc2-046c59f67e03}]
+alignment='center'
+name='Clock'
+position=0
+
+[com/solus-project/budgie-panel/applets/{029c1208-d89f-11ef-8fc2-046c59f67e03}]
+alignment='end'
+name='DropBy'
+position=0
+
+[com/solus-project/budgie-panel/applets/{029c1209-d89f-11ef-8fc2-046c59f67e03}]
+alignment='end'
+name='AppIndicator Applet'
+position=1
+
+[com/solus-project/budgie-panel/applets/{029c120d-d89f-11ef-8fc2-046c59f67e03}]
+alignment='end'
+name='Notifications'
+position=4
+
+[com/solus-project/budgie-panel/applets/{029c120e-d89f-11ef-8fc2-046c59f67e03}]
+alignment='end'
+name='Network'
+position=2
+
+[com/solus-project/budgie-panel/applets/{029c120f-d89f-11ef-8fc2-046c59f67e03}]
+alignment='end'
+name='Status Indicator'
+position=3
+
+[com/solus-project/budgie-panel/applets/{029c1211-d89f-11ef-8fc2-046c59f67e03}]
+alignment='end'
+name='User Indicator'
+position=6
+
+[com/solus-project/budgie-panel/applets/{029c1212-d89f-11ef-8fc2-046c59f67e03}]
+alignment='end'
+name='Raven Trigger'
+position=5
+
+[com/solus-project/budgie-panel/instance/status/{029c120f-d89f-11ef-8fc2-046c59f67e03}]
+spacing=6
+
+[com/solus-project/budgie-panel/panels/{029c1204-d89f-11ef-8fc2-046c59f67e03}]
+applets=['029c1206-d89f-11ef-8fc2-046c59f67e03', '029c120e-d89f-11ef-8fc2-046c59f67e03', '029c1207-d89f-11ef-8fc2-046c59f67e03', '029c120f-d89f-11ef-8fc2-046c59f67e03', '029c1208-d89f-11ef-8fc2-046c59f67e03', '029c1209-d89f-11ef-8fc2-046c59f67e03', '029c1205-d89f-11ef-8fc2-046c59f67e03', '029c1212-d89f-11ef-8fc2-046c59f67e03', '029c120d-d89f-11ef-8fc2-046c59f67e03', '029c1211-d89f-11ef-8fc2-046c59f67e03']
+dock-mode=false
+enable-shadow=true
+location='top'
+size=20
+spacing=5
+theme-regions=false
+transparency='none'
+
+[com/solus-project/budgie-wm]
+attach-modal-dialogs=true
+button-layout='appmenu:minimize,maximize,close'
+button-style='traditional'
+caffeine-mode=false
+center-windows=true
+edge-tiling=true
+show-all-windows-tabswitcher=false
+
+[com/ubuntu/update-notifier]
+release-check-time=uint32 1736722765
+
 [com/uploadedlobster/peek]
 persist-save-folder='/home/hubertas/Videos/Camera'
 persist-window-geometry=(1516, 124, 396, 841)
@@ -22,19 +108,41 @@ recording-output-format='mp4'
 
 [desktop/ibus/general]
 preload-engines=['xkb:gb::eng', 'xkb:lt::lit']
-version='1.5.28'
+version='1.5.29'
 
 [desktop/ibus/panel/emoji]
 favorites=['€']
 
+[net/launchpad/plank/docks/dock1]
+dock-items=['libreoffice-writer.dockitem', 'libreoffice-calc.dockitem', 'firefox_firefox.dockitem', 'nemo.dockitem']
+
 [org/blueman/general]
 window-properties=[956, 1053, 962, 25]
+
+[org/blueman/plugins/powermanager]
+auto-power-on=@mb false
+
+[org/buddiesofbudgie/budgie-desktop/raven/widgets]
+initialized=true
+uuids=['e67a8414-7aa3-4140-b9c9-c4009ad4e250', '7ed34de1-996c-4973-98e8-0440ed783a8b', '8499f312-314c-4ccd-b459-2e68be88df5a', '711f5d7d-c996-454b-82ba-2520ce8001c2']
+
+[org/buddiesofbudgie/budgie-desktop/raven/widgets/instance-info/711f5d7d-c996-454b-82ba-2520ce8001c2]
+module='org.buddiesofbudgie.budgie-desktop.raven.widget.MediaControls.so'
+
+[org/buddiesofbudgie/budgie-desktop/raven/widgets/instance-info/7ed34de1-996c-4973-98e8-0440ed783a8b]
+module='org.buddiesofbudgie.budgie-desktop.raven.widget.SoundOutput.so'
+
+[org/buddiesofbudgie/budgie-desktop/raven/widgets/instance-info/8499f312-314c-4ccd-b459-2e68be88df5a]
+module='org.buddiesofbudgie.budgie-desktop.raven.widget.SoundInput.so'
+
+[org/buddiesofbudgie/budgie-desktop/raven/widgets/instance-info/e67a8414-7aa3-4140-b9c9-c4009ad4e250]
+module='org.buddiesofbudgie.budgie-desktop.raven.widget.Calendar.so'
 
 [org/gnome/Disks]
 image-dir-uri='file:///home/hubertas/Documents'
 
 [org/gnome/Extensions]
-window-height=1041
+window-height=1018
 window-maximized=false
 window-width=1276
 
@@ -46,7 +154,9 @@ window-width=800
 
 [org/gnome/TextEditor]
 last-save-directory='file:///home/hubertas/Downloads'
+show-line-numbers=true
 style-variant='dark'
+tab-width=uint32 4
 
 [org/gnome/Totem]
 active-plugins=['recent', 'screensaver', 'autoload-subtitles', 'apple-trailers', 'screenshot', 'movie-properties', 'mpris', 'skipto', 'open-directory', 'save-file', 'rotation', 'variable-rate', 'vimeo']
@@ -97,8 +207,12 @@ panel-id='world'
 size=(870, 690)
 
 [org/gnome/control-center]
-last-panel='display'
+last-panel='power'
 window-state=(930, 608, false)
+
+[org/gnome/deja-dup]
+backend='google'
+prompt-check='2025-01-12T23:02:25.111498Z'
 
 [org/gnome/desktop/a11y/applications]
 screen-magnifier-enabled=false
@@ -129,8 +243,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/hubertas/.local/share/backgrounds/2024-05-08-01-48-57-Lisbon_2.jpg'
-picture-uri-dark='file:///home/hubertas/.local/share/backgrounds/2024-05-08-01-48-57-Lisbon_2.jpg'
+picture-uri='file:///home/hubertas/.local/share/backgrounds/2025-01-13-15-25-17-Venice_2.jpg'
+picture-uri-dark='file:///home/hubertas/.local/share/backgrounds/2025-01-13-15-25-17-Venice_2.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -143,16 +257,17 @@ xkb-options=@as []
 [org/gnome/desktop/interface]
 color-scheme='prefer-dark'
 cursor-size=24
-cursor-theme='breeze_cursors'
+cursor-theme='Yaru'
 enable-animations=true
 enable-hot-corners=false
 font-antialiasing='grayscale'
 font-hinting='slight'
 font-name='Noto Sans,  10'
 gtk-enable-primary-paste=false
-gtk-theme='Graphite-red-Dark'
-icon-theme='Tela-circle-red-dark'
+gtk-theme='QogirBudgie'
+icon-theme='Tela-circle-manjaro'
 scaling-factor=uint32 1
+show-battery-percentage=true
 text-scaling-factor=1.0
 toolbar-style='text'
 toolkit-accessibility=false
@@ -161,14 +276,17 @@ toolkit-accessibility=false
 disable-lock-screen=false
 
 [org/gnome/desktop/notifications]
-application-children=['org-gnome-software', 'firefox', 'org-gnome-terminal', 'org-freedesktop-problems-applet', 'steam', 'org-gnome-evolution-alarm-notify', 'org-gnome-eog', 'com-spotify-client', 'code', 'gnome-network-panel', 'libreoffice-calc', 'jetbrains-toolbox', 'org-qbittorrent-qbittorrent', 'gnome-power-panel', 'org-gnome-nautilus', 'org-gnome-settings', 'wine-programs-roblox-roblox-studio', 'xdg-desktop-portal-gnome', 'gimp', 'jetbrains-idea', 'org-gnome-evince', 'libreoffice-writer', 'org-gnome-shell-extensions', 'discord', 'org-gnome-totem', 'org-gnome-characters', 'jetbrains-rider-cd8072ed-4b54-4492-8354-2159d99d8b90', 'com-github-ismaelmartinez-teams-for-linux', 'alacritty', 'com-discordapp-discord', 'spotify-spotify', 'thunar', 'org-kde-drkonqi', 'flameshot', 'org-kde-dolphin', 'jetbrains-rider-d5961df4-e1ad-4122-bdd1-2a03751ba22f', 'org-gnome-shell-portalhelper', 'zoom', 'libreoffice-impress', 'org-gnome-extensions-desktop', 'org-wireshark-wireshark', 'org-fedoraproject-mediawriter', 'io-snapcraft-sessionagent', 'virtualbox', 'terminator', 'org-gnome-pomodoro', 'org-mozilla-firefox', 'org-gnome-loupe', 'com-uploadedlobster-peek', 'vlc', 'signal-desktop-signal-desktop', 'org-flameshot-flameshot', 'org-gnome-boxes', 'one-ablaze-floorp', 'supertuxkart', 'android-studio-android-studio', 'org-gnome-extensions', 'virt-manager', 'teams-for-linux-teams-for-linux', 'org-freedesktop-piper', 'intellij-idea-community-intellij-idea-community', 'intellij-idea-ultimate-intellij-idea-ultimate', 'gnome-printers-panel', 'org-gnome-baobab']
-show-banners=true
+application-children=['org-gnome-software', 'firefox', 'org-gnome-terminal', 'org-freedesktop-problems-applet', 'steam', 'org-gnome-evolution-alarm-notify', 'org-gnome-eog', 'com-spotify-client', 'code', 'gnome-network-panel', 'libreoffice-calc', 'jetbrains-toolbox', 'org-qbittorrent-qbittorrent', 'gnome-power-panel', 'org-gnome-nautilus', 'org-gnome-settings', 'wine-programs-roblox-roblox-studio', 'xdg-desktop-portal-gnome', 'gimp', 'jetbrains-idea', 'org-gnome-evince', 'libreoffice-writer', 'org-gnome-shell-extensions', 'discord', 'org-gnome-totem', 'org-gnome-characters', 'jetbrains-rider-cd8072ed-4b54-4492-8354-2159d99d8b90', 'com-github-ismaelmartinez-teams-for-linux', 'alacritty', 'com-discordapp-discord', 'spotify-spotify', 'thunar', 'org-kde-drkonqi', 'flameshot', 'org-kde-dolphin', 'jetbrains-rider-d5961df4-e1ad-4122-bdd1-2a03751ba22f', 'org-gnome-shell-portalhelper', 'zoom', 'libreoffice-impress', 'org-gnome-extensions-desktop', 'org-wireshark-wireshark', 'org-fedoraproject-mediawriter', 'io-snapcraft-sessionagent', 'virtualbox', 'terminator', 'org-gnome-pomodoro', 'org-mozilla-firefox', 'org-gnome-loupe', 'com-uploadedlobster-peek', 'vlc', 'signal-desktop-signal-desktop', 'org-flameshot-flameshot', 'org-gnome-boxes', 'one-ablaze-floorp', 'supertuxkart', 'android-studio-android-studio', 'org-gnome-extensions', 'virt-manager', 'teams-for-linux-teams-for-linux', 'org-freedesktop-piper', 'intellij-idea-community-intellij-idea-community', 'intellij-idea-ultimate-intellij-idea-ultimate', 'gnome-printers-panel', 'org-gnome-baobab', 'zen', 'discord-discord', 'snapd-desktop-integration-snapd-desktop-integration']
+show-banners=false
 
 [org/gnome/desktop/notifications/application/alacritty]
 application-id='Alacritty.desktop'
 
 [org/gnome/desktop/notifications/application/android-studio-android-studio]
 application-id='android-studio_android-studio.desktop'
+
+[org/gnome/desktop/notifications/application/apport-gtk]
+application-id='apport-gtk.desktop'
 
 [org/gnome/desktop/notifications/application/code]
 application-id='code.desktop'
@@ -187,9 +305,15 @@ application-id='com.spotify.Client.desktop'
 application-id='com.uploadedlobster.peek.desktop'
 enable=false
 
+[org/gnome/desktop/notifications/application/discord-discord]
+application-id='discord_discord.desktop'
+
 [org/gnome/desktop/notifications/application/discord]
 application-id='discord.desktop'
 enable=false
+
+[org/gnome/desktop/notifications/application/firefox-firefox]
+application-id='firefox_firefox.desktop'
 
 [org/gnome/desktop/notifications/application/firefox]
 application-id='firefox.desktop'
@@ -343,6 +467,9 @@ application-id='pgadmin4.desktop'
 application-id='signal-desktop_signal-desktop.desktop'
 enable=false
 
+[org/gnome/desktop/notifications/application/snapd-desktop-integration-snapd-desktop-integration]
+application-id='snapd-desktop-integration_snapd-desktop-integration.desktop'
+
 [org/gnome/desktop/notifications/application/spotify-spotify]
 application-id='spotify_spotify.desktop'
 enable=false
@@ -380,6 +507,9 @@ application-id='wine-Programs-Roblox-Roblox Studio.desktop'
 application-id='xdg-desktop-portal-gnome.desktop'
 enable=false
 
+[org/gnome/desktop/notifications/application/zen]
+application-id='zen.desktop'
+
 [org/gnome/desktop/notifications/application/zoom]
 application-id='Zoom.desktop'
 
@@ -406,7 +536,7 @@ idle-activation-enabled=true
 lock-delay=uint32 0
 lock-enabled=true
 picture-options='zoom'
-picture-uri='file:///home/hubertas/.local/share/backgrounds/2024-05-08-01-48-57-Lisbon_2.jpg'
+picture-uri='file:///home/hubertas/.local/share/backgrounds/2025-01-13-15-25-17-Venice_2.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -440,6 +570,7 @@ move-to-workspace-7=['<Shift><Super>7']
 move-to-workspace-8=['<Shift><Super>8']
 move-to-workspace-left=['<Shift><Super>Left']
 move-to-workspace-right=['<Shift><Super>Right']
+show-desktop=['']
 switch-applications=@as []
 switch-applications-backward=@as []
 switch-group=['<Super>Above_Tab', '<Alt>Above_Tab']
@@ -448,13 +579,11 @@ switch-to-workspace-1=['<Super>1']
 switch-to-workspace-2=['<Super>2']
 switch-to-workspace-3=['<Super>3']
 switch-to-workspace-4=['<Super>4']
-switch-to-workspace-5=['<Super>5']
-switch-to-workspace-6=['<Super>6']
+switch-to-workspace-5=['<Super>f1']
+switch-to-workspace-6=['<Super>f2']
 switch-to-workspace-7=['<Super>7']
 switch-to-workspace-8=['<Super>8']
 switch-to-workspace-last=['<Super>End']
-switch-to-workspace-left=@as []
-switch-to-workspace-right=@as []
 switch-windows=['<Alt>Tab']
 switch-windows-backward=['<Shift><Alt>Tab']
 toggle-fullscreen=['<Super>g']
@@ -463,7 +592,7 @@ unmaximize=@as []
 
 [org/gnome/desktop/wm/preferences]
 auto-raise=false
-button-layout='icon:minimize,maximize,close'
+button-layout='appmenu:minimize,maximize,close'
 focus-new-windows='smart'
 num-workspaces=6
 theme='Graphite-red-Dark'
@@ -486,7 +615,7 @@ show-sidebar=false
 sidebar-page='thumbnails'
 sidebar-size=132
 sizing-mode='free'
-window-ratio=(1.9537169002055517, 1.0999064248076174)
+window-ratio=(1.9529411764705882, 1.0997624703087887)
 zoom=0.55361585372703026
 
 [org/gnome/evolution-data-server]
@@ -503,6 +632,25 @@ notify-window-x=0
 notify-window-y=32
 reminders-past=@as []
 reminders-snoozed=@as []
+
+[org/gnome/file-roller/listing]
+list-mode='as-folder'
+name-column-width=68
+show-path=false
+sort-method='name'
+sort-type='ascending'
+
+[org/gnome/file-roller/ui]
+sidebar-width=200
+window-height=480
+window-width=600
+
+[org/gnome/gedit/state/window]
+bottom-panel-size=140
+side-panel-active-page='GeditWindowDocumentsPanel'
+side-panel-size=200
+size=(900, 784)
+state=87168
 
 [org/gnome/libgnomekbd/preview]
 height=625
@@ -530,8 +678,8 @@ edge-tiling=false
 workspaces-only-on-primary=true
 
 [org/gnome/mutter/keybindings]
-toggle-tiled-left=['<Control><Super>Left']
-toggle-tiled-right=['<Control><Super>Right']
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []
 
 [org/gnome/mutter/wayland/keybindings]
 restore-shortcuts=['<Super>Escape']
@@ -588,6 +736,10 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
+[org/gnome/nm-applet/eap/47cca49a-b470-46ef-bad5-63d8bdc677f9]
+ignore-ca-cert=true
+ignore-phase2-ca-cert=false
+
 [org/gnome/nm-applet/eap/4c4a2623-5040-4248-866c-11ef89bf963c]
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
@@ -602,6 +754,10 @@ ignore-phase2-ca-cert=false
 
 [org/gnome/nm-applet/eap/614421c6-423b-4634-9e52-709aaf3cea1a]
 ignore-ca-cert=true
+ignore-phase2-ca-cert=false
+
+[org/gnome/nm-applet/eap/63f07090-d4d2-414a-a179-df1f40c2e6d8]
+ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
 [org/gnome/nm-applet/eap/6525ca11-af4e-32c8-939d-1d756b726263]
@@ -688,17 +844,21 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
+[org/gnome/pomodoro/plugins/sounds]
+ticking-sound=''
+ticking-sound-volume=0.20000000000000001
+
 [org/gnome/pomodoro/preferences]
 pomodoro-duration=1500.0
 short-break-duration=300.0
 
 [org/gnome/pomodoro/state]
-timer-date='2025-01-10T18:10:25+0000'
+timer-date='2025-01-22T09:34:35+0000'
 timer-elapsed=0.0
 timer-paused=false
-timer-score=1.8334604773521423
+timer-score=0.0
 timer-state='null'
-timer-state-date='2025-01-10T18:10:25+0000'
+timer-state-date='2025-01-22T09:34:35+0000'
 timer-state-duration=0.0
 
 [org/gnome/portal/filechooser/com.discordapp.Discord]
@@ -734,17 +894,54 @@ last-folder-path='/home/hubertas/Downloads'
 [org/gnome/portal/filechooser/steam]
 last-folder-path='/mnt/games/Steam'
 
+[org/gnome/power-manager]
+info-history-type='charge'
+info-last-device='/org/freedesktop/UPower/devices/battery_BAT0'
+info-stats-type='discharge-accuracy'
+
+[org/gnome/rhythmbox]
+position=(-1, -1)
+
+[org/gnome/rhythmbox/plugins]
+active-plugins=['iradio', 'notification', 'android', 'ipod', 'generic-player', 'audiocd', 'power-manager', 'mpris', 'daap', 'rb', 'alternative-toolbar', 'artsearch', 'audioscrobbler', 'dbus-media-server', 'mtpdevice']
+seen-plugins=['notification', 'pythonconsole', 'ipod', 'fmradio', 'daap', 'grilo', 'rb', 'alternative-toolbar', 'listenbrainz', 'replaygain', 'webremote', 'magnatune', 'im-status', 'artsearch', 'audioscrobbler', 'dbus-media-server', 'mtpdevice', 'rblirc', 'lyrics']
+
+[org/gnome/rhythmbox/plugins/alternative_toolbar]
+show-source-toolbar=false
+
+[org/gnome/rhythmbox/plugins/audioscrobbler/Last.fm]
+scrobbling-enabled=true
+
+[org/gnome/rhythmbox/plugins/audioscrobbler/Libre.fm]
+scrobbling-enabled=true
+
+[org/gnome/rhythmbox/plugins/iradio]
+initial-stations-loaded=true
+
+[org/gnome/rhythmbox/rhythmdb]
+locations=['file:///home/hubertas/Music']
+
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=true
 night-light-schedule-automatic=false
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-desktop/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
 email=@as []
 home=@as []
 screenreader=@as []
 screensaver=['<Shift><Control><Alt><Super>l']
 www=['<Super>b']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-desktop]
+binding='<Super>d'
+command='/usr/share/budgie-desktop/showdesktop/showdesktop'
+name='Hide/Show desktop'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test]
+binding='<Super>e'
+command='nemo'
+name='Show File Browser'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>BackSpace'
@@ -757,7 +954,7 @@ command='code'
 name='Launch VSCode'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
-binding='Print'
+binding=''
 command='flameshot gui'
 name='Launch flameshot'
 
@@ -779,12 +976,15 @@ sleep-inactive-ac-timeout=3600
 sleep-inactive-ac-type='nothing'
 sleep-inactive-battery-timeout=1800
 
+[org/gnome/settings-daemon/plugins/xsettings]
+overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
+
 [org/gnome/shell]
 app-picker-layout=[{'org.fedoraproject.MediaWriter.desktop': <{'position': <0>}>, 'org.gnome.Contacts.desktop': <{'position': <1>}>, 'org.gnome.Weather.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Maps.desktop': <{'position': <4>}>, 'libreoffice-calc.desktop': <{'position': <5>}>, 'org.gnome.Totem.desktop': <{'position': <6>}>, 'org.gnome.Calculator.desktop': <{'position': <7>}>, 'libreoffice-impress.desktop': <{'position': <8>}>, 'simple-scan.desktop': <{'position': <9>}>, 'org.gnome.Settings.desktop': <{'position': <10>}>, 'org.gnome.Boxes.desktop': <{'position': <11>}>, 'org.gnome.Terminal.desktop': <{'position': <12>}>, 'Utilities': <{'position': <13>}>, 'libreoffice-writer.desktop': <{'position': <14>}>, 'yelp.desktop': <{'position': <15>}>, 'org.gnome.Rhythmbox3.desktop': <{'position': <16>}>, 'org.gnome.TextEditor.desktop': <{'position': <17>}>, 'org.gnome.Tour.desktop': <{'position': <18>}>}, {"Baldur's Gate 3.desktop": <{'position': <0>}>, 'org.gnome.Calendar.desktop': <{'position': <1>}>, 'code.desktop': <{'position': <2>}>, 'nvim.desktop': <{'position': <3>}>, 'org.gnome.Snapshot.desktop': <{'position': <4>}>, 'discord.desktop': <{'position': <5>}>, 'onlyoffice-desktopeditors.desktop': <{'position': <6>}>, 'Proton Experimental.desktop': <{'position': <7>}>, 'dosbox-school.desktop': <{'position': <8>}>, 'dosbox-staging.desktop': <{'position': <9>}>, 'org.gnome.Extensions.desktop': <{'position': <10>}>, 'org.flameshot.Flameshot.desktop': <{'position': <11>}>, 'gparted.desktop': <{'position': <12>}>, 'htop.desktop': <{'position': <13>}>, 'org.gnome.Loupe.desktop': <{'position': <14>}>, 'minecraft-launcher.desktop': <{'position': <15>}>, 'mysql-workbench.desktop': <{'position': <16>}>, 'wine-notepad.desktop': <{'position': <17>}>, 'nvidia-settings.desktop': <{'position': <18>}>, 'nvtop.desktop': <{'position': <19>}>, 'android-studio_android-studio.desktop': <{'position': <20>}>, 'wine-Programs-7-Zip-7-Zip File Manager.desktop': <{'position': <21>}>, 'com.uploadedlobster.peek.desktop': <{'position': <22>}>, 'blueman-manager.desktop': <{'position': <23>}>}, {'org.gnome.Pomodoro.desktop': <{'position': <0>}>, 'putty.desktop': <{'position': <1>}>, 'org.qbittorrent.qBittorrent.desktop': <{'position': <2>}>, 'ranger.desktop': <{'position': <3>}>, 'wine-regedit.desktop': <{'position': <4>}>, 'net.nokyan.Resources.desktop': <{'position': <5>}>, 'signal-desktop_signal-desktop.desktop': <{'position': <6>}>, 'org.gnome.Software.desktop': <{'position': <7>}>, 'spotify_spotify.desktop': <{'position': <8>}>, 'Steam Linux Runtime 3.0 (sniper).desktop': <{'position': <9>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <10>}>, 'terminator.desktop': <{'position': <11>}>, 'vlc.desktop': <{'position': <12>}>, 'wine-wineboot.desktop': <{'position': <13>}>, 'wine-winecfg.desktop': <{'position': <14>}>, 'wine-winefile.desktop': <{'position': <15>}>, 'wine-winhelp.desktop': <{'position': <16>}>, 'wine-oleview.desktop': <{'position': <17>}>, 'wine-uninstaller.desktop': <{'position': <18>}>, 'wine-wordpad.desktop': <{'position': <19>}>, 'wine-winemine.desktop': <{'position': <20>}>, 'Zoom.desktop': <{'position': <21>}>, 'chromium-browser.desktop': <{'position': <22>}>, 'Counter-Strike 2.desktop': <{'position': <23>}>}, {'ca.desrt.dconf-editor.desktop': <{'position': <0>}>, 'Euro Truck Simulator 2.desktop': <{'position': <1>}>, 'one.ablaze.floorp.desktop': <{'position': <2>}>, 'forticlient.desktop': <{'position': <3>}>, 'Hypersomnia.desktop': <{'position': <4>}>, 'nitrogen.desktop': <{'position': <5>}>, 'obsidian_obsidian.desktop': <{'position': <6>}>, 'cisco-pt821.desktop': <{'position': <7>}>, 'folding-at-home-fcole90_FAHControl.desktop': <{'position': <8>}>, 'postman_postman.desktop': <{'position': <9>}>, 'Project Zomboid.desktop': <{'position': <10>}>, 'rofi.desktop': <{'position': <11>}>, 'rofi-theme-selector.desktop': <{'position': <12>}>, 'rxvt-unicode.desktop': <{'position': <13>}>, 'wine-Programs-7-Zip-7-Zip Help.desktop': <{'position': <14>}>, 'steam.desktop': <{'position': <15>}>, 'telegram-desktop_telegram-desktop.desktop': <{'position': <16>}>, 'The Room.desktop': <{'position': <17>}>, 'The Wolf Among Us.desktop': <{'position': <18>}>, 'Alacritty.desktop': <{'position': <19>}>, 'wine-Programs-Altova MissionKit 2024 (x64)-Altova XMLSpy 2024 (x64).desktop': <{'position': <20>}>, 'arandr.desktop': <{'position': <21>}>, 'audacity.desktop': <{'position': <22>}>, 'folding-at-home-fcole90_FAHViewer.desktop': <{'position': <23>}>}, {'com.blackmagicdesign.rawplayer.desktop': <{'position': <0>}>, 'com.blackmagicdesign.rawspeedtest.desktop': <{'position': <1>}>, 'com.blackmagicdesign.resolve-CaptureLogs.desktop': <{'position': <2>}>, 'com.blackmagicdesign.resolve-Panels.desktop': <{'position': <3>}>, 'com.blackmagicdesign.resolve.desktop': <{'position': <4>}>, 'gimp.desktop': <{'position': <5>}>, 'grass.desktop': <{'position': <6>}>, 'ibkr_desktop.desktop': <{'position': <7>}>, 'net.lutris.Lutris.desktop': <{'position': <8>}>, 'org.freedesktop.Piper.desktop': <{'position': <9>}>, 'org.qgis.qgis.desktop': <{'position': <10>}>, 'org.remmina.Remmina.desktop': <{'position': <11>}>, 'remote-viewer.desktop': <{'position': <12>}>, 'teams-for-linux_teams-for-linux.desktop': <{'position': <13>}>, 'install4j_9ked8t-tws.desktop': <{'position': <14>}>, 'com.blackmagicdesign.resolve-Installer.desktop': <{'position': <15>}>, 'virt-manager.desktop': <{'position': <16>}>, 'org.pulseaudio.pavucontrol.desktop': <{'position': <17>}>, 'winetricks.desktop': <{'position': <18>}>, 'com.xnview.XnViewMP.desktop': <{'position': <19>}>, 'chrome-egmafekfmcnknbdlbfbhafbllplmjlhn-Default.desktop': <{'position': <20>}>, 'intellij-idea-community_intellij-idea-community.desktop': <{'position': <21>}>, 'java-17-openjdk-17.0.13.0.11-1.fc41.x86_64-jconsole.desktop': <{'position': <22>}>, 'java-21-openjdk-21.0.5.0.11-1.fc41.x86_64-jconsole.desktop': <{'position': <23>}>}, {'java-23-openjdk-23.0.1.0.11-1.rolling.fc41.x86_64-jconsole.desktop': <{'position': <0>}>}]
-command-history=['reboot', 'polybar', 'poweroff', 'terminator -e tmux', 'r', 'xkill']
-disabled-extensions=['pop-shell@system76.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com']
-enabled-extensions=['background-logo@fedorahosted.org', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'no-overview@fthx', 'blur-my-shell@aunetx', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'paperwm@paperwm.github.com', 'awesome-tiles@velitasali.com', 'forge@jmmaranan.com', 'arrangeWindows@sun.wxg@gmail.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'wintile@nowsci.com', 'hidetopbar@mathieu.bidon.ca', 'tiling-assistant@leleat-on-github', 'WallpaperSwitcher@Rishu', 'randomwallpaper@iflow.space', 'fancy-tiling@devroamer.zen', 'unite@hardpixel.eu', 'no-title-bar@franglais125.gmail.com', 'cronomix@zagortenay333', 'color-picker@tuberry', 'pomodoro@arun.codito.in', 'tilingshell@ferrarodomenico.com', 'dash-to-dock@micxgx.gmail.com', 'gnome-ui-tune@itstime.tech', 'clipboard-history@alexsaveau.dev', 'undecorate@sun.wxg@gmail.com', 'notification-timeout@chlumskyvaclav.gmail.com', 'gTile@vibou', 'window-app-switcher-on-active-monitor@NiKnights.com', 'hibernate-status@dromi']
-favorite-apps=['org.mozilla.firefox.desktop', 'org.gnome.Nautilus.desktop']
+command-history=['reboot', 'polybar', 'poweroff', 'terminator -e tmux', 'xkill', 'r']
+disabled-extensions=['pop-shell@system76.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'light-style@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'ubuntu-dock@ubuntu.com', 'ding@rastersoft.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['background-logo@fedorahosted.org', 'no-overview@fthx', 'blur-my-shell@aunetx', 'paperwm@paperwm.github.com', 'awesome-tiles@velitasali.com', 'forge@jmmaranan.com', 'arrangeWindows@sun.wxg@gmail.com', 'wintile@nowsci.com', 'hidetopbar@mathieu.bidon.ca', 'tiling-assistant@leleat-on-github', 'WallpaperSwitcher@Rishu', 'randomwallpaper@iflow.space', 'fancy-tiling@devroamer.zen', 'unite@hardpixel.eu', 'no-title-bar@franglais125.gmail.com', 'cronomix@zagortenay333', 'color-picker@tuberry', 'tilingshell@ferrarodomenico.com', 'dash-to-dock@micxgx.gmail.com', 'gnome-ui-tune@itstime.tech', 'clipboard-history@alexsaveau.dev', 'notification-timeout@chlumskyvaclav.gmail.com', 'gTile@vibou', 'window-app-switcher-on-active-monitor@NiKnights.com', 'hibernate-status@dromi', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'pomodoro@arun.codito.in', 'undecorate@sun.wxg@gmail.com', 'ubuntu-appindicators@ubuntu.com', 'tiling-assistant@ubuntu.com']
+favorite-apps=@as []
 last-selected-power-profile='performance'
 welcome-dialog-last-shown-version='43.0'
 
@@ -820,17 +1020,46 @@ shortcut-tile-window-to-top=['<Super>Up']
 shortcut-tile-window-to-top-left=@as []
 shortcut-tile-window-to-top-right=@as []
 
+[org/gnome/shell/extensions/blur-my-shell]
+settings-version=2
+
+[org/gnome/shell/extensions/blur-my-shell/appfolder]
+brightness=0.59999999999999998
+sigma=30
+
+[org/gnome/shell/extensions/blur-my-shell/dash-to-dock]
+blur=true
+brightness=0.59999999999999998
+sigma=30
+static-blur=true
+style-dash-to-dock=0
+
+[org/gnome/shell/extensions/blur-my-shell/panel]
+brightness=0.59999999999999998
+sigma=30
+
+[org/gnome/shell/extensions/blur-my-shell/window-list]
+brightness=0.59999999999999998
+sigma=30
+
 [org/gnome/shell/extensions/color-picker]
 color-history=[uint64 488447232]
 
 [org/gnome/shell/extensions/dash-to-dock]
 background-opacity=0.80000000000000004
-dash-max-icon-size=48
+dash-max-icon-size=42
 disable-overview-on-startup=false
-dock-position='BOTTOM'
+dock-fixed=true
+dock-position='LEFT'
+extend-height=true
 height-fraction=0.90000000000000002
+hot-keys=false
 preferred-monitor=-2
-preferred-monitor-by-connector='eDP-1'
+preferred-monitor-by-connector='DP-1'
+show-mounts=false
+show-mounts-network=false
+show-mounts-only-mounted=true
+show-trash=false
 
 [org/gnome/shell/extensions/dash-to-panel]
 animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
@@ -849,6 +1078,11 @@ primary-monitor=0
 status-icon-padding=-1
 tray-padding=-1
 window-preview-title-position='TOP'
+
+[org/gnome/shell/extensions/ding]
+icon-size='standard'
+show-home=false
+start-corner='top-left'
 
 [org/gnome/shell/extensions/forge]
 auto-split-enabled=true
@@ -1102,6 +1336,7 @@ enable-tiling-popup=true
 import-layout-examples=false
 last-version-installed=46
 maximize-with-gap=true
+overridden-settings={'org.gnome.mutter.edge-tiling': <@mb nothing>, 'org.gnome.mutter.keybindings.toggle-tiled-left': <@mb nothing>, 'org.gnome.mutter.keybindings.toggle-tiled-right': <@mb nothing>}
 restore-window=@as []
 search-popup-layout=@as []
 tile-bottom-half=['<Super>Down']
@@ -1154,7 +1389,7 @@ show-window-buttons='never'
 show-window-title='never'
 
 [org/gnome/shell/extensions/user-theme]
-name='Graphite-orange-Dark'
+name='Flat-Remix-Teal-Dark-fullPanel'
 
 [org/gnome/shell/extensions/wintile]
 gap=26
@@ -1167,7 +1402,11 @@ focus-active-notification=['<Super>n']
 screenshot=['<Super>Print']
 shift-overview-down=['<Super><Alt>Down']
 shift-overview-up=['<Super><Alt>Up']
-show-screenshot-ui=@as []
+show-screenshot-ui=['Print']
+switch-to-application-1=@as []
+switch-to-application-2=@as []
+switch-to-application-3=@as []
+switch-to-application-4=@as []
 toggle-application-view=@as []
 toggle-message-tray=@as []
 toggle-overview=@as []
@@ -1533,12 +1772,25 @@ show-hidden=false
 show-size-column=true
 show-type-column=true
 sidebar-width=212
-sort-column='name'
+sort-column='modified'
 sort-directories-first=false
-sort-order='ascending'
+sort-order='descending'
 type-format='category'
-window-position=(398, 119)
+window-position=(23, 15)
 window-size=(1124, 822)
+
+[org/nemo/desktop]
+desktop-layout='true::false'
+show-desktop-icons=false
+
+[org/ubuntubudgie/plugins/budgie-dropby]
+popup-corner=4
+
+[org/ubuntubudgie/plugins/budgie-visualspace]
+scrollinstruction=2
+
+[org/ubuntubudgie/windowshuffler]
+dragsnaptiling=false
 
 [org/virt-manager/virt-manager]
 manager-window-height=550
