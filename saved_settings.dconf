@@ -615,7 +615,7 @@ show-sidebar=false
 sidebar-page='thumbnails'
 sidebar-size=132
 sizing-mode='free'
-window-ratio=(1.9529411764705882, 1.0997624703087887)
+window-ratio=(1.9537169002055517, 1.0999064248076174)
 zoom=0.55361585372703026
 
 [org/gnome/evolution-data-server]
