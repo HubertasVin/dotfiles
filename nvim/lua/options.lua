@@ -5,7 +5,29 @@ require "nvchad.options"
 -- o.cursorlineopt ='both' -- to enable cursorline!
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "bash", "c", "cpp", "cs", "css", "go", "html", "java", "javascript", "javascriptreact", "json", "python", "rust", "sh", "sql", "xml", "typescript", "typescriptreact", "yaml","zsh" },
+  pattern = {
+    "bash",
+    "c",
+    "cpp",
+    "cs",
+    "css",
+    "go",
+    "fish",
+    "html",
+    "java",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "python",
+    "rust",
+    "sh",
+    "sql",
+    "xml",
+    "typescript",
+    "typescriptreact",
+    "yaml",
+    "zsh",
+  },
   callback = function()
     if vim.bo.filetype == "c" then
       -- For C files
@@ -87,7 +109,12 @@ vim.api.nvim_create_autocmd("FileType", {
       vim.bo.shiftwidth = 2
       vim.bo.tabstop = 2
       vim.bo.expandtab = true
-    elseif vim.bo.filetype == "sh" or vim.bo.filetype == "bash" or vim.bo.filetype == "zsh" then
+    elseif
+      vim.bo.filetype == "sh"
+      or vim.bo.filetype == "bash"
+      or vim.bo.filetype == "zsh"
+      or vim.bo.filetype == "fish"
+    then
       -- For Shell files
       vim.bo.shiftwidth = 4
       vim.bo.tabstop = 4

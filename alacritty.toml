@@ -14,31 +14,32 @@ foreground = '#abb2bf'
 
 # Normal colors
 [colors.normal]
-black   = '#1e2127'
-red     = '#e06c75'
-green   = '#98c379'
-yellow  = '#d19a66'
-blue    = '#61afef'
+black = '#1e2127'
+red = '#e06c75'
+green = '#98c379'
+yellow = '#d19a66'
+blue = '#61afef'
 magenta = '#c678dd'
-cyan    = '#56b6c2'
-white   = '#abb2bf'
+cyan = '#56b6c2'
+white = '#abb2bf'
 
 # Bright colors
 [colors.bright]
-black   = '#5c6370'
-red     = '#e06c75'
-green   = '#98c379'
-yellow  = '#d19a66'
-blue    = '#61afef'
+black = '#5c6370'
+red = '#e06c75'
+green = '#98c379'
+yellow = '#d19a66'
+blue = '#61afef'
 magenta = '#c678dd'
-cyan    = '#56b6c2'
-white   = '#e4e4e4'
+cyan = '#56b6c2'
+white = '#e4e4e4'
 
 [scrolling]
 history = 10000
 multiplier = 3
 
+[shell]
+program = "/bin/fish"
+
 [keyboard]
-bindings = [
-  { key = "Q", mods = "Command", action = "Quit" }
-]
+bindings = [{ key = "Q", mods = "Command", action = "Quit" }]
