@@ -38,7 +38,7 @@ white = '#e4e4e4'
 history = 10000
 multiplier = 3
 
-[shell]
+[terminal.shell]
 program = "/bin/fish"
 
 [keyboard]
