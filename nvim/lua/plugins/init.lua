@@ -68,6 +68,7 @@ return {
         "ansible-lint",
         "bash-language-server",
         "clangd",
+        "clang-format",
         "csharp-language-server",
         "css-lsp",
         "dockerfile-language-server",
