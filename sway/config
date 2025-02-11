@@ -1,0 +1,277 @@
+#
+#   _____                                       __ _       
+#  / ____|                                     / _(_)      
+# | (_____      ____ _ _   _    ___ ___  _ __ | |_ _  __ _ 
+#  \___ \ \ /\ / / _` | | | |  / __/ _ \| '_ \|  _| |/ _` |
+#  ____) \ V  V / (_| | |_| | | (_| (_) | | | | | | | (_| |
+# |_____/ \_/\_/ \__,_|\__, |  \___\___/|_| |_|_| |_|\__, |
+#                       __/ |                         __/ |
+#                      |___/                         |___/ 
+#
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term "alacritty -e tmux"
+# Your preferred application launcher
+set $menu ~/.config/rofi/bin/launcher
+# Your preferred browser launcher
+set $browser /home/hubertas/.tarball-installations/zen/zen
+
+set $laptop eDP-1
+
+### Output configuration
+#
+# Wallpaper
+output * bg ~/Pictures/Wallpapers/Bern_3.jpg fill
+output DP-1 resolution 1920x1080@143.98Hz position 0,0
+output $laptop resolution 1920x1080@59.950Hz position 1920,0
+
+bindswitch --reload --locked lid:on exec "$HOME"/tools/change-laptop-lid-state.sh
+bindswitch --reload --locked lid:off output $laptop enable
+# exec_always ~/tools/change-laptop-lid-state.sh
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+### Idle configuration
+#
+exec swayidle -w \
+         timeout 7200 'swaylock -f -c 000000' \
+         timeout 7500 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 7200 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Mouse and keyboard settings
+input "1133:16518:Logitech_G703_LS" {
+    left_handed disabled
+    natural_scroll disabled
+    accel_profile "flat" # disable mouse acceleration (enabled by default; to set it manually, use "adaptive" instead of "flat")
+    pointer_accel 0 # set mouse sensitivity (between -1 and 1)
+}
+input "type:touchpad" {
+    natural_scroll disabled
+    tap enabled
+    dwt enabled
+    scroll_factor 0.7
+}
+input "type:keyboard" {
+    xkb_layout us,gb,lt
+    xkb_options grp:alt_shift_toggle
+}
+
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+BackSpace exec $term
+
+    # Start browser
+    bindsym $mod+b exec $browser
+
+    # Kill focused window
+    bindsym $mod+Ctrl+q kill
+
+    # Start your launcher
+    bindsym $mod+x exec $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+c reload
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    # Or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    # Ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+F1 workspace number 5
+    bindsym $mod+F2 workspace number 6
+    bindsym $mod+F3 workspace number 7
+    bindsym $mod+F4 workspace number 8
+    bindsym $mod+6 workspace number 9
+    bindsym $mod+7 workspace number 10
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+F1 move container to workspace number 5
+    bindsym $mod+Shift+F2 move container to workspace number 6
+    bindsym $mod+Shift+F3 move container to workspace number 7
+    bindsym $mod+Shift+F4 move container to workspace number 8
+    bindsym $mod+Shift+6 move container to workspace number 9
+    bindsym $mod+Shift+7 move container to workspace number 10
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    # bindsym $mod+b splith
+    # bindsym $mod+v splitv
+
+    # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 20px
+    bindsym $down resize grow height 20px
+    bindsym $up resize shrink height 20px
+    bindsym $right resize grow width 20px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 20px
+    bindsym Down resize grow height 20px
+    bindsym Up resize shrink height 20px
+    bindsym Right resize grow width 20px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+#
+# Utilities:
+#
+    # Special keys to adjust volume via PulseAudio
+    bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -10%
+    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +10%
+    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+    # Special keys to adjust brightness via brightnessctl
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    # Special key to take a screenshot with grim
+    bindsym Print exec grim
+
+#
+# Workspace configurations:
+#
+workspace 1 output DP-1 HDMI-1 eDP-1 DP-2 HDMI-2
+workspace 2 output DP-1 HDMI-1 eDP-1 DP-2 HDMI-2
+workspace 3 output DP-1 HDMI-1 eDP-1 DP-2 HDMI-2
+workspace 4 output DP-2 HDMI-2 eDP-1 DP-1 HDMI-1
+workspace 5 output DP-2 HDMI-2 eDP-1 DP-1 HDMI-1
+workspace 6 output DP-2 HDMI-2 eDP-1 DP-1 HDMI-1
+workspace 7 output DP-1 HDMI-1 eDP-1 DP-2 HDMI-2
+workspace 8 output DP-1 HDMI-1 eDP-1 DP-2 HDMI-2
+workspace 9 output DP-2 HDMI-2 eDP-1 DP-1 HDMI-1
+workspace 0 output DP-2 HDMI-2 eDP-1 DP-1 HDMI-1
+
+#
+# Disable window titles
+#
+default_border pixel
+default_floating_border pixel
+titlebar_padding 1
+titlebar_border_thickness 0
+
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    position top
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+
+    colors {
+        statusline #ffffff
+        background #282c34
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
+
+# target                 title         bg          text        indicator    border
+client.focused           #61afef   #c678dd   #282c34   #c678dd    #c678dd
+client.focused_inactive  #5c6370   #5c6370   #5c6370   #5c6370    #5c6370
+client.unfocused         #5c6370   #282c34   #abb2bf   #282c34
+client.urgent            #e5c07b   #282c34   #e5c07b   #5c6370
+client.placeholder       #5c6370   #282c34   #abb2bf   #5c6370
+client.background        #282c34
+
+gaps inner 10
+
+#Set Fonts
+font pango:SauceCodePro Nerd Font 10
+
+# include @sysconfdir@/sway/config.d/*

@@ -52,28 +52,5 @@ mkcd() {
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# Start ble.sh
-source ~/.local/share/blesh/ble.sh
-export BASH_IT="/home/hubertas/.bash_it"  # Path to the bash it configuration
-export BASH_IT_THEME='hubertas'           # Lock and Load a custom theme file
-unset MAILCHECK                           # Don't check mail when opening terminal
-bleopt history_lazyload=0
-bleopt history_share=                     # Ensures the history file is not truncated when cancelling a selection
-# Custom error and elapsed messages
-bleopt exec_elapsed_mark=$'\e[94m[bash: elapsed %s (CPU %s%%)]\e[m'
-bleopt exec_errexit_mark=$'\e[91m[bash: exit %d]\e[m'
-bleopt exec_exit_mark=$'\e[94m[bash: exit]\e[m'
-export SCM_CHECK=true                     # Set this to false to turn off version control status checking within the prompt for all themes
-# Setup function that resets history location to the end after ctrl+c
-function ble/widget/ctrl-c-reset-history {
-    ble/widget/history-end                # Moves history pointer to the most recent entry
-    ble/widget/discard-line               # Cancel the current input and start a new line
-    # ble-edit/content/reset               # Cancel the current input
-}
-
-# Bind Ctrl+C to the custom function
-ble-bind -f 'C-c' ctrl-c-reset-history    # Reset the Ctrl+c bind
-source "$BASH_IT"/bash_it.sh              # Load Bash It
-
 # Enable brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
