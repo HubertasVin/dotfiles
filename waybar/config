@@ -1,0 +1,67 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 24,
+  "spacing": 5,
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-center": ["clock"],
+  "modules-right": ["cpu", "memory", "battery", "pulseaudio", "bluetooth", "network"],
+
+  "sway/workspaces": {
+    "active-only": false,
+    "format": ""
+  },
+
+  "clock": {
+    "interval": 2,
+    "format": "{:%Y-%m-%d %H:%M:%S}"
+  },
+
+  "cpu": { 
+    "interval": 2, 
+    "format": "CPU: {usage}%" 
+  },
+  "memory": { 
+    "interval": 5, 
+    "format": "RAM: {percentage}%" 
+  },
+  "battery": {
+    "bat": "BAT0",
+    "interval": 5,
+    "states": {
+      "good": 95,
+      "warning": 40,
+      "critical": 20
+    },
+    "format-icons": [" "," "," "," "," "],
+    "format": "<span> {icon}</span>{capacity}%",
+    "format-critical": "<span color='#cc241d'> {icon}</span>{capacity}%",
+    "format-warning": "<span> {icon}</span>{capacity}%",
+    "format-full": "<span> {icon}</span>{capacity}%",
+    "format-charging": "<span color='#8ec07c'>  </span>{capacity}%",
+    "format-charging-warning": "<span color='#d8a657'>  </span>{capacity}%",
+    "format-charging-critical": "<span color='#cc241d'>  </span>{capacity}%",
+    "format-plugged": "<span>  </span>{capacity}%",
+    "tooltip": false
+  },
+  "pulseaudio": { 
+    "format": "{icon} {volume}%", 
+    "format-muted": " {volume}%",
+    "format-icons": { 
+      "default": [" ", " ", " "] 
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+  },
+  "bluetooth": {
+    "format": "",
+    "on-click": "blueman-manager"
+  },
+  "network": {
+    "interval": 5,
+    "format-wifi": "",
+    "format-ethernet": "",
+    "format-disconnected": ""
+  }
+}
+
