@@ -1,11 +1,20 @@
 setopt prompt_subst
+
+#------------------------------------------------------------------------------
+# Bindings
+#------------------------------------------------------------------------------
 # Bind Ctrl+Left and Ctrl+Right to move by word
 bindkey "\e[1;5D" backward-word
 bindkey "\e[1;5C" forward-word
 # Bind Ctrl+Backspace and Ctrl+Delete to delete whole word
 bindkey "^H" backward-kill-word
 bindkey "\e[3;5~" kill-word
+bindkey "\e[3~" delete-char
 
+
+#------------------------------------------------------------------------------
+# Prompt creation
+#------------------------------------------------------------------------------
 bold_c=$(tput bold)
 normal_c=$(tput sgr0)
 input_start_colored="%{$(tput setaf 136)%}❯%{${normal_c}%}"
@@ -104,8 +113,8 @@ autoload -Uz compinit && compinit
 # Enable menu selection when there are multiple completions
 zstyle ':completion:*' menu select=2
 # Enable zsh plugins
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(/home/linuxbrew/.linuxbrew/bin/brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(/home/linuxbrew/.linuxbrew/bin/brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #------------------------------------------------------------------------------
 # Aliases
