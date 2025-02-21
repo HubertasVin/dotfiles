@@ -9,18 +9,13 @@ local options = {
     json = { "prettier" },
     jsx = { "prettier" },
     lua = { "stylua" },
+    php = { "phpcbf" },
     rust = { "rust_analyzer" },
     scss = { "prettier" },
     typescript = { "prettier" },
     bash = { "beautysh" },
     sh = { "beautysh" },
     zsh = { "beautysh" },
-  },
-
-  format_on_save = {
-    -- These options will be passed to conform.format()
-    timeout_ms = 500,
-    lsp_fallback = true,
   },
 
   formatters = {

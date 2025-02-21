@@ -6,12 +6,26 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- LSP related mappings with descriptions
-map("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover", table.unpack(opts) })
-map("n", "gd", vim.lsp.buf.definition, { desc = "LSP Go to Definition", table.unpack(opts) })
-map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action", table.unpack(opts) })
+map("n", "K", vim.lsp.buf.hover, { desc = "Code Hover", table.unpack(opts) })
+map("n", "gd", vim.lsp.buf.definition, { desc = "Code Go to Definition", table.unpack(opts) })
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", table.unpack(opts) })
+
+-- Format related mappings
+map("n", "<leader>cf", function()
+  require("conform").format()
+end, { desc = "Format code", table.unpack(opts) })
+
+map("v", "<leader>f", function()
+  require("conform").format({ async = true }, function(err)
+    if not err then
+      vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)
+    end
+  end)
+end, { desc = "Format code selection" })
 
 -- Open CMD line without holding shift
 map("n", ";", ":")
+map("v", ";", ":")
 
 -- Custom mapping: Hop to word
 map("n", "<leader>fj", "<cmd>HopWord<CR>", { desc = "Hop to word", table.unpack(opts) })
