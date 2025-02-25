@@ -11,6 +11,9 @@ bindkey "\e[1;5C" forward-word
 bindkey "^H" backward-kill-word
 bindkey "\e[3;5~" kill-word
 bindkey "\e[3~" delete-char
+# Bind the up and down arrow keys to search through history with typed context
+bindkey "\e[A" history-search-backward
+bindkey "\e[B" history-search-forward
 
 
 #------------------------------------------------------------------------------
