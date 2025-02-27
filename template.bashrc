@@ -17,13 +17,11 @@ bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
 
 # Add variables
-INSTSCRIPT=/home/hubertas/Installation_Script
+INSTSCRIPT="$HOME"/Installation_Script
 
 # Set the aliases
 alias rm='rm -i'
 alias clr='clear'
-alias qtile_conf="cd ~/.config/qtile"
-alias qtile_log="cd ~/.local/share/qtile"
 alias sound_reload="systemctl --user restart pipewire.service"
 alias sound_reset="systemctl --user unmask pulseaudio; systemctl --user --now disable pipewire.socket; systemctl --user --now enable pulseaudio.service pulseaudio.socket"
 alias backupDevice="python ~/tools/backup/remote/backup-remote.py"
@@ -31,8 +29,6 @@ alias restoreDevice="python ~/tools/backup/remote/restore-remote.py"
 alias xr144="xrandr --output DP-1 --mode 1920x1080 --rate 144"
 alias prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
 alias ..="cd .."
-alias sshopi="ssh orangepi@10.15.5.176"
-alias sshuosis="ssh -L 5555:linux:3389 huvi8958@uosis.mif.vu.lt"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # Create new directory and change the current directory to it
