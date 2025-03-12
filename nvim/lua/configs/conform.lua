@@ -11,6 +11,7 @@ local options = {
     jsx = { "prettier" },
     lua = { "stylua" },
     php = { "phpcbf" },
+    python = { "autopep8" },
     rust = { "rustfmt" },
     scss = { "prettier" },
     typescript = { "prettier" },
@@ -20,6 +21,11 @@ local options = {
   },
 
   formatters = {
+    ["autopep8"] = {
+      command = "autopep8",
+      args = { "--aggressive", "--aggressive", "-" },
+      stdin = true,
+    },
     ["clang-format"] = {
       command = "clang-format",
       args = { "--style={IndentWidth: 4, TabWidth: 4}" },

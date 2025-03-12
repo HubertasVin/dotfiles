@@ -66,6 +66,7 @@ return {
         "angular-language-server",
         "ansible-language-server",
         "ansible-lint",
+        "autopep8",
         "bash-language-server",
         "clangd",
         "clang-format",
@@ -110,7 +111,7 @@ return {
     config = function()
       require("todo-comments").setup {
         keywords = {
-          NOTE = { icon = " ", color = "note", alt = { "INFO" } },
+          NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
         },
         colors = {
           hint = { "Hint", "#FBBF24" },
