@@ -1,24 +1,98 @@
+setopt extended_glob
 setopt prompt_subst
-WORDCHARS=${WORDCHARS//[\/;.,_=\-]/}
+WORDCHARS=${WORDCHARS//[\/;,_=\-]/}
 
-#------------------------------------------------------------------------------
-# Bindings
-#------------------------------------------------------------------------------
+#NOTE: ------------------------------------------------------------------------------
+#       Helper functions
+#      ------------------------------------------------------------------------------
+
+# Better word detection for killing words
+function custom-backward-kill-word() {
+    if [[ -z "$LBUFFER" ]]; then
+        return 0
+    fi
+
+    if [[ "${LBUFFER: -1}" =~ [[:alnum:]] ]]; then
+        LBUFFER=${LBUFFER/%([[:alnum:]]#)/}
+    else
+        LBUFFER=${LBUFFER/%([^[:alnum:]]#)/}
+    fi
+    zle reset-prompt
+}
+zle -N custom-backward-kill-word
+
+function custom-forward-kill-word() {
+    if [[ -z "$RBUFFER" ]]; then
+        return 0
+    fi
+
+    if [[ "${RBUFFER:0:1}" =~ [[:alnum:]] ]]; then
+        RBUFFER=${RBUFFER/#([[:alnum:]]#)/}
+    else
+        RBUFFER=${RBUFFER/#([^[:alnum:]]#)/}
+    fi
+    zle reset-prompt
+}
+zle -N custom-forward-kill-word
+
+setopt extended_glob
+
+# Custom widget for moving the cursor left (Ctrl+Left)
+function custom-backward-word() {
+    if [[ -z "$LBUFFER" ]]; then
+        return 0
+    fi
+
+    local word
+    if [[ "${LBUFFER: -1}" =~ [[:alnum:]] ]]; then
+        word=${LBUFFER##*[^[:alnum:]]}
+    else
+        word=${LBUFFER##*([[:alnum:]])}
+    fi
+    LBUFFER=${LBUFFER%$word}
+    RBUFFER="$word$RBUFFER"
+    zle reset-prompt
+}
+zle -N custom-backward-word
+
+# Custom widget for moving the cursor right (Ctrl+Right)
+function custom-forward-word() {
+    if [[ -z "$RBUFFER" ]]; then
+        return 0
+    fi
+
+    local word
+    if [[ "${RBUFFER:0:1}" =~ [[:alnum:]] ]]; then
+        word=${RBUFFER%%[^[:alnum:]]*}
+    else
+        word=${RBUFFER%%[[:alnum:]]*}
+    fi
+    LBUFFER=$LBUFFER$word
+    RBUFFER=${RBUFFER#$word}
+    zle reset-prompt
+}
+zle -N custom-forward-word
+
+
+#NOTE: ------------------------------------------------------------------------------
+#       Bindings
+#      ------------------------------------------------------------------------------
+
 # Bind Ctrl+Left and Ctrl+Right to move by word
-bindkey "\e[1;5D" backward-word
-bindkey "\e[1;5C" forward-word
-# Bind Ctrl+Backspace and Ctrl+Delete to delete whole word
-bindkey "^H" backward-kill-word
-bindkey "\e[3;5~" kill-word
+bindkey "\e[1;5D" custom-backward-word
+bindkey "\e[1;5C" custom-forward-word
+
+bindkey '^H' custom-backward-kill-word
+bindkey "\e[3;5~" custom-forward-kill-word
 bindkey "\e[3~" delete-char
 # Bind the up and down arrow keys to search through history with typed context
 bindkey "\e[A" history-search-backward
 bindkey "\e[B" history-search-forward
 
 
-#------------------------------------------------------------------------------
-# Prompt creation
-#------------------------------------------------------------------------------
+#NOTE: ------------------------------------------------------------------------------
+#       Prompt creation
+#      ------------------------------------------------------------------------------
 bold_c=$(tput bold)
 normal_c=$(tput sgr0)
 input_start_colored="%{$(tput setaf 136)%}❯%{${normal_c}%}"
@@ -87,9 +161,10 @@ PS1='$(truncated_pwd) $(vcs_super_info)
 $input_start_colored '
 
 
-#------------------------------------------------------------------------------
-# History settings
-#------------------------------------------------------------------------------
+#NOTE: ------------------------------------------------------------------------------
+#       History settings
+#      ------------------------------------------------------------------------------
+
 export HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
@@ -98,21 +173,26 @@ setopt APPEND_HISTORY     # Append history to the file rather than overwriting i
 setopt INC_APPEND_HISTORY # Save each command as it's entered
 setopt SHARE_HISTORY      # Optionally, share history between multiple sessions
 
-#------------------------------------------------------------------------------
-# Default editors and JAVA_HOME
-#------------------------------------------------------------------------------
+#NOTE: ------------------------------------------------------------------------------
+#       Default editors and JAVA_HOME
+#      ------------------------------------------------------------------------------
 export VISUAL=nvim
 export EDITOR=nvim
-export JAVA_HOME=/usr/bin/java   # Set JAVA_HOME to fix mvn Java version error
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk   # Set JAVA_HOME to fix mvn Java version error
 
-#------------------------------------------------------------------------------
-# PATH setup
-#------------------------------------------------------------------------------
+#NOTE: ------------------------------------------------------------------------------
+#       PATH setup
+#      ------------------------------------------------------------------------------
 export PATH="$HOME/.npm-global/bin:$PATH:$HOME/.dotnet/tools:$HOME/go/bin"
 
-#------------------------------------------------------------------------------
-# zsh Completion (similar to bash menu-complete)
-#------------------------------------------------------------------------------
+#NOTE: ------------------------------------------------------------------------------
+#       Miscellaneous exports
+#      ------------------------------------------------------------------------------
+export XCURSOR_THEME=Quintom_Ink
+
+#NOTE: ------------------------------------------------------------------------------
+#       zsh Completion (similar to bash menu-complete)
+#      ------------------------------------------------------------------------------
 autoload -Uz compinit && compinit
 # Enable menu selection when there are multiple completions
 zstyle ':completion:*' menu select=2
@@ -120,9 +200,9 @@ zstyle ':completion:*' menu select=2
 source $(/home/linuxbrew/.linuxbrew/bin/brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(/home/linuxbrew/.linuxbrew/bin/brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#------------------------------------------------------------------------------
-# Aliases
-#------------------------------------------------------------------------------
+#NOTE: ------------------------------------------------------------------------------
+#       Aliases
+#      ------------------------------------------------------------------------------
 alias clr='clear'
 alias sound_reload="systemctl --user restart pipewire.service"
 alias sound_reset="systemctl --user unmask pulseaudio; systemctl --user --now disable pipewire.socket; systemctl --user --now enable pulseaudio.service pulseaudio.socket"
@@ -132,10 +212,11 @@ alias xr144="xrandr --output DP-1 --mode 1920x1080 --rate 144"
 alias prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
 alias ..="cd .."
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd "$LASTDIR"'
+alias sshvps="ssh hubserv@198.7.118.97"
 
-#------------------------------------------------------------------------------
-# mkcd: Create directory and change into it
-#------------------------------------------------------------------------------
+#NOTE: ------------------------------------------------------------------------------
+#       mkcd: Create directory and change into it
+#      ------------------------------------------------------------------------------
 mkcd() {
     if [ -d "$1" ]; then
         echo "Error: Directory '$1' already exists."
@@ -144,9 +225,10 @@ mkcd() {
     fi
 }
 
-#------------------------------------------------------------------------------
-# Load additional environment settings
-#------------------------------------------------------------------------------
+#NOTE: ------------------------------------------------------------------------------
+#       Load additional environment settings
+#      ------------------------------------------------------------------------------
+
 # Rust
 source "$HOME/.cargo/env"
 
@@ -157,3 +239,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

@@ -102,4 +102,20 @@ return {
     end,
     event = "BufRead", -- Lazy load on buffer read
   },
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    event = { "BufReadPost", "BufNewFile" },
+    config = function()
+      require("todo-comments").setup {
+        keywords = {
+          NOTE = { icon = " ", color = "note", alt = { "INFO" } },
+        },
+        colors = {
+          hint = { "Hint", "#FBBF24" },
+        },
+      }
+    end,
+  },
 }

@@ -39,7 +39,7 @@ history = 10000
 multiplier = 3
 
 [terminal.shell]
-program = "/bin/fish"
+program = "/usr/bin/zsh"
 
 [keyboard]
 bindings = [{ key = "Q", mods = "Command", action = "Quit" }]
