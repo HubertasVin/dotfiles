@@ -11,7 +11,7 @@ local options = {
     jsx = { "prettier" },
     lua = { "stylua" },
     php = { "phpcbf" },
-    python = { "autopep8" },
+    python = { "black" },
     rust = { "rustfmt" },
     scss = { "prettier" },
     typescript = { "prettier" },
@@ -21,9 +21,9 @@ local options = {
   },
 
   formatters = {
-    ["autopep8"] = {
-      command = "autopep8",
-      args = { "--aggressive", "--aggressive", "-" },
+    black = {
+      command = "black",
+      args = { "--quiet", "-" },
       stdin = true,
     },
     ["clang-format"] = {
