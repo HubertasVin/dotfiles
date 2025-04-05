@@ -81,6 +81,9 @@ zle -N custom-forward-word
 # Bind Ctrl+Left and Ctrl+Right to move by word
 bindkey "\e[1;5D" custom-backward-word
 bindkey "\e[1;5C" custom-forward-word
+# Bind Home and End to move to line start or end
+bindkey "\e[1~" beginning-of-line
+bindkey "\e[4~" end-of-line
 
 bindkey '^H' custom-backward-kill-word
 bindkey "\e[3;5~" custom-forward-kill-word
