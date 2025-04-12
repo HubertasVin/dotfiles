@@ -1,6 +1,70 @@
 setopt extended_glob
 setopt prompt_subst
+
+
+#NOTE: ------------------------------------------------------------------------------
+#       Variables
+#      ------------------------------------------------------------------------------
+
+# ---- Colors ----
+# Define foreground colors
+BLACK=$(tput setaf 0)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
+MAGENTA=$(tput setaf 5)
+CYAN=$(tput setaf 6)
+WHITE=$(tput setaf 7)
+# You can also define background colors if needed:
+BG_BLACK=$(tput setab 0)
+BG_RED=$(tput setab 1)
+BG_GREEN=$(tput setab 2)
+BG_YELLOW=$(tput setab 3)
+BG_BLUE=$(tput setab 4)
+BG_MAGENTA=$(tput setab 5)
+BG_CYAN=$(tput setab 6)
+BG_WHITE=$(tput setab 7)
+# Special colors
+BOLD=$(tput bold)
+RESET=$(tput sgr0)
+
+# Characters not considered part of words for word splitting
 WORDCHARS=${WORDCHARS//[\/;,_=\-]/}
+
+# Time reporting for all commands that took more than 3s
+REPORTTIME=3
+TIMEFMT=$' '"${CYAN}"'[Took %E; Avg CPU: %P]'${RESET}
+
+# ---- Various exports ----
+export VISUAL=nvim
+export EDITOR=nvim
+# PATH setup
+export PATH="$HOME/.npm-global/bin:$PATH:$HOME/.dotnet/tools:$HOME/go/bin"
+# Set JAVA_HOME to fix mvn Java version error
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+# Custom cursor
+export XCURSOR_THEME=Quintom_Ink
+
+
+#NOTE: ------------------------------------------------------------------------------
+#       Bindings
+#      ------------------------------------------------------------------------------
+
+# Bind Ctrl+Left and Ctrl+Right to move by word
+bindkey "\e[1;5D" custom-backward-word
+bindkey "\e[1;5C" custom-forward-word
+# Bind Home and End to move to line start or end
+bindkey "\e[1~" beginning-of-line
+bindkey "\e[4~" end-of-line
+# Character / word delete
+bindkey '^H' custom-backward-kill-word
+bindkey "\e[3;5~" custom-forward-kill-word
+bindkey "\e[3~" delete-char
+# Bind the up and down arrow keys to search through history with typed context
+bindkey "\e[A" history-search-backward
+bindkey "\e[B" history-search-forward
+
 
 #NOTE: ------------------------------------------------------------------------------
 #       Helper functions
@@ -34,8 +98,6 @@ function custom-forward-kill-word() {
     zle reset-prompt
 }
 zle -N custom-forward-kill-word
-
-setopt extended_glob
 
 # Custom widget for moving the cursor left (Ctrl+Left)
 function custom-backward-word() {
@@ -75,48 +137,10 @@ zle -N custom-forward-word
 
 
 #NOTE: ------------------------------------------------------------------------------
-#       Bindings
-#      ------------------------------------------------------------------------------
-
-# Bind Ctrl+Left and Ctrl+Right to move by word
-bindkey "\e[1;5D" custom-backward-word
-bindkey "\e[1;5C" custom-forward-word
-# Bind Home and End to move to line start or end
-bindkey "\e[1~" beginning-of-line
-bindkey "\e[4~" end-of-line
-
-bindkey '^H' custom-backward-kill-word
-bindkey "\e[3;5~" custom-forward-kill-word
-bindkey "\e[3~" delete-char
-# Bind the up and down arrow keys to search through history with typed context
-bindkey "\e[A" history-search-backward
-bindkey "\e[B" history-search-forward
-
-
-#NOTE: ------------------------------------------------------------------------------
 #       Prompt creation
 #      ------------------------------------------------------------------------------
-bold_c=$(tput bold)
-normal_c=$(tput sgr0)
-input_start_colored="%{$(tput setaf 136)%}❯%{${normal_c}%}"
 
-function preexec() {
-    __start_time=$(date +%s%N)
-}
-
-function precmd() {
-    if [[ -n "$__start_time" ]]; then
-        local __end_time elapsed_ns elapsed_ms elapsed_sec threshold_ms
-        __end_time=$(date +%s%N)
-        elapsed_ns=$(( __end_time - __start_time ))
-        elapsed_ms=$(( elapsed_ns / 1000000 ))
-        if (( elapsed_ms > 4000 )); then
-            elapsed_sec=$(awk "BEGIN {printf \"%.3f\", $elapsed_ns/1000000000}")
-            print -P " %F{cyan}[Took ${elapsed_sec} seconds]%f"
-        fi
-        unset __start_time
-    fi
-}
+input_start_colored="%{$(tput setaf 136)%}❯%{${RESET}%}"
 
 function truncated_pwd() {
     local pwd_color="%{$(tput setaf 202)%}"
@@ -127,16 +151,16 @@ function truncated_pwd() {
         rel=${PWD#$repo_root}
         rel=${rel#/}
         if [ -n "$rel" ]; then
-            echo "${pwd_color}${repo_name}/${rel}%{${normal_c}%}"
+            echo "${pwd_color}${repo_name}/${rel}%{${RESET}%}"
         else
-            echo "${pwd_color}${repo_name}%{${normal_c}%}"
+            echo "${pwd_color}${repo_name}%{${RESET}%}"
         fi
     else
         # If inside the home directory, replace $HOME with ~
         if [[ "$PWD" == "$HOME"* ]]; then
-            echo "${pwd_color}~${PWD#$HOME}%{${normal_c}%}"
+            echo "${pwd_color}~${PWD#$HOME}%{${RESET}%}"
         else
-            echo "${pwd_color}$PWD%{${normal_c}%}"
+            echo "${pwd_color}$PWD%{${RESET}%}"
         fi
     fi
 }
@@ -149,12 +173,12 @@ function vcs_super_info() {
         local added=$(echo $git_numstat | awk '{added += $1} END {print added+0}')
         local deleted=$(echo $git_numstat | awk '{deleted += $2} END {print deleted+0}')
 
-        local branch_colored="%{$(tput setaf 172)${bold_c}%}(${branch})%{${normal_c}%}"
+        local branch_colored="%{$(tput setaf 172)${BOLD}%}(${branch})%{${RESET}%}"
 
         local added_colored deleted_colored
-        [ "$added" -eq 0 ] && added_colored="" || added_colored="%{$(tput setaf 70)${bold_c}%}↑${added}%{${normal_c}%}"
+        [ "$added" -eq 0 ] && added_colored="" || added_colored="%{$(tput setaf 70)${BOLD}%}↑${added}%{${RESET}%}"
 
-        [ "$deleted" -eq 0 ] && deleted_colored="" || deleted_colored="%{$(tput setaf 124)${bold_c}%}↓${deleted}%{${normal_c}%}"
+        [ "$deleted" -eq 0 ] && deleted_colored="" || deleted_colored="%{$(tput setaf 124)${BOLD}%}↓${deleted}%{${RESET}%}"
 
         echo "${branch_colored} ${added_colored} ${deleted_colored}"
     fi
@@ -177,25 +201,9 @@ setopt INC_APPEND_HISTORY # Save each command as it's entered
 setopt SHARE_HISTORY      # Optionally, share history between multiple sessions
 
 #NOTE: ------------------------------------------------------------------------------
-#       Default editors and JAVA_HOME
+#       ZSH Completion
 #      ------------------------------------------------------------------------------
-export VISUAL=nvim
-export EDITOR=nvim
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk   # Set JAVA_HOME to fix mvn Java version error
 
-#NOTE: ------------------------------------------------------------------------------
-#       PATH setup
-#      ------------------------------------------------------------------------------
-export PATH="$HOME/.npm-global/bin:$PATH:$HOME/.dotnet/tools:$HOME/go/bin"
-
-#NOTE: ------------------------------------------------------------------------------
-#       Miscellaneous exports
-#      ------------------------------------------------------------------------------
-export XCURSOR_THEME=Quintom_Ink
-
-#NOTE: ------------------------------------------------------------------------------
-#       zsh Completion (similar to bash menu-complete)
-#      ------------------------------------------------------------------------------
 autoload -Uz compinit && compinit
 # Enable menu selection when there are multiple completions
 zstyle ':completion:*' menu select=2
@@ -206,6 +214,7 @@ source $(/home/linuxbrew/.linuxbrew/bin/brew --prefix)/share/zsh-syntax-highligh
 #NOTE: ------------------------------------------------------------------------------
 #       Aliases
 #      ------------------------------------------------------------------------------
+
 alias clr='clear'
 alias sound_reload="systemctl --user restart pipewire.service"
 alias sound_reset="systemctl --user unmask pulseaudio; systemctl --user --now disable pipewire.socket; systemctl --user --now enable pulseaudio.service pulseaudio.socket"
@@ -220,6 +229,7 @@ alias sshvps="ssh hubserv@198.7.118.97"
 #NOTE: ------------------------------------------------------------------------------
 #       mkcd: Create directory and change into it
 #      ------------------------------------------------------------------------------
+
 mkcd() {
     if [ -d "$1" ]; then
         echo "Error: Directory '$1' already exists."
