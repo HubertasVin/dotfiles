@@ -36,6 +36,10 @@ for _, lsp in ipairs(servers) do
 	})
 end
 
+lspconfig.bashls.setup({
+  filetypes = { "sh", "zsh" },
+})
+
 lspconfig.sqlls.setup({
 	on_attach = on_attach,
 	on_init = on_init,
