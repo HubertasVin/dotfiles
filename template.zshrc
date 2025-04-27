@@ -227,7 +227,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdi
 alias sshvps="ssh hubserv@198.7.118.97"
 
 #NOTE: ------------------------------------------------------------------------------
-#       mkcd: Create directory and change into it
+#       Custom QoL functions
 #      ------------------------------------------------------------------------------
 
 mkcd() {
@@ -235,6 +235,24 @@ mkcd() {
         echo "Error: Directory '$1' already exists."
     else
         mkdir "$1" && cd "$1"
+    fi
+}
+
+bman() {
+    local pattern args=()
+    # pull out -p pattern (or -ppattern) from anywhere in the args
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            -p)          pattern=$2; shift 2 ;;
+            -p*)         pattern=${1#-p}; shift ;;
+            *)           args+=("$1"); shift ;;
+        esac
+    done
+
+    if [[ -n $pattern ]]; then
+        command man -P "less -p '$pattern'" "${args[@]}"
+    else
+        command man "${args[@]}"
     fi
 }
 
