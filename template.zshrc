@@ -201,7 +201,7 @@ setopt INC_APPEND_HISTORY # Save each command as it's entered
 setopt SHARE_HISTORY      # Optionally, share history between multiple sessions
 
 #NOTE: ------------------------------------------------------------------------------
-#       ZSH Completion
+#       ZSH Extensions
 #      ------------------------------------------------------------------------------
 
 autoload -Uz compinit && compinit
@@ -213,6 +213,8 @@ zstyle ':completion:*' file-sort mtime
 ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 # Enable zsh plugins
 source $(/home/linuxbrew/.linuxbrew/bin/brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Make syntax highlighting faster
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 source $(/home/linuxbrew/.linuxbrew/bin/brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #NOTE: ------------------------------------------------------------------------------
