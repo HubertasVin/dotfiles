@@ -207,6 +207,10 @@ setopt SHARE_HISTORY      # Optionally, share history between multiple sessions
 autoload -Uz compinit && compinit
 # Enable menu selection when there are multiple completions
 zstyle ':completion:*' menu select=2
+# Sort files so that the newest‐modified are suggested first
+zstyle ':completion:*' file-sort mtime
+# Completions suggests existing files
+ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 # Enable zsh plugins
 source $(/home/linuxbrew/.linuxbrew/bin/brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(/home/linuxbrew/.linuxbrew/bin/brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
