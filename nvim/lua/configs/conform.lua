@@ -18,6 +18,7 @@ local options = {
     bash = { "beautysh" },
     sh = { "beautysh" },
     zsh = { "beautysh" },
+    vue = { "prettier" },
   },
 
   formatters = {
