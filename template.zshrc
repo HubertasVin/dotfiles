@@ -231,6 +231,7 @@ alias prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
 alias ..="cd .."
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd "$LASTDIR"'
 alias sshvps="ssh hubserv@198.7.118.97"
+alias diff="diff -bu"
 
 #NOTE: ------------------------------------------------------------------------------
 #       Custom QoL functions
