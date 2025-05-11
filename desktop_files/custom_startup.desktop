@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
 Exec=/home/hubertas/tools/custom-startup.sh
-Hidden=true
+Hidden=false
 X-MATE-Autostart-enabled=true
 Name=Custom startup
