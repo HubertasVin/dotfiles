@@ -1,7 +1,7 @@
 [window]
-decorations = "none"  # Hide the title bar
-opacity = 0.9         # Use window.opacity instead of background_opacity
-dynamic_title = false # Use window.dynamic_title instead of dynamic_title
+decorations = "none"
+opacity = 0.9
+dynamic_title = false
 
 [font]
 normal = { family = "JetBrainsMonoNL Nerd Font", style = "Regular" }
