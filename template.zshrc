@@ -198,7 +198,6 @@ SAVEHIST=10000
 setopt EXTENDED_HISTORY   # Add execution time for each command
 setopt APPEND_HISTORY     # Append history to the file rather than overwriting it
 setopt INC_APPEND_HISTORY # Save each command as it's entered
-setopt SHARE_HISTORY      # Optionally, share history between multiple sessions
 
 #NOTE: ------------------------------------------------------------------------------
 #       ZSH Extensions
