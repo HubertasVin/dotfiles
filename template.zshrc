@@ -1,7 +1,3 @@
-setopt extended_glob
-setopt prompt_subst
-
-
 #NOTE: ------------------------------------------------------------------------------
 #       Variables
 #      ------------------------------------------------------------------------------
@@ -28,6 +24,10 @@ BG_WHITE=$(tput setab 7)
 # Special colors
 BOLD=$(tput bold)
 RESET=$(tput sgr0)
+# History variables
+HISTSIZE=10000
+SAVEHIST=10000
+HISTDUP=erase
 
 # Characters not considered part of words for word splitting
 WORDCHARS=${WORDCHARS//[\/;,_=\-]/}
@@ -42,9 +42,11 @@ export EDITOR=nvim
 # PATH setup
 export PATH="$HOME/.npm-global/bin:$PATH:$HOME/.dotnet/tools:$HOME/go/bin"
 # Set JAVA_HOME to fix mvn Java version error
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+export JAVA_HOME=/usr/lib/jvm/temurin-17-jdk
 # Custom cursor
 export XCURSOR_THEME=Quintom_Ink
+# History file
+export HISTFILE="$HOME/.zsh_history"
 
 
 #NOTE: ------------------------------------------------------------------------------
@@ -189,32 +191,66 @@ $input_start_colored '
 
 
 #NOTE: ------------------------------------------------------------------------------
-#       History settings
+#       Settings
 #      ------------------------------------------------------------------------------
 
-export HISTFILE="$HOME/.zsh_history"
-HISTSIZE=10000
-SAVEHIST=10000
-setopt EXTENDED_HISTORY   # Add execution time for each command
-setopt APPEND_HISTORY     # Append history to the file rather than overwriting it
-setopt INC_APPEND_HISTORY # Save each command as it's entered
+setopt appendhistory
+# setopt SHARE_HISTORY      # Optionally, share history between multiple sessions
+setopt extended_glob
+setopt prompt_subst
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+autoload -Uz compinit && compinit
+
+
+#NOTE: ------------------------------------------------------------------------------
+#       Zinit setup
+#      ------------------------------------------------------------------------------
+
+# Set the directory we want to store zinit and plugins
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# Download Zinit, if it's not there yet
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+# Load zinit
+source "${ZINIT_HOME}/zinit.zsh"
 
 #NOTE: ------------------------------------------------------------------------------
 #       ZSH Extensions
 #      ------------------------------------------------------------------------------
 
-autoload -Uz compinit && compinit
-# Enable menu selection when there are multiple completions
-zstyle ':completion:*' menu select=2
-# Sort files so that the newest‐modified are suggested first
-zstyle ':completion:*' file-sort mtime
-# Completions suggests existing files
-ZSH_AUTOSUGGEST_STRATEGY=(completion history)
-# Enable zsh plugins
-source $(/home/linuxbrew/.linuxbrew/bin/brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# Make syntax highlighting faster
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-source $(/home/linuxbrew/.linuxbrew/bin/brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Add in zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+
+# Add in snippets
+zinit snippet OMZL::git.zsh
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::aws
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::kubectx
+zinit snippet OMZP::command-not-found
+
+zinit cdreplay -q
+
+# Completion enhancements
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
 
 #NOTE: ------------------------------------------------------------------------------
 #       Aliases
@@ -230,7 +266,6 @@ alias prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
 alias ..="cd .."
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd "$LASTDIR"'
 alias sshvps="ssh hubserv@198.7.118.97"
-alias diff="diff -bu"
 
 #NOTE: ------------------------------------------------------------------------------
 #       Custom QoL functions
@@ -263,48 +298,48 @@ bman() {
 }
 
 fcat() {
-  local maxdepth="" pattern width find_args file prefix plen dash_count dashes
+    local maxdepth="" pattern width find_args file prefix plen dash_count dashes
 
-  # parse args
-  while [[ $# -gt 0 ]]; do
-    case "$1" in
-      -d|--depth)
-        maxdepth="$2"
-        shift 2
-        ;;
-      -*)
+    # parse args
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            -d|--depth)
+                maxdepth="$2"
+                shift 2
+                ;;
+            -*)
+                echo "Usage: find_and_cat [-d N] REGEX" >&2
+                return 1
+                ;;
+            *)
+                pattern="$1"
+                shift
+                ;;
+        esac
+    done
+
+    if [[ -z "$pattern" ]]; then
         echo "Usage: find_and_cat [-d N] REGEX" >&2
         return 1
-        ;;
-      *)
-        pattern="$1"
-        shift
-        ;;
-    esac
-  done
+    fi
 
-  if [[ -z "$pattern" ]]; then
-    echo "Usage: find_and_cat [-d N] REGEX" >&2
-    return 1
-  fi
+    # terminal width
+    width=$(tput cols)
 
-  # terminal width
-  width=$(tput cols)
+    # build find args
+    find_args=(.)
+    [[ -n "$maxdepth" ]] && find_args+=( -maxdepth "$maxdepth" )
+    find_args+=( -regextype posix-extended -regex ".*$pattern" -type f )
 
-  # build find args
-  find_args=(.)
-  [[ -n "$maxdepth" ]] && find_args+=( -maxdepth "$maxdepth" )
-  find_args+=( -regextype posix-extended -regex ".*$pattern" -type f )
-
-  # run find and process
-  while IFS= read -r file; do
-    prefix="---- $file "
-    plen=${#prefix}
-    dash_count=$(( width > plen ? width - plen : 0 ))
-    dashes=$(printf '%*s' "$dash_count" '' | tr ' ' '-')
-    printf '%s%s\n' "$prefix" "$dashes"
-    cat "$file"
-  done < <(find "${find_args[@]}")
+    # run find and process
+    while IFS= read -r file; do
+        prefix="---- $file "
+        plen=${#prefix}
+        dash_count=$(( width > plen ? width - plen : 0 ))
+        dashes=$(printf '%*s' "$dash_count" '' | tr ' ' '-')
+        printf '%s%s\n' "$prefix" "$dashes"
+        cat "$file"
+    done < <(find "${find_args[@]}")
 }
 
 #NOTE: ------------------------------------------------------------------------------
@@ -321,6 +356,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# Make syntax highlighting faster
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+source $(/home/linuxbrew/.linuxbrew/bin/brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Completion enhancements
+eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd cd zsh)"
