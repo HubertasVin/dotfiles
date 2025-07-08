@@ -28,10 +28,10 @@ RESET=$(tput sgr0)
 HISTSIZE=10000
 SAVEHIST=10000
 HISTDUP=erase
-
+# Syntax highlighting options
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # Characters not considered part of words for word splitting
 WORDCHARS=${WORDCHARS//[\/;,_=\-]/}
-
 # Time reporting for all commands that took more than 3s
 REPORTTIME=3
 TIMEFMT=$' '"${CYAN}"'[Took %E; Avg CPU: %P]'${RESET}
@@ -139,58 +139,6 @@ zle -N custom-forward-word
 
 
 #NOTE: ------------------------------------------------------------------------------
-#       Prompt creation
-#      ------------------------------------------------------------------------------
-
-input_start_colored="%{$(tput setaf 136)%}❯%{${RESET}%}"
-
-function truncated_pwd() {
-    local pwd_color="%{$(tput setaf 202)%}"
-    if git rev-parse --is-inside-work-tree &>/dev/null; then
-        local repo_root repo_name rel
-        repo_root=$(git rev-parse --show-toplevel 2>/dev/null)
-        repo_name=$(basename "$repo_root")
-        rel=${PWD#$repo_root}
-        rel=${rel#/}
-        if [ -n "$rel" ]; then
-            echo "${pwd_color}${repo_name}/${rel}%{${RESET}%}"
-        else
-            echo "${pwd_color}${repo_name}%{${RESET}%}"
-        fi
-    else
-        # If inside the home directory, replace $HOME with ~
-        if [[ "$PWD" == "$HOME"* ]]; then
-            echo "${pwd_color}~${PWD#$HOME}%{${RESET}%}"
-        else
-            echo "${pwd_color}$PWD%{${RESET}%}"
-        fi
-    fi
-}
-
-function vcs_super_info() {
-    if git rev-parse --is-inside-work-tree &>/dev/null; then
-        local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-
-        local git_numstat=$(git diff --numstat 2>/dev/null)
-        local added=$(echo $git_numstat | awk '{added += $1} END {print added+0}')
-        local deleted=$(echo $git_numstat | awk '{deleted += $2} END {print deleted+0}')
-
-        local branch_colored="%{$(tput setaf 172)${BOLD}%}(${branch})%{${RESET}%}"
-
-        local added_colored deleted_colored
-        [ "$added" -eq 0 ] && added_colored="" || added_colored="%{$(tput setaf 70)${BOLD}%}↑${added}%{${RESET}%}"
-
-        [ "$deleted" -eq 0 ] && deleted_colored="" || deleted_colored="%{$(tput setaf 124)${BOLD}%}↓${deleted}%{${RESET}%}"
-
-        echo "${branch_colored} ${added_colored} ${deleted_colored}"
-    fi
-}
-
-PS1='$(truncated_pwd) $(vcs_super_info)
-$input_start_colored '
-
-
-#NOTE: ------------------------------------------------------------------------------
 #       Settings
 #      ------------------------------------------------------------------------------
 
@@ -227,13 +175,12 @@ source "${ZINIT_HOME}/zinit.zsh"
 #       ZSH Extensions
 #      ------------------------------------------------------------------------------
 
-# Add in zsh plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
+# Add ZSH plugins
 zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
 zinit light Aloxaf/fzf-tab
 
-# Add in snippets
+# Add snippets
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
@@ -346,19 +293,16 @@ fcat() {
 #       Load additional environment settings
 #      ------------------------------------------------------------------------------
 
+# SDKMAN
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# Homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# Oh-my-posh prompt
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh.toml)"
 # Rust
 source "$HOME/.cargo/env"
 
-# SDKMAN (should be at the end)
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# Homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-# Make syntax highlighting faster
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-source $(/home/linuxbrew/.linuxbrew/bin/brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Completion enhancements
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
