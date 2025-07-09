@@ -75,6 +75,8 @@ return {
         "dockerfile-language-server",
         "docker-compose-language-service",
         "google-java-format",
+        "gofumpt",
+        "gopls",
         "html-lsp",
         "java-language-server",
         "json-lsp",

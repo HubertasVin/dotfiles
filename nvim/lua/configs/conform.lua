@@ -5,6 +5,7 @@ local options = {
     cpp = { "clang-format" },
     css = { "prettier" },
     html = { "prettier" },
+    go = { "gofumpt" },
     java = { "google-java-format" },
     javascript = { "prettier" },
     json = { "prettier" },
