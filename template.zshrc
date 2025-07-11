@@ -171,6 +171,7 @@ fi
 # Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
+
 #NOTE: ------------------------------------------------------------------------------
 #       ZSH Extensions
 #      ------------------------------------------------------------------------------
@@ -214,6 +215,7 @@ alias ..="cd .."
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd "$LASTDIR"'
 alias sshvps="ssh hubserv@198.7.118.97"
 
+
 #NOTE: ------------------------------------------------------------------------------
 #       Custom QoL functions
 #      ------------------------------------------------------------------------------
@@ -244,50 +246,53 @@ bman() {
     fi
 }
 
-fcat() {
-    local maxdepth="" pattern width find_args file prefix plen dash_count dashes
-
-    # parse args
-    while [[ $# -gt 0 ]]; do
-        case "$1" in
-            -d|--depth)
-                maxdepth="$2"
-                shift 2
-                ;;
-            -*)
-                echo "Usage: find_and_cat [-d N] REGEX" >&2
-                return 1
-                ;;
-            *)
-                pattern="$1"
-                shift
-                ;;
-        esac
-    done
-
-    if [[ -z "$pattern" ]]; then
-        echo "Usage: find_and_cat [-d N] REGEX" >&2
+findstr() {
+    if (( $# < 1 )); then
+        echo "Usage: findstr PATTERN [PATH]"
         return 1
     fi
 
-    # terminal width
-    width=$(tput cols)
+    local pattern=$1
+    local search_path=${2:-.}
 
-    # build find args
-    find_args=(.)
-    [[ -n "$maxdepth" ]] && find_args+=( -maxdepth "$maxdepth" )
-    find_args+=( -regextype posix-extended -regex ".*$pattern" -type f )
+    local bg=$(tput setab 28)
+    local fg=$(tput setaf 15)
+    local bold=$(tput bold)
+    local reset=$(tput sgr0)
 
-    # run find and process
+    local first_file=1
     while IFS= read -r file; do
-        prefix="---- $file "
-        plen=${#prefix}
-        dash_count=$(( width > plen ? width - plen : 0 ))
-        dashes=$(printf '%*s' "$dash_count" '' | tr ' ' '-')
-        printf '%s%s\n' "$prefix" "$dashes"
-        cat "$file"
-    done < <(find "${find_args[@]}")
+        (( first_file )) || printf '\n\n'
+        first_file=0
+
+        local clean_file=${file#./}
+        local lines=("${bold}--- $clean_file:${reset}")
+
+        while IFS= read -r line; do
+            [[ $line == -- ]] && { lines+=('...'); continue; }
+
+            if [[ $line =~ ^([0-9]+)([:\-])(.*)$ ]]; then
+                local num=${match[1]}
+                local sep=${match[2]}
+                local content=${match[3]}
+            else
+                local num=
+                local content=$line
+            fi
+
+            if [[ $sep == ':' ]]; then
+                lines+=("${bg}${fg}${num} ${content}${reset}")
+            else
+                lines+=("${num} ${content}")
+            fi
+        done < <(grep -n -C2 -- "$pattern" "$file")
+
+        local max=0
+        for l in "${lines[@]}"; do (( ${#l} > max )) && max=${#l}; done
+        for l in "${lines[@]}"; do printf '%s%*s\n' "$l" $((max - ${#l})) ""; done
+    done < <(grep -Rl -- "$pattern" "$search_path")
 }
+
 
 #NOTE: ------------------------------------------------------------------------------
 #       Load additional environment settings
