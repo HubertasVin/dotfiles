@@ -40,7 +40,7 @@ TIMEFMT=$' '"${CYAN}"'[Took %E; Avg CPU: %P]'${RESET}
 export VISUAL=nvim
 export EDITOR=nvim
 # PATH setup
-export PATH="$HOME/.npm-global/bin:$PATH:$HOME/.dotnet/tools:$HOME/go/bin"
+export PATH="$HOME/.npm-global/bin:$PATH:$HOME/.dotnet/tools:$HOME/go/bin:$HOME/.local/bin"
 # Set JAVA_HOME to fix mvn Java version error
 export JAVA_HOME=/usr/lib/jvm/temurin-17-jdk
 # Custom cursor
