@@ -5,7 +5,7 @@ local options = {
     cpp = { "clang-format" },
     css = { "prettier" },
     html = { "prettier" },
-    go = { "gofumpt" },
+    go = { "gofumpt", "golines" },
     java = { "google-java-format" },
     javascript = { "prettier" },
     json = { "prettier" },
@@ -19,7 +19,6 @@ local options = {
     bash = { "beautysh" },
     sh = { "beautysh" },
     zsh = { "beautysh" },
-    vue = { "prettier" },
   },
 
   formatters = {
@@ -42,6 +41,11 @@ local options = {
       command = "rustfmt",
       args = { "--emit=stdout" },
       stdin = true,
+    },
+    golines = {
+      command = "golines",
+      args    = { "-m", "100" },
+      stdin   = true,
     },
   },
 }
