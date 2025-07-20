@@ -248,6 +248,51 @@ bman() {
     fi
 }
 
+fcat() {
+    local maxdepth="" pattern width find_args file prefix plen dash_count dashes
+
+    # parse args
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            -d|--depth)
+                maxdepth="$2"
+                shift 2
+                ;;
+            -*)
+                echo "Usage: find_and_cat [-d N] REGEX" >&2
+                return 1
+                ;;
+            *)
+                pattern="$1"
+                shift
+                ;;
+        esac
+    done
+
+    if [[ -z "$pattern" ]]; then
+        echo "Usage: find_and_cat [-d N] REGEX" >&2
+        return 1
+    fi
+
+    # terminal width
+    width=$(tput cols)
+
+    # build find args
+    find_args=(.)
+    [[ -n "$maxdepth" ]] && find_args+=( -maxdepth "$maxdepth" )
+    find_args+=( -regextype posix-extended -regex ".*$pattern" -type f )
+
+    # run find and process
+    while IFS= read -r file; do
+        prefix="---- $file "
+        plen=${#prefix}
+        dash_count=$(( width > plen ? width - plen : 0 ))
+        dashes=$(printf '%*s' "$dash_count" '' | tr ' ' '-')
+        printf '%s%s\n' "$prefix" "$dashes"
+        cat "$file"
+    done < <(find "${find_args[@]}")
+}
+
 findstr() {
     if (( $# < 1 )); then
         echo "Usage: findstr PATTERN [PATH]"
