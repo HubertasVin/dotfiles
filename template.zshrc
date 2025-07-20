@@ -66,6 +66,8 @@ bindkey "\e[3~" delete-char
 # Bind the up and down arrow keys to search through history with typed context
 bindkey "\e[A" history-search-backward
 bindkey "\e[B" history-search-forward
+# Newline bind Ctrl+j
+bindkey '^J' self-insert
 
 
 #NOTE: ------------------------------------------------------------------------------
