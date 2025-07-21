@@ -9,6 +9,7 @@ local options = {
     java = { "google-java-format" },
     javascript = { "prettier" },
     json = { "prettier" },
+    yaml = { "prettier" },
     jsx = { "prettier" },
     lua = { "stylua" },
     php = { "phpcbf" },
