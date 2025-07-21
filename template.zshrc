@@ -71,76 +71,6 @@ bindkey '^J' self-insert
 
 
 #NOTE: ------------------------------------------------------------------------------
-#       Helper functions
-#      ------------------------------------------------------------------------------
-
-# Better word detection for killing words
-function custom-backward-kill-word() {
-    if [[ -z "$LBUFFER" ]]; then
-        return 0
-    fi
-
-    if [[ "${LBUFFER: -1}" =~ [[:alnum:]] ]]; then
-        LBUFFER=${LBUFFER/%([[:alnum:]]#)/}
-    else
-        LBUFFER=${LBUFFER/%([^[:alnum:]]#)/}
-    fi
-    zle reset-prompt
-}
-zle -N custom-backward-kill-word
-
-function custom-forward-kill-word() {
-    if [[ -z "$RBUFFER" ]]; then
-        return 0
-    fi
-
-    if [[ "${RBUFFER:0:1}" =~ [[:alnum:]] ]]; then
-        RBUFFER=${RBUFFER/#([[:alnum:]]#)/}
-    else
-        RBUFFER=${RBUFFER/#([^[:alnum:]]#)/}
-    fi
-    zle reset-prompt
-}
-zle -N custom-forward-kill-word
-
-# Custom widget for moving the cursor left (Ctrl+Left)
-function custom-backward-word() {
-    if [[ -z "$LBUFFER" ]]; then
-        return 0
-    fi
-
-    local word
-    if [[ "${LBUFFER: -1}" =~ [[:alnum:]] ]]; then
-        word=${LBUFFER##*[^[:alnum:]]}
-    else
-        word=${LBUFFER##*([[:alnum:]])}
-    fi
-    LBUFFER=${LBUFFER%$word}
-    RBUFFER="$word$RBUFFER"
-    zle reset-prompt
-}
-zle -N custom-backward-word
-
-# Custom widget for moving the cursor right (Ctrl+Right)
-function custom-forward-word() {
-    if [[ -z "$RBUFFER" ]]; then
-        return 0
-    fi
-
-    local word
-    if [[ "${RBUFFER:0:1}" =~ [[:alnum:]] ]]; then
-        word=${RBUFFER%%[^[:alnum:]]*}
-    else
-        word=${RBUFFER%%[[:alnum:]]*}
-    fi
-    LBUFFER=$LBUFFER$word
-    RBUFFER=${RBUFFER#$word}
-    zle reset-prompt
-}
-zle -N custom-forward-word
-
-
-#NOTE: ------------------------------------------------------------------------------
 #       Settings
 #      ------------------------------------------------------------------------------
 
@@ -232,7 +162,6 @@ mkcd() {
 
 bman() {
     local pattern args=()
-    # pull out -p pattern (or -ppattern) from anywhere in the args
     while [[ $# -gt 0 ]]; do
         case $1 in
             -p)          pattern=$2; shift 2 ;;
@@ -251,7 +180,6 @@ bman() {
 fcat() {
     local maxdepth="" pattern width find_args file prefix plen dash_count dashes
 
-    # parse args
     while [[ $# -gt 0 ]]; do
         case "$1" in
             -d|--depth)
@@ -339,6 +267,76 @@ findstr() {
         for l in "${lines[@]}"; do printf '%s%*s\n' "$l" $((max - ${#l})) ""; done
     done < <(grep -Rl -- "$pattern" "$search_path")
 }
+
+
+#NOTE: ------------------------------------------------------------------------------
+#       Helper functions for binds
+#      ------------------------------------------------------------------------------
+
+# Better word detection for killing words
+function custom-backward-kill-word() {
+    if [[ -z "$LBUFFER" ]]; then
+        return 0
+    fi
+
+    if [[ "${LBUFFER: -1}" =~ [[:alnum:]] ]]; then
+        LBUFFER=${LBUFFER/%([[:alnum:]]#)/}
+    else
+        LBUFFER=${LBUFFER/%([^[:alnum:]]#)/}
+    fi
+    zle reset-prompt
+}
+zle -N custom-backward-kill-word
+
+function custom-forward-kill-word() {
+    if [[ -z "$RBUFFER" ]]; then
+        return 0
+    fi
+
+    if [[ "${RBUFFER:0:1}" =~ [[:alnum:]] ]]; then
+        RBUFFER=${RBUFFER/#([[:alnum:]]#)/}
+    else
+        RBUFFER=${RBUFFER/#([^[:alnum:]]#)/}
+    fi
+    zle reset-prompt
+}
+zle -N custom-forward-kill-word
+
+# Custom widget for moving the cursor left (Ctrl+Left)
+function custom-backward-word() {
+    if [[ -z "$LBUFFER" ]]; then
+        return 0
+    fi
+
+    local word
+    if [[ "${LBUFFER: -1}" =~ [[:alnum:]] ]]; then
+        word=${LBUFFER##*[^[:alnum:]]}
+    else
+        word=${LBUFFER##*([[:alnum:]])}
+    fi
+    LBUFFER=${LBUFFER%$word}
+    RBUFFER="$word$RBUFFER"
+    zle reset-prompt
+}
+zle -N custom-backward-word
+
+# Custom widget for moving the cursor right (Ctrl+Right)
+function custom-forward-word() {
+    if [[ -z "$RBUFFER" ]]; then
+        return 0
+    fi
+
+    local word
+    if [[ "${RBUFFER:0:1}" =~ [[:alnum:]] ]]; then
+        word=${RBUFFER%%[^[:alnum:]]*}
+    else
+        word=${RBUFFER%%[[:alnum:]]*}
+    fi
+    LBUFFER=$LBUFFER$word
+    RBUFFER=${RBUFFER#$word}
+    zle reset-prompt
+}
+zle -N custom-forward-word
 
 
 #NOTE: ------------------------------------------------------------------------------
