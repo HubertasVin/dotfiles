@@ -1539,7 +1539,7 @@ install-timestamp=int64 1748714086
 online-updates-timestamp=int64 1695972091
 packagekit-historical-updates-timestamp=uint64 1748714086
 security-timestamp=int64 1752653958839344
-update-notification-timestamp=int64 1749982064
+update-notification-timestamp=int64 1753177154
 upgrade-notification-timestamp=int64 1745476677
 
 [org/gnome/system/location]
