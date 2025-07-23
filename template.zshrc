@@ -53,16 +53,18 @@ export HISTFILE="$HOME/.zsh_history"
 #       Bindings
 #      ------------------------------------------------------------------------------
 
-# Bind Ctrl+Left and Ctrl+Right to move by word
-bindkey "\e[1;5D" custom-backward-word
-bindkey "\e[1;5C" custom-forward-word
-# Bind Home and End to move to line start or end
-bindkey "\e[1~" beginning-of-line
-bindkey "\e[4~" end-of-line
-# Character / word delete
-bindkey '^H' custom-backward-kill-word
-bindkey "\e[3;5~" custom-forward-kill-word
-bindkey "\e[3~" delete-char
+function rebind-ctrl-arrows() {
+    # Bind Ctrl+Left and Ctrl+Right to move by word
+    bindkey "\e[1;5D" custom-backward-word
+    bindkey "\e[1;5C" custom-forward-word
+    # Bind Home and End to move to line start or end
+    bindkey "\e[1~" beginning-of-line
+    bindkey "\e[4~" end-of-line
+    # Character / word delete
+    bindkey '^H' custom-backward-kill-word
+    bindkey "\e[3;5~" custom-forward-kill-word
+    bindkey "\e[3~" delete-char
+}
 # Bind the up and down arrow keys to search through history with typed context
 bindkey "\e[A" history-search-backward
 bindkey "\e[B" history-search-forward
@@ -86,6 +88,8 @@ setopt hist_find_no_dups
 
 autoload -Uz compinit && compinit
 
+zle -N zle-line-init rebind-ctrl-arrows
+zle -N zle-keymap-select rebind-ctrl-arrows
 
 #NOTE: ------------------------------------------------------------------------------
 #       Zinit setup
