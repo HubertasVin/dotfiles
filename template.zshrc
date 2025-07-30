@@ -225,54 +225,6 @@ fcat() {
     done < <(find "${find_args[@]}")
 }
 
-findstr() {
-    if (( $# < 1 )); then
-        echo "Usage: findstr PATTERN [PATH]"
-        return 1
-    fi
-
-    local pattern=$1
-    local search_path=${2:-.}
-
-    local bg=$(tput setab 28)
-    local fg=$(tput setaf 15)
-    local bold=$(tput bold)
-    local reset=$(tput sgr0)
-
-    local first_file=1
-    while IFS= read -r file; do
-        (( first_file )) || printf '\n\n'
-        first_file=0
-
-        local clean_file=${file#./}
-        local lines=("${bold}--- $clean_file:${reset}")
-
-        while IFS= read -r line; do
-            [[ $line == -- ]] && { lines+=('...'); continue; }
-
-            if [[ $line =~ ^([0-9]+)([:\-])(.*)$ ]]; then
-                local num=${match[1]}
-                local sep=${match[2]}
-                local content=${match[3]}
-            else
-                local num=
-                local content=$line
-            fi
-
-            if [[ $sep == ':' ]]; then
-                lines+=("${bg}${fg}${num} ${content}${reset}")
-            else
-                lines+=("${num} ${content}")
-            fi
-        done < <(grep -n -C2 -- "$pattern" "$file")
-
-        local max=0
-        for l in "${lines[@]}"; do (( ${#l} > max )) && max=${#l}; done
-        for l in "${lines[@]}"; do printf '%s%*s\n' "$l" $((max - ${#l})) ""; done
-    done < <(grep -Rl -- "$pattern" "$search_path")
-}
-
-
 #NOTE: ------------------------------------------------------------------------------
 #       Helper functions for binds
 #      ------------------------------------------------------------------------------
