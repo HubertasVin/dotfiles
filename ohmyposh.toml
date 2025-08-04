@@ -7,11 +7,6 @@ final_space = true
   foreground = '#AF8700'
   background = 'transparent'
 
-[transient_prompt]
-  template = '❯ '
-  background = 'transparent'
-  foreground_templates = ['{{if gt .Code 0}}#D70000{{end}}', '{{if eq .Code 0}}#AF8700{{end}}']
-
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
@@ -40,12 +35,12 @@ final_space = true
       fetch_status = false
   
   [[blocks.segments]]
-    type       = "command"
-    style      = "plain"
-    template   = " {{ .Output }}"
+    type = "command"
+    style = "plain"
+    template = " {{ .Output }}"
 
     [blocks.segments.properties]
-      shell   = "bash"
+      shell = "bash"
       command = "~/tools/get-git-diff-stats.sh"
       fallback = ""
 
@@ -59,7 +54,7 @@ final_space = true
     background = 'transparent'
     type = 'text'
     style = 'plain'
-    foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}#AF8700{{end}}']
+    foreground_templates = ['{{if gt .Code 0}}#ad2222{{end}}', '{{if eq .Code 0}}#AF8700{{end}}']
 
     [blocks.segments.properties]
       cache_duration = 'none'
