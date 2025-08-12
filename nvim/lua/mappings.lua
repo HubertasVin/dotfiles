@@ -36,6 +36,10 @@ map("n", "<leader>fj", "<cmd>HopWord<CR>", { desc = "Hop to word", table.unpack(
 map("v", "P", "p", { desc = "Paste (clipboard unaware)", table.unpack(opts) })
 map("v", "p", "P", { desc = "Alternate paste (clipboard preserved)", table.unpack(opts) })
 
+-- Change char without yanking
+map("n", "s", '"_s', { desc = "Change char" })
+map("v", "s", '"_s', { desc = "Change selection" })
+
 -- Remap '>' and '<' to keep selection in visual mode
 map("v", "<", "<gv")
 map("v", ">", ">gv")
