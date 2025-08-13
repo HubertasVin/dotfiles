@@ -50,7 +50,10 @@ return {
       require "configs.conform"
     end,
   },
-
+  {
+    "towolf/vim-helm",
+    event = { "BufReadPre", "BufNewFile" },
+  },
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -79,6 +82,7 @@ return {
         "gofumpt",
         "golines",
         "html-lsp",
+        "helm-ls",
         "java-language-server",
         "json-lsp",
         "lemminx",

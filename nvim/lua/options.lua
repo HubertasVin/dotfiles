@@ -128,3 +128,13 @@ vim.api.nvim_create_autocmd("FileType", {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = {
+    "*/templates/*.yaml", "*/templates/*.yml",
+    "*.tpl", "*.gotmpl",
+  },
+  callback = function()
+    vim.bo.filetype = "helm"
+  end,
+})

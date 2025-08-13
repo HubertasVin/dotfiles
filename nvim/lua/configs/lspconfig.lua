@@ -4,6 +4,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require("lspconfig")
+local util = require("lspconfig.util")
 local servers = {
 	"angularls",
 	"ansiblels",
@@ -14,6 +15,7 @@ local servers = {
 	"dockerls",
 	"docker_compose_language_service",
 	"html",
+	"helm_ls",
   "gopls",
 	"jdtls",
 	"jsonls",
@@ -28,7 +30,6 @@ local servers = {
 	"yamlls",
 }
 
--- lsps with default config
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
 		on_attach = on_attach,
@@ -46,8 +47,8 @@ lspconfig.sqlls.setup({
 	on_init = on_init,
 	capabilities = capabilities,
 	root_dir = function(fname)
-		return lspconfig.util.root_pattern(".git")(fname) -- Uses the .git directory as the root
-			or lspconfig.util.path.dirname(fname) -- Falls back to the file's directory
+		return lspconfig.util.root_pattern(".git")(fname)
+			or lspconfig.util.path.dirname(fname)
 	end,
 })
 
@@ -88,4 +89,39 @@ lspconfig.rust_analyzer.setup({
 			},
 		},
 	},
+})
+
+-- Configuring which files should be matched as helm type
+lspconfig.helm_ls.setup({
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = { "helm" },
+  root_dir = function(fname)
+    return util.root_pattern("Chart.yaml")(fname) or util.find_git_ancestor(fname)
+  end,
+})
+
+lspconfig.yamlls.setup({
+  on_attach = function(client, bufnr)
+    if vim.bo[bufnr].filetype == "helm" then
+      client.stop()
+      return
+    end
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+  filetypes = { "yaml", "yml" },
+})
+
+-- Global default border for all LSP float windows
+local orig_open_floating = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = opts.border or "rounded"
+  return orig_open_floating(contents, syntax, opts, ...)
+end
+
+vim.diagnostic.config({
+  float = { border = "rounded" },
 })
