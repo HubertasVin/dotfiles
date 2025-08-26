@@ -85,6 +85,11 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+# Save history, but don't share it between sessions
+setopt inc_append_history_time
+setopt hist_fcntl_lock
+setopt hist_save_by_copy
+setopt extended_history
 
 autoload -Uz compinit && compinit
 
