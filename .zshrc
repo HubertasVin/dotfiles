@@ -145,15 +145,16 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 #       Aliases
 #      ------------------------------------------------------------------------------
 
-alias clr='clear'
-alias sound_reload="systemctl --user restart pipewire.service"
-alias sound_reset="systemctl --user unmask pulseaudio; systemctl --user --now disable pipewire.socket; systemctl --user --now enable pulseaudio.service pulseaudio.socket"
-alias backupDevice="python ~/tools/backup/remote/backup-remote.py"
-alias restoreDevice="python ~/tools/backup/remote/restore-remote.py"
+alias clr="clear"
+alias gadd="git add -A"
+alias gcommit="git commit"
+alias gpush="git push origin -u @"
+alias backupDevice="python ~/tools/backup/borg-backup.sh"
+alias restoreDevice="python ~/tools/backup/borg-restore.sh"
 alias xr144="xrandr --output DP-1 --mode 1920x1080 --rate 144"
 alias prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
 alias ..="cd .."
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd "$LASTDIR"'
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd $LASTDIR'
 alias sshvps="ssh hubserv@198.7.118.97"
 
 
