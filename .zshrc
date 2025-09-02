@@ -147,7 +147,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 alias clr="clear"
 alias gadd="git add -A"
-alias gcommit="git commit"
+alias gcommit="git commit -a"
 alias gpush="git push origin -u @"
 alias backupDevice="~/tools/backup/borg-backup.sh"
 alias restoreDevice="~/tools/backup/borg-restore.sh"
