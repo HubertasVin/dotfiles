@@ -96,6 +96,7 @@ autoload -Uz compinit && compinit
 zle -N zle-line-init rebind-ctrl-arrows
 zle -N zle-keymap-select rebind-ctrl-arrows
 
+
 #NOTE: ------------------------------------------------------------------------------
 #       Zinit setup
 #      ------------------------------------------------------------------------------
@@ -105,8 +106,8 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
-   mkdir -p "$(dirname $ZINIT_HOME)"
-   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+    mkdir -p "$(dirname $ZINIT_HOME)"
+    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
 # Load zinit
@@ -125,12 +126,14 @@ zinit light Aloxaf/fzf-tab
 # Add snippets
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
-zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
+# Disable esc unnecessary mappings
+bindkey -M emacs '\e^M' accept-line
+bindkey -M vicmd '\e^M' accept-line
 
 zinit cdreplay -q
 
@@ -231,75 +234,6 @@ fcat() {
     done < <(find "${find_args[@]}")
 }
 
-#NOTE: ------------------------------------------------------------------------------
-#       Helper functions for binds
-#      ------------------------------------------------------------------------------
-
-# Better word detection for killing words
-function custom-backward-kill-word() {
-    if [[ -z "$LBUFFER" ]]; then
-        return 0
-    fi
-
-    if [[ "${LBUFFER: -1}" =~ [[:alnum:]] ]]; then
-        LBUFFER=${LBUFFER/%([[:alnum:]]#)/}
-    else
-        LBUFFER=${LBUFFER/%([^[:alnum:]]#)/}
-    fi
-    zle reset-prompt
-}
-zle -N custom-backward-kill-word
-
-function custom-forward-kill-word() {
-    if [[ -z "$RBUFFER" ]]; then
-        return 0
-    fi
-
-    if [[ "${RBUFFER:0:1}" =~ [[:alnum:]] ]]; then
-        RBUFFER=${RBUFFER/#([[:alnum:]]#)/}
-    else
-        RBUFFER=${RBUFFER/#([^[:alnum:]]#)/}
-    fi
-    zle reset-prompt
-}
-zle -N custom-forward-kill-word
-
-# Custom widget for moving the cursor left (Ctrl+Left)
-function custom-backward-word() {
-    if [[ -z "$LBUFFER" ]]; then
-        return 0
-    fi
-
-    local word
-    if [[ "${LBUFFER: -1}" =~ [[:alnum:]] ]]; then
-        word=${LBUFFER##*[^[:alnum:]]}
-    else
-        word=${LBUFFER##*([[:alnum:]])}
-    fi
-    LBUFFER=${LBUFFER%$word}
-    RBUFFER="$word$RBUFFER"
-    zle reset-prompt
-}
-zle -N custom-backward-word
-
-# Custom widget for moving the cursor right (Ctrl+Right)
-function custom-forward-word() {
-    if [[ -z "$RBUFFER" ]]; then
-        return 0
-    fi
-
-    local word
-    if [[ "${RBUFFER:0:1}" =~ [[:alnum:]] ]]; then
-        word=${RBUFFER%%[^[:alnum:]]*}
-    else
-        word=${RBUFFER%%[[:alnum:]]*}
-    fi
-    LBUFFER=$LBUFFER$word
-    RBUFFER=${RBUFFER#$word}
-    zle reset-prompt
-}
-zle -N custom-forward-word
-
 
 #NOTE: ------------------------------------------------------------------------------
 #       Load additional environment settings
@@ -312,9 +246,68 @@ export SDKMAN_DIR="$HOME/.sdkman"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # Oh-my-posh prompt
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh.toml)"
-# Rust
-source "$HOME/.cargo/env"
+
+# Use dedicated key for borg backups
+export BORG_RSH='ssh -i /home/hubertas/.ssh/id_ed25519_borg -o IdentitiesOnly=yes'
 
 # Completion enhancements
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+
+#NOTE: ------------------------------------------------------------------------------
+#       Helper functions for binds
+#      ------------------------------------------------------------------------------
+
+# Helper functions for binds
+function custom-backward-kill-word() {
+    [[ -z "$LBUFFER" ]] && return 0
+    if [[ "${LBUFFER: -1}" =~ [[:alnum:]] ]]; then
+        LBUFFER=${LBUFFER/%([[:alnum:]]#)/}
+    else
+        LBUFFER=${LBUFFER/%([^[:alnum:]]#)/}
+    fi
+    zle -R
+}
+zle -N custom-backward-kill-word
+
+function custom-forward-kill-word() {
+    [[ -z "$RBUFFER" ]] && return 0
+    if [[ "${RBUFFER:0:1}" =~ [[:alnum:]] ]]; then
+        RBUFFER=${RBUFFER/#([[:alnum:]]#)/}
+    else
+        RBUFFER=${RBUFFER/#([^[:alnum:]]#)/}
+    fi
+    zle -R
+}
+zle -N custom-forward-kill-word
+
+# Custom widget for moving the cursor left (Ctrl+Left)
+function custom-backward-word() {
+    [[ -z "$LBUFFER" ]] && return 0
+    local word
+    if [[ "${LBUFFER: -1}" =~ [[:alnum:]] ]]; then
+        word=${LBUFFER##*[^[:alnum:]]}
+    else
+        word=${LBUFFER##*([[:alnum:]])}
+    fi
+    LBUFFER=${LBUFFER%$word}
+    RBUFFER="$word$RBUFFER"
+    zle -R
+}
+zle -N custom-backward-word
+
+# Custom widget for moving the cursor right (Ctrl+Right)
+function custom-forward-word() {
+    [[ -z "$RBUFFER" ]] && return 0
+    local word
+    if [[ "${RBUFFER:0:1}" =~ [[:alnum:]] ]]; then
+        word=${RBUFFER%%[^[:alnum:]]*}
+    else
+        word=${RBUFFER%%[[:alnum:]]*}
+    fi
+    LBUFFER+=$word
+    RBUFFER=${RBUFFER#$word}
+    zle -R
+}
+zle -N custom-forward-word
