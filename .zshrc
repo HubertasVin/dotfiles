@@ -66,8 +66,8 @@ function rebind-ctrl-arrows() {
     bindkey "\e[3~" delete-char
 }
 # Bind the up and down arrow keys to search through history with typed context
-bindkey '\e[A' history-beginning-search-backward-end
-bindkey '\e[B' history-beginning-search-forward-end
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward
 # Newline bind Ctrl+j
 bindkey '^J' self-insert
 
@@ -95,11 +95,6 @@ autoload -Uz compinit && compinit
 
 zle -N zle-line-init rebind-ctrl-arrows
 zle -N zle-keymap-select rebind-ctrl-arrows
-
-autoload -Uz history-search-end
-
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
 
 
 #NOTE: ------------------------------------------------------------------------------
