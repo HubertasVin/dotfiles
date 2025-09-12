@@ -66,8 +66,8 @@ function rebind-ctrl-arrows() {
     bindkey "\e[3~" delete-char
 }
 # Bind the up and down arrow keys to search through history with typed context
-bindkey "\e[A" history-search-backward
-bindkey "\e[B" history-search-forward
+bindkey '\e[A' history-beginning-search-backward-end
+bindkey '\e[B' history-beginning-search-forward-end
 # Newline bind Ctrl+j
 bindkey '^J' self-insert
 
@@ -95,6 +95,11 @@ autoload -Uz compinit && compinit
 
 zle -N zle-line-init rebind-ctrl-arrows
 zle -N zle-keymap-select rebind-ctrl-arrows
+
+autoload -Uz history-search-end
+
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
 
 
 #NOTE: ------------------------------------------------------------------------------
@@ -246,9 +251,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # Oh-my-posh prompt
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh.toml)"
-
-# Use dedicated key for borg backups
-export BORG_RSH='ssh -i /home/hubertas/.ssh/id_ed25519_borg -o IdentitiesOnly=yes'
 
 # Completion enhancements
 eval "$(fzf --zsh)"
