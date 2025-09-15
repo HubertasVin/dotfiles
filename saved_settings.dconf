@@ -103,8 +103,8 @@ release-check-time=uint32 1736722765
 
 [com/uploadedlobster/peek]
 persist-save-folder='/home/hubertas/Videos/Camera'
-persist-window-geometry=(1516, 124, 396, 841)
-recording-output-format='mp4'
+persist-window-geometry=(1276, 31, 1272, 1322)
+recording-output-format='gif'
 
 [desktop/ibus/general]
 preload-engines=['xkb:gb::eng', 'xkb:lt::lit']
@@ -145,14 +145,17 @@ module='org.buddiesofbudgie.budgie-desktop.raven.widget.Calendar.so'
 image-dir-uri='file:///home/hubertas/Documents'
 
 [org/gnome/Extensions]
-window-height=1156
+window-height=1420
 window-maximized=false
-window-width=945
+window-width=840
+
+[org/gnome/Loupe]
+show-properties=true
 
 [org/gnome/Ptyxis]
 default-profile-uuid='0498c998bd68b3a1505701d667c2e985'
 profile-uuids=['0498c998bd68b3a1505701d667c2e985']
-window-size=(uint32 103, uint32 54)
+window-size=(uint32 139, uint32 66)
 
 [org/gnome/Snapshot]
 capture-mode='picture'
@@ -200,8 +203,8 @@ word-size=64
 
 [org/gnome/calendar]
 active-view='month'
-window-maximized=true
-window-size=(768, 600)
+window-maximized=false
+window-size=(1265, 1396)
 
 [org/gnome/cheese]
 burst-delay=1000
@@ -217,7 +220,7 @@ panel-id='world'
 size=(870, 690)
 
 [org/gnome/control-center]
-last-panel='power'
+last-panel='applications'
 window-state=(945, 1156, false)
 
 [org/gnome/deja-dup]
@@ -258,8 +261,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/hubertas/Pictures/Wallpapers/Vilnius_7.jpg'
-picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Vilnius_7.jpg'
+picture-uri='file:///home/hubertas/Pictures/Wallpapers/Artwork_1.png'
+picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Artwork_1.png'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -268,7 +271,7 @@ automatic-timezone=true
 
 [org/gnome/desktop/input-sources]
 current=uint32 0
-mru-sources=[('xkb', 'lt'), ('xkb', 'us')]
+mru-sources=[('xkb', 'us'), ('xkb', 'lt')]
 per-window=false
 sources=[('xkb', 'us'), ('xkb', 'lt')]
 xkb-options=@as []
@@ -680,7 +683,7 @@ show-sidebar=false
 sidebar-page='thumbnails'
 sidebar-size=132
 sizing-mode='free'
-window-ratio=(1.5875015749023558, 1.373102629919146)
+window-ratio=(2.1250661038349294, 0.82314811273399435)
 zoom=0.51709337957272361
 
 [org/gnome/evolution-data-server]
@@ -767,8 +770,8 @@ search-filter-time-type='last_modified'
 search-view='list-view'
 
 [org/gnome/nautilus/window-state]
-initial-size=(1900, 1156)
-initial-size-file-chooser=(1900, 1156)
+initial-size=(945, 1156)
+initial-size-file-chooser=(945, 1156)
 maximized=false
 
 [org/gnome/nm-applet/eap/04b0f064-83d8-4e98-aa71-f76ded5d6c45]
@@ -871,6 +874,10 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
+[org/gnome/nm-applet/eap/a2c8bab6-b927-4680-b037-9d23450f97b8]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
 [org/gnome/nm-applet/eap/a5af3165-a040-4261-89f3-d24d4a8a0317]
 ignore-ca-cert=true
 ignore-phase2-ca-cert=false
@@ -901,6 +908,10 @@ ignore-phase2-ca-cert=false
 
 [org/gnome/nm-applet/eap/c0fa9314-5e01-47d9-945f-30a3ff4cb4f8]
 ignore-ca-cert=true
+ignore-phase2-ca-cert=false
+
+[org/gnome/nm-applet/eap/c31b01a4-9408-4fd9-a2e4-bd730c1bf5c5]
+ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
 [org/gnome/nm-applet/eap/df95bc39-acca-4d0d-aa76-72d99cde9340]
@@ -936,16 +947,16 @@ pomodoro-duration=900.0
 short-break-duration=300.0
 
 [org/gnome/pomodoro/state]
-timer-date='2025-09-09T08:02:48+0000'
-timer-elapsed=0.0
-timer-paused=false
-timer-score=0.0
-timer-state='null'
-timer-state-date='2025-09-09T08:02:48+0000'
-timer-state-duration=0.0
+timer-date='2025-09-15T12:40:06+0000'
+timer-elapsed=4.6049280166625977
+timer-paused=true
+timer-score=0.99807050374516271
+timer-state='short-break'
+timer-state-date='2025-09-15T12:40:00+0000'
+timer-state-duration=300.0
 
 [org/gnome/portal/filechooser/app.zen_browser.zen]
-last-folder-path='/home/hubertas/Downloads'
+last-folder-path='/home/hubertas/Documents/backup-folder/Programming/C++/facility_location'
 
 [org/gnome/portal/filechooser/clickup]
 last-folder-path='/home/hubertas/Documents/backup-folder/Random documents/Sąskaitos faktūros/Roket'
@@ -984,7 +995,7 @@ last-folder-path='/home/hubertas/Pictures/Wallpapers'
 last-folder-path='/home/hubertas/Downloads/The Walking Dead'
 
 [org/gnome/portal/filechooser/snap.obsidian]
-last-folder-path='/home/hubertas/Documents'
+last-folder-path='/home/hubertas/Downloads'
 
 [org/gnome/portal/filechooser/snap.postman]
 last-folder-path='/home/hubertas/Downloads'
@@ -1079,7 +1090,7 @@ sleep-inactive-battery-timeout=1800
 overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
 
 [org/gnome/shell]
-app-picker-layout=[{'org.fedoraproject.MediaWriter.desktop': <{'position': <0>}>, 'org.gnome.Contacts.desktop': <{'position': <1>}>, 'org.gnome.Weather.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Maps.desktop': <{'position': <4>}>, 'org.gnome.Totem.desktop': <{'position': <5>}>, 'org.gnome.Characters.desktop': <{'position': <6>}>, 'org.gnome.Calculator.desktop': <{'position': <7>}>, 'simple-scan.desktop': <{'position': <8>}>, 'org.gnome.Settings.desktop': <{'position': <9>}>, 'org.gnome.Boxes.desktop': <{'position': <10>}>, 'Utilities': <{'position': <11>}>, 'yelp.desktop': <{'position': <12>}>, 'org.gnome.Rhythmbox3.desktop': <{'position': <13>}>, 'org.gnome.Ptyxis.desktop': <{'position': <14>}>, 'org.gnome.TextEditor.desktop': <{'position': <15>}>, 'org.gnome.Tour.desktop': <{'position': <16>}>}, {'org.gnome.Calendar.desktop': <{'position': <0>}>, 'code.desktop': <{'position': <1>}>, 'org.dosbox-staging.dosbox-staging.desktop': <{'position': <2>}>, 'nvim.desktop': <{'position': <3>}>, 'org.gnome.Snapshot.desktop': <{'position': <4>}>, 'discord.desktop': <{'position': <5>}>, 'java-21-openjdk-jconsole.desktop': <{'position': <6>}>, 'org.gnome.Extensions.desktop': <{'position': <7>}>, 'org.flameshot.Flameshot.desktop': <{'position': <8>}>, 'htop.desktop': <{'position': <9>}>, 'org.gnome.Loupe.desktop': <{'position': <10>}>, 'minecraft-launcher.desktop': <{'position': <11>}>, 'org.gnome.Nautilus.desktop': <{'position': <12>}>, 'org.gnome.font-viewer.desktop': <{'position': <13>}>, 'wine-notepad.desktop': <{'position': <14>}>, 'org.mozilla.firefox.desktop': <{'position': <15>}>, 'org.freedesktop.MalcontentControl.desktop': <{'position': <16>}>, 'com.uploadedlobster.peek.desktop': <{'position': <17>}>, 'blueman-manager.desktop': <{'position': <18>}>}, {'org.gnome.Pomodoro.desktop': <{'position': <0>}>, 'putty.desktop': <{'position': <1>}>, 'org.qbittorrent.qBittorrent.desktop': <{'position': <2>}>, 'ranger.desktop': <{'position': <3>}>, 'wine-regedit.desktop': <{'position': <4>}>, 'net.nokyan.Resources.desktop': <{'position': <5>}>, 'btop.desktop': <{'position': <6>}>, 'org.gnome.Software.desktop': <{'position': <7>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <8>}>, 'vlc.desktop': <{'position': <9>}>, 'wine-wineboot.desktop': <{'position': <10>}>, 'wine-winecfg.desktop': <{'position': <11>}>, 'wine-winefile.desktop': <{'position': <12>}>, 'wine-winhelp.desktop': <{'position': <13>}>, 'wine-oleview.desktop': <{'position': <14>}>, 'wine-uninstaller.desktop': <{'position': <15>}>, 'wine-wordpad.desktop': <{'position': <16>}>, 'wine-winemine.desktop': <{'position': <17>}>, 'brave-browser.desktop': <{'position': <18>}>, 'org.onlyoffice.desktopeditors.desktop': <{'position': <19>}>, 'obsidian_obsidian.desktop': <{'position': <20>}>}, {'nitrogen.desktop': <{'position': <0>}>, 'rofi.desktop': <{'position': <1>}>, 'rofi-theme-selector.desktop': <{'position': <2>}>, 'steam.desktop': <{'position': <3>}>, 'Alacritty.desktop': <{'position': <4>}>, 'arandr.desktop': <{'position': <5>}>}, {'remote-viewer.desktop': <{'position': <0>}>, 'virt-manager.desktop': <{'position': <1>}>, 'org.pulseaudio.pavucontrol.desktop': <{'position': <2>}>}]
+app-picker-layout=[{'org.fedoraproject.MediaWriter.desktop': <{'position': <0>}>, 'org.gnome.Contacts.desktop': <{'position': <1>}>, 'org.gnome.Weather.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Maps.desktop': <{'position': <4>}>, 'org.gnome.Totem.desktop': <{'position': <5>}>, 'org.gnome.Characters.desktop': <{'position': <6>}>, 'org.gnome.Calculator.desktop': <{'position': <7>}>, 'simple-scan.desktop': <{'position': <8>}>, 'org.gnome.Settings.desktop': <{'position': <9>}>, 'org.gnome.Boxes.desktop': <{'position': <10>}>, 'Utilities': <{'position': <11>}>, 'yelp.desktop': <{'position': <12>}>, 'org.gnome.Rhythmbox3.desktop': <{'position': <13>}>, 'org.gnome.Ptyxis.desktop': <{'position': <14>}>, 'org.gnome.TextEditor.desktop': <{'position': <15>}>, 'org.gnome.Tour.desktop': <{'position': <16>}>}, {'org.gnome.Calendar.desktop': <{'position': <0>}>, 'code.desktop': <{'position': <1>}>, 'org.dosbox-staging.dosbox-staging.desktop': <{'position': <2>}>, 'nvim.desktop': <{'position': <3>}>, 'org.gnome.Snapshot.desktop': <{'position': <4>}>, 'discord.desktop': <{'position': <5>}>, 'java-21-openjdk-jconsole.desktop': <{'position': <6>}>, 'org.gnome.Extensions.desktop': <{'position': <7>}>, 'org.flameshot.Flameshot.desktop': <{'position': <8>}>, 'htop.desktop': <{'position': <9>}>, 'org.gnome.Loupe.desktop': <{'position': <10>}>, 'minecraft-launcher.desktop': <{'position': <11>}>, 'wine-Programs-Adobe Digital Editions.desktop': <{'position': <12>}>, 'org.gnome.font-viewer.desktop': <{'position': <13>}>, 'wine-notepad.desktop': <{'position': <14>}>, 'org.mozilla.firefox.desktop': <{'position': <15>}>, 'org.freedesktop.MalcontentControl.desktop': <{'position': <16>}>, 'com.uploadedlobster.peek.desktop': <{'position': <17>}>, 'wine-Programs-Adobe-Adobe Digital Editions-Adobe Digital Editions.desktop': <{'position': <18>}>, 'android-studio_android-studio.desktop': <{'position': <19>}>, 'caprine.desktop': <{'position': <20>}>, 'chromium-browser.desktop': <{'position': <21>}>, 'Counter-Strike 2.desktop': <{'position': <22>}>, 'custom_startup.desktop': <{'position': <23>}>}, {'org.gnome.Pomodoro.desktop': <{'position': <0>}>, 'putty.desktop': <{'position': <1>}>, 'org.qbittorrent.qBittorrent.desktop': <{'position': <2>}>, 'ranger.desktop': <{'position': <3>}>, 'wine-regedit.desktop': <{'position': <4>}>, 'net.nokyan.Resources.desktop': <{'position': <5>}>, 'btop.desktop': <{'position': <6>}>, 'org.gnome.Software.desktop': <{'position': <7>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <8>}>, 'vlc.desktop': <{'position': <9>}>, 'wine-wineboot.desktop': <{'position': <10>}>, 'wine-winecfg.desktop': <{'position': <11>}>, 'wine-winefile.desktop': <{'position': <12>}>, 'wine-winhelp.desktop': <{'position': <13>}>, 'wine-oleview.desktop': <{'position': <14>}>, 'wine-uninstaller.desktop': <{'position': <15>}>, 'wine-wordpad.desktop': <{'position': <16>}>, 'wine-winemine.desktop': <{'position': <17>}>, 'com.github.johnfactotum.Foliate.desktop': <{'position': <18>}>, 'org.onlyoffice.desktopeditors.desktop': <{'position': <19>}>, 'obsidian_obsidian.desktop': <{'position': <20>}>, 'org.fontforge.FontForge.desktop': <{'position': <21>}>, 'wine-Programs-Adobe-Adobe Digital Editions-Help.desktop': <{'position': <22>}>, 'wine-Programs-Adobe-Adobe Digital Editions-Home Page.desktop': <{'position': <23>}>}, {'nitrogen.desktop': <{'position': <0>}>, 'rofi.desktop': <{'position': <1>}>, 'rofi-theme-selector.desktop': <{'position': <2>}>, 'steam.desktop': <{'position': <3>}>, 'Alacritty.desktop': <{'position': <4>}>, 'arandr.desktop': <{'position': <5>}>, 'org.inkscape.Inkscape.desktop': <{'position': <6>}>, 'intellij-idea-ultimate_intellij-idea-ultimate.desktop': <{'position': <7>}>, 'nvidia-settings.desktop': <{'position': <8>}>, 'nvtop.desktop': <{'position': <9>}>, 'proton-pass.desktop': <{'position': <10>}>, 'net.thunderbird.Thunderbird.desktop': <{'position': <11>}>, 'wine-Programs-Adobe-Adobe Digital Editions-Uninstall.desktop': <{'position': <12>}>, 'Wrap House Simulator Demo.desktop': <{'position': <13>}>, 'app.zen_browser.zen.desktop': <{'position': <14>}>}, {'remote-viewer.desktop': <{'position': <0>}>, 'virt-manager.desktop': <{'position': <1>}>, 'org.pulseaudio.pavucontrol.desktop': <{'position': <2>}>}]
 command-history=['reboot', 'polybar', 'poweroff', 'terminator -e tmux', 'xkill', 'xclip', 'r', 'reload']
 disable-user-extensions=false
 disabled-extensions=['pop-shell@system76.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'light-style@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'ubuntu-dock@ubuntu.com', 'ding@rastersoft.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'tiling-assistant@leleat-on-github', 'dash-to-dock@micxgx.gmail.com']
@@ -1558,14 +1569,14 @@ toggle-quick-settings=@as []
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1757490561
+check-timestamp=int64 1757920215
 first-run=false
-flatpak-purge-timestamp=int64 1757492247
+flatpak-purge-timestamp=int64 1757922063
 install-timestamp=int64 1757000400
 online-updates-timestamp=int64 1695972091
 packagekit-historical-updates-timestamp=uint64 1757000400
-security-timestamp=int64 1756800917717090
-update-notification-timestamp=int64 1757404992
+security-timestamp=int64 1757920327878483
+update-notification-timestamp=int64 1757920328
 upgrade-notification-timestamp=int64 1745476677
 
 [org/gnome/system/location]
