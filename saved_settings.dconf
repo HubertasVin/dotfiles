@@ -145,9 +145,9 @@ module='org.buddiesofbudgie.budgie-desktop.raven.widget.Calendar.so'
 image-dir-uri='file:///home/hubertas/Documents'
 
 [org/gnome/Extensions]
-window-height=1420
+window-height=1156
 window-maximized=false
-window-width=840
+window-width=945
 
 [org/gnome/Loupe]
 show-properties=true
@@ -155,7 +155,7 @@ show-properties=true
 [org/gnome/Ptyxis]
 default-profile-uuid='0498c998bd68b3a1505701d667c2e985'
 profile-uuids=['0498c998bd68b3a1505701d667c2e985']
-window-size=(uint32 139, uint32 66)
+window-size=(uint32 139, uint32 31)
 
 [org/gnome/Snapshot]
 capture-mode='picture'
@@ -176,7 +176,7 @@ subtitle-encoding='UTF-8'
 [org/gnome/baobab/ui]
 active-chart='rings'
 is-maximized=false
-window-size=(1177, 732)
+window-size=(945, 1156)
 
 [org/gnome/boxes]
 first-run=false
@@ -220,8 +220,8 @@ panel-id='world'
 size=(870, 690)
 
 [org/gnome/control-center]
-last-panel='applications'
-window-state=(945, 1156, false)
+last-panel='display'
+window-state=(626, 585, false)
 
 [org/gnome/deja-dup]
 backend='google'
@@ -261,8 +261,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/hubertas/Pictures/Wallpapers/Artwork_1.png'
-picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Artwork_1.png'
+picture-uri='file:///home/hubertas/Pictures/Wallpapers/Fantasy_1.png'
+picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Fantasy_1.png'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -671,6 +671,7 @@ sidebar=false
 
 [org/gnome/evince]
 document-directory=@ms 'file:///home/hubertas/Documents/BackupFolder/Fizika%20IT'
+pictures-directory=@ms 'file:///home/hubertas/Downloads'
 
 [org/gnome/evince/default]
 continuous=true
@@ -683,8 +684,8 @@ show-sidebar=false
 sidebar-page='thumbnails'
 sidebar-size=132
 sizing-mode='free'
-window-ratio=(2.1250661038349294, 0.82314811273399435)
-zoom=0.51709337957272361
+window-ratio=(0.984375, 1.0611111111111111)
+zoom=0.64707275559311894
 
 [org/gnome/evolution-data-server]
 migrated=true
@@ -770,7 +771,7 @@ search-filter-time-type='last_modified'
 search-view='list-view'
 
 [org/gnome/nautilus/window-state]
-initial-size=(945, 1156)
+initial-size=(2540, 693)
 initial-size-file-chooser=(945, 1156)
 maximized=false
 
@@ -947,16 +948,16 @@ pomodoro-duration=900.0
 short-break-duration=300.0
 
 [org/gnome/pomodoro/state]
-timer-date='2025-09-15T12:40:06+0000'
-timer-elapsed=4.6049280166625977
-timer-paused=true
-timer-score=0.99807050374516271
-timer-state='short-break'
-timer-state-date='2025-09-15T12:40:00+0000'
-timer-state-duration=300.0
+timer-date='2025-09-18T07:11:59+0000'
+timer-elapsed=0.0
+timer-paused=false
+timer-score=0.0
+timer-state='null'
+timer-state-date='2025-09-18T07:11:59+0000'
+timer-state-duration=0.0
 
 [org/gnome/portal/filechooser/app.zen_browser.zen]
-last-folder-path='/home/hubertas/Documents/backup-folder/Programming/C++/facility_location'
+last-folder-path='/home/hubertas/Downloads'
 
 [org/gnome/portal/filechooser/clickup]
 last-folder-path='/home/hubertas/Documents/backup-folder/Random documents/Sąskaitos faktūros/Roket'
@@ -1113,7 +1114,7 @@ color-60='#15c931'
 color-70='#15c931'
 color-80='#15c931'
 color-90='#15c931'
-device-list=['{"path":"/org/bluez/hci0/dev_D2_39_12_EE_B0_86","icon":"input-keyboard","alias":"MX KEYS B","paired":false,"battery-reported":null,"qs-level":null,"indicator-mode":0,"enhanced-device":null,"connected-time":1753948012,"disconnected-time":1753948012}', '{"path":"/org/bluez/hci0/dev_DE_AB_2B_BD_1E_86","icon":"input-mouse","alias":"MX Master 2S","paired":false,"battery-reported":null,"qs-level":null,"indicator-mode":0,"enhanced-device":null,"connected-time":1753948012,"disconnected-time":1753948012}', '{"path":"/org/bluez/hci0/dev_4D_9D_F1_EA_CF_43","icon":"audio-headset","alias":"T12","paired":true,"battery-reported":true,"qs-level":true,"indicator-mode":2,"enhanced-device":null,"connected-time":1757417538,"disconnected-time":1757417486}', '{"path":"/org/bluez/hci0/dev_88_C9_E8_11_1D_3A","icon":"audio-headset","alias":"WH-1000XM4","paired":true,"battery-reported":true,"qs-level":true,"indicator-mode":2,"enhanced-device":null,"connected-time":1757514532,"disconnected-time":1757515719}']
+device-list=['{"path":"/org/bluez/hci0/dev_D2_39_12_EE_B0_86","icon":"input-keyboard","alias":"MX KEYS B","paired":false,"battery-reported":null,"qs-level":null,"indicator-mode":0,"enhanced-device":null,"connected-time":1753948012,"disconnected-time":1753948012}', '{"path":"/org/bluez/hci0/dev_DE_AB_2B_BD_1E_86","icon":"input-mouse","alias":"MX Master 2S","paired":false,"battery-reported":null,"qs-level":null,"indicator-mode":0,"enhanced-device":null,"connected-time":1753948012,"disconnected-time":1753948012}', '{"path":"/org/bluez/hci0/dev_4D_9D_F1_EA_CF_43","icon":"audio-headset","alias":"T12","paired":true,"battery-reported":true,"qs-level":true,"indicator-mode":2,"enhanced-device":null,"connected-time":1758111027,"disconnected-time":1758112030}', '{"path":"/org/bluez/hci0/dev_88_C9_E8_11_1D_3A","icon":"audio-headset","alias":"WH-1000XM4","paired":true,"battery-reported":true,"qs-level":true,"indicator-mode":2,"enhanced-device":null,"connected-time":1757514532,"disconnected-time":1757515719}']
 indicator-size=100
 level-indicator-color=0
 level-indicator-type=0
@@ -1569,13 +1570,13 @@ toggle-quick-settings=@as []
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1757920215
+check-timestamp=int64 1758268701
 first-run=false
-flatpak-purge-timestamp=int64 1757922063
+flatpak-purge-timestamp=int64 1758270370
 install-timestamp=int64 1757000400
 online-updates-timestamp=int64 1695972091
 packagekit-historical-updates-timestamp=uint64 1757000400
-security-timestamp=int64 1757920327878483
+security-timestamp=int64 1758268760919909
 update-notification-timestamp=int64 1757920328
 upgrade-notification-timestamp=int64 1745476677
 
