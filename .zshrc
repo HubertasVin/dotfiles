@@ -205,7 +205,7 @@ fcat() {
                 shift 2
                 ;;
             -*)
-                echo "Usage: find_and_cat [-d N] REGEX" >&2
+                echo "Usage: fcat [-d N] GLOB_PATTERN" >&2
                 return 1
                 ;;
             *)
@@ -216,7 +216,7 @@ fcat() {
     done
 
     if [[ -z "$pattern" ]]; then
-        echo "Usage: find_and_cat [-d N] REGEX" >&2
+        echo "Usage: fcat [-d N] GLOB_PATTERN" >&2
         return 1
     fi
 
@@ -226,15 +226,13 @@ fcat() {
     # build find args
     find_args=(.)
     [[ -n "$maxdepth" ]] && find_args+=( -maxdepth "$maxdepth" )
-    find_args+=( -regextype posix-extended -regex ".*$pattern" -type f )
+    find_args+=( -type f -name "$pattern" )
 
     # run find and process
     while IFS= read -r file; do
-        prefix="---- $file "
+        prefix="--- $file "
         plen=${#prefix}
-        dash_count=$(( width > plen ? width - plen : 0 ))
-        dashes=$(printf '%*s' "$dash_count" '' | tr ' ' '-')
-        printf '%s%s\n' "$prefix" "$dashes"
+        printf '%s\n' "$prefix"
         cat "$file"
     done < <(find "${find_args[@]}")
 }
