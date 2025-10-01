@@ -155,7 +155,7 @@ show-properties=true
 [org/gnome/Ptyxis]
 default-profile-uuid='0498c998bd68b3a1505701d667c2e985'
 profile-uuids=['0498c998bd68b3a1505701d667c2e985']
-window-size=(uint32 139, uint32 31)
+window-size=(uint32 103, uint32 48)
 
 [org/gnome/Snapshot]
 capture-mode='picture'
@@ -220,8 +220,8 @@ panel-id='world'
 size=(870, 690)
 
 [org/gnome/control-center]
-last-panel='display'
-window-state=(626, 585, false)
+last-panel='power'
+window-state=(626, 1036, false)
 
 [org/gnome/deja-dup]
 backend='google'
@@ -261,8 +261,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/hubertas/Pictures/Wallpapers/Fantasy_1.png'
-picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Fantasy_1.png'
+picture-uri='file:///home/hubertas/Pictures/Wallpapers/Prague_5.jpg'
+picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Prague_5.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -271,12 +271,13 @@ automatic-timezone=true
 
 [org/gnome/desktop/input-sources]
 current=uint32 0
-mru-sources=[('xkb', 'us'), ('xkb', 'lt')]
+mru-sources=[('xkb', 'lt'), ('xkb', 'us')]
 per-window=false
 sources=[('xkb', 'us'), ('xkb', 'lt')]
 xkb-options=@as []
 
 [org/gnome/desktop/interface]
+accent-color='purple'
 color-scheme='prefer-dark'
 cursor-size=24
 cursor-theme='Quintom_Ink'
@@ -286,8 +287,8 @@ font-antialiasing='grayscale'
 font-hinting='slight'
 font-name='Noto Sans,  10'
 gtk-enable-primary-paste=false
-gtk-theme='Graphite-teal-Dark'
-icon-theme='Tela-circle-manjaro-dark'
+gtk-theme='Adwaita'
+icon-theme='Tela-circle-purple-light'
 scaling-factor=uint32 1
 show-battery-percentage=true
 text-scaling-factor=1.0
@@ -312,6 +313,9 @@ application-id='app.zen_browser.zen.desktop'
 
 [org/gnome/desktop/notifications/application/apport-gtk]
 application-id='apport-gtk.desktop'
+
+[org/gnome/desktop/notifications/application/balena-etcher]
+application-id='balena-etcher.desktop'
 
 [org/gnome/desktop/notifications/application/brave-browser]
 application-id='brave-browser.desktop'
@@ -578,7 +582,7 @@ application-id='zen.desktop'
 application-id='Zoom.desktop'
 
 [org/gnome/desktop/peripherals/keyboard]
-numlock-state=true
+numlock-state=false
 
 [org/gnome/desktop/peripherals/mouse]
 accel-profile='flat'
@@ -757,7 +761,7 @@ restore-shortcuts=['<Super>Escape']
 default-compression-format='zip'
 
 [org/gnome/nautilus/icon-view]
-default-zoom-level='large'
+default-zoom-level='medium'
 
 [org/gnome/nautilus/list-view]
 default-column-order=['name', 'size', 'type', 'owner', 'group', 'permissions', 'date_modified', 'date_accessed', 'date_created', 'recency', 'detailed_type']
@@ -771,7 +775,7 @@ search-filter-time-type='last_modified'
 search-view='list-view'
 
 [org/gnome/nautilus/window-state]
-initial-size=(2540, 693)
+initial-size=(945, 1036)
 initial-size-file-chooser=(945, 1156)
 maximized=false
 
@@ -948,12 +952,12 @@ pomodoro-duration=900.0
 short-break-duration=300.0
 
 [org/gnome/pomodoro/state]
-timer-date='2025-09-18T07:11:59+0000'
+timer-date='2025-09-30T17:00:16+0000'
 timer-elapsed=0.0
 timer-paused=false
 timer-score=0.0
 timer-state='null'
-timer-state-date='2025-09-18T07:11:59+0000'
+timer-state-date='2025-09-30T17:00:16+0000'
 timer-state-duration=0.0
 
 [org/gnome/portal/filechooser/app.zen_browser.zen]
@@ -1091,13 +1095,13 @@ sleep-inactive-battery-timeout=1800
 overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
 
 [org/gnome/shell]
-app-picker-layout=[{'org.fedoraproject.MediaWriter.desktop': <{'position': <0>}>, 'org.gnome.Contacts.desktop': <{'position': <1>}>, 'org.gnome.Weather.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Maps.desktop': <{'position': <4>}>, 'org.gnome.Totem.desktop': <{'position': <5>}>, 'org.gnome.Characters.desktop': <{'position': <6>}>, 'org.gnome.Calculator.desktop': <{'position': <7>}>, 'simple-scan.desktop': <{'position': <8>}>, 'org.gnome.Settings.desktop': <{'position': <9>}>, 'org.gnome.Boxes.desktop': <{'position': <10>}>, 'Utilities': <{'position': <11>}>, 'yelp.desktop': <{'position': <12>}>, 'org.gnome.Rhythmbox3.desktop': <{'position': <13>}>, 'org.gnome.Ptyxis.desktop': <{'position': <14>}>, 'org.gnome.TextEditor.desktop': <{'position': <15>}>, 'org.gnome.Tour.desktop': <{'position': <16>}>}, {'org.gnome.Calendar.desktop': <{'position': <0>}>, 'code.desktop': <{'position': <1>}>, 'org.dosbox-staging.dosbox-staging.desktop': <{'position': <2>}>, 'nvim.desktop': <{'position': <3>}>, 'org.gnome.Snapshot.desktop': <{'position': <4>}>, 'discord.desktop': <{'position': <5>}>, 'java-21-openjdk-jconsole.desktop': <{'position': <6>}>, 'org.gnome.Extensions.desktop': <{'position': <7>}>, 'org.flameshot.Flameshot.desktop': <{'position': <8>}>, 'htop.desktop': <{'position': <9>}>, 'org.gnome.Loupe.desktop': <{'position': <10>}>, 'minecraft-launcher.desktop': <{'position': <11>}>, 'wine-Programs-Adobe Digital Editions.desktop': <{'position': <12>}>, 'org.gnome.font-viewer.desktop': <{'position': <13>}>, 'wine-notepad.desktop': <{'position': <14>}>, 'org.mozilla.firefox.desktop': <{'position': <15>}>, 'org.freedesktop.MalcontentControl.desktop': <{'position': <16>}>, 'com.uploadedlobster.peek.desktop': <{'position': <17>}>, 'wine-Programs-Adobe-Adobe Digital Editions-Adobe Digital Editions.desktop': <{'position': <18>}>, 'android-studio_android-studio.desktop': <{'position': <19>}>, 'caprine.desktop': <{'position': <20>}>, 'chromium-browser.desktop': <{'position': <21>}>, 'Counter-Strike 2.desktop': <{'position': <22>}>, 'custom_startup.desktop': <{'position': <23>}>}, {'org.gnome.Pomodoro.desktop': <{'position': <0>}>, 'putty.desktop': <{'position': <1>}>, 'org.qbittorrent.qBittorrent.desktop': <{'position': <2>}>, 'ranger.desktop': <{'position': <3>}>, 'wine-regedit.desktop': <{'position': <4>}>, 'net.nokyan.Resources.desktop': <{'position': <5>}>, 'btop.desktop': <{'position': <6>}>, 'org.gnome.Software.desktop': <{'position': <7>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <8>}>, 'vlc.desktop': <{'position': <9>}>, 'wine-wineboot.desktop': <{'position': <10>}>, 'wine-winecfg.desktop': <{'position': <11>}>, 'wine-winefile.desktop': <{'position': <12>}>, 'wine-winhelp.desktop': <{'position': <13>}>, 'wine-oleview.desktop': <{'position': <14>}>, 'wine-uninstaller.desktop': <{'position': <15>}>, 'wine-wordpad.desktop': <{'position': <16>}>, 'wine-winemine.desktop': <{'position': <17>}>, 'com.github.johnfactotum.Foliate.desktop': <{'position': <18>}>, 'org.onlyoffice.desktopeditors.desktop': <{'position': <19>}>, 'obsidian_obsidian.desktop': <{'position': <20>}>, 'org.fontforge.FontForge.desktop': <{'position': <21>}>, 'wine-Programs-Adobe-Adobe Digital Editions-Help.desktop': <{'position': <22>}>, 'wine-Programs-Adobe-Adobe Digital Editions-Home Page.desktop': <{'position': <23>}>}, {'nitrogen.desktop': <{'position': <0>}>, 'rofi.desktop': <{'position': <1>}>, 'rofi-theme-selector.desktop': <{'position': <2>}>, 'steam.desktop': <{'position': <3>}>, 'Alacritty.desktop': <{'position': <4>}>, 'arandr.desktop': <{'position': <5>}>, 'org.inkscape.Inkscape.desktop': <{'position': <6>}>, 'intellij-idea-ultimate_intellij-idea-ultimate.desktop': <{'position': <7>}>, 'nvidia-settings.desktop': <{'position': <8>}>, 'nvtop.desktop': <{'position': <9>}>, 'proton-pass.desktop': <{'position': <10>}>, 'net.thunderbird.Thunderbird.desktop': <{'position': <11>}>, 'wine-Programs-Adobe-Adobe Digital Editions-Uninstall.desktop': <{'position': <12>}>, 'Wrap House Simulator Demo.desktop': <{'position': <13>}>, 'app.zen_browser.zen.desktop': <{'position': <14>}>}, {'remote-viewer.desktop': <{'position': <0>}>, 'virt-manager.desktop': <{'position': <1>}>, 'org.pulseaudio.pavucontrol.desktop': <{'position': <2>}>}]
+app-picker-layout=[{'org.fedoraproject.MediaWriter.desktop': <{'position': <0>}>, 'org.gnome.Contacts.desktop': <{'position': <1>}>, 'org.gnome.Weather.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Maps.desktop': <{'position': <4>}>, 'org.gnome.Totem.desktop': <{'position': <5>}>, 'org.gnome.Characters.desktop': <{'position': <6>}>, 'org.gnome.Calculator.desktop': <{'position': <7>}>, 'simple-scan.desktop': <{'position': <8>}>, 'org.gnome.Settings.desktop': <{'position': <9>}>, 'org.gnome.Boxes.desktop': <{'position': <10>}>, 'Utilities': <{'position': <11>}>, 'yelp.desktop': <{'position': <12>}>, 'org.gnome.Rhythmbox3.desktop': <{'position': <13>}>, 'org.gnome.Ptyxis.desktop': <{'position': <14>}>, 'org.gnome.TextEditor.desktop': <{'position': <15>}>, 'org.gnome.Tour.desktop': <{'position': <16>}>}, {'org.gnome.Calendar.desktop': <{'position': <0>}>, 'code.desktop': <{'position': <1>}>, 'org.dosbox-staging.dosbox-staging.desktop': <{'position': <2>}>, 'nvim.desktop': <{'position': <3>}>, 'org.gnome.Snapshot.desktop': <{'position': <4>}>, 'discord.desktop': <{'position': <5>}>, 'java-21-openjdk-jconsole.desktop': <{'position': <6>}>, 'org.gnome.Extensions.desktop': <{'position': <7>}>, 'org.flameshot.Flameshot.desktop': <{'position': <8>}>, 'htop.desktop': <{'position': <9>}>, 'org.gnome.Loupe.desktop': <{'position': <10>}>, 'minecraft-launcher.desktop': <{'position': <11>}>, 'A Way Out.desktop': <{'position': <12>}>, 'org.gnome.font-viewer.desktop': <{'position': <13>}>, 'wine-notepad.desktop': <{'position': <14>}>, 'org.mozilla.firefox.desktop': <{'position': <15>}>, 'org.freedesktop.MalcontentControl.desktop': <{'position': <16>}>, 'com.uploadedlobster.peek.desktop': <{'position': <17>}>, 'Ale & Tale Tavern.desktop': <{'position': <18>}>, 'android-studio_android-studio.desktop': <{'position': <19>}>, 'proton.vpn.app.gtk.desktop': <{'position': <20>}>, 'chromium-browser.desktop': <{'position': <21>}>, 'Counter-Strike 2.desktop': <{'position': <22>}>, 'custom_startup.desktop': <{'position': <23>}>}, {'org.gnome.Pomodoro.desktop': <{'position': <0>}>, 'putty.desktop': <{'position': <1>}>, 'org.qbittorrent.qBittorrent.desktop': <{'position': <2>}>, 'ranger.desktop': <{'position': <3>}>, 'wine-regedit.desktop': <{'position': <4>}>, 'net.nokyan.Resources.desktop': <{'position': <5>}>, 'btop.desktop': <{'position': <6>}>, 'org.gnome.Software.desktop': <{'position': <7>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <8>}>, 'vlc.desktop': <{'position': <9>}>, 'wine-wineboot.desktop': <{'position': <10>}>, 'wine-winecfg.desktop': <{'position': <11>}>, 'wine-winefile.desktop': <{'position': <12>}>, 'wine-winhelp.desktop': <{'position': <13>}>, 'wine-oleview.desktop': <{'position': <14>}>, 'wine-uninstaller.desktop': <{'position': <15>}>, 'wine-wordpad.desktop': <{'position': <16>}>, 'wine-winemine.desktop': <{'position': <17>}>, 'blueman-manager.desktop': <{'position': <18>}>, 'org.onlyoffice.desktopeditors.desktop': <{'position': <19>}>, 'obsidian_obsidian.desktop': <{'position': <20>}>, "Baldur's Gate 3.desktop": <{'position': <21>}>, 'balena-etcher.desktop': <{'position': <22>}>, 'brave-browser.desktop': <{'position': <23>}>}, {'nitrogen.desktop': <{'position': <0>}>, 'rofi.desktop': <{'position': <1>}>, 'rofi-theme-selector.desktop': <{'position': <2>}>, 'steam.desktop': <{'position': <3>}>, 'Alacritty.desktop': <{'position': <4>}>, 'arandr.desktop': <{'position': <5>}>, 'clickup.desktop': <{'position': <6>}>, 'intellij-idea-ultimate_intellij-idea-ultimate.desktop': <{'position': <7>}>, 'DEATH STRANDING.desktop': <{'position': <8>}>, 'nvtop.desktop': <{'position': <9>}>, 'filezilla.desktop': <{'position': <10>}>, 'net.thunderbird.Thunderbird.desktop': <{'position': <11>}>, 'gimp.desktop': <{'position': <12>}>, 'Half-Life Alyx.desktop': <{'position': <13>}>, 'net.lutris.Lutris.desktop': <{'position': <14>}>, 'com.obsproject.Studio.desktop': <{'position': <15>}>, 'Phasmophobia.desktop': <{'position': <16>}>, 'postman_postman.desktop': <{'position': <17>}>, 'Proton 8.0.desktop': <{'position': <18>}>, 'Proton 9.0.desktop': <{'position': <19>}>, 'R.E.P.O..desktop': <{'position': <20>}>, 'Raft.desktop': <{'position': <21>}>, 'Split Fiction.desktop': <{'position': <22>}>}, {'remote-viewer.desktop': <{'position': <0>}>, 'virt-manager.desktop': <{'position': <1>}>, 'org.pulseaudio.pavucontrol.desktop': <{'position': <2>}>, 'spotify_spotify.desktop': <{'position': <3>}>, 'Steam Linux Runtime 1.0 (scout).desktop': <{'position': <4>}>, 'Steam Linux Runtime 2.0 (soldier).desktop': <{'position': <5>}>, 'Steam Linux Runtime 3.0 (sniper).desktop': <{'position': <6>}>, 'SteamVR.desktop': <{'position': <7>}>, 'com.github.IsmaelMartinez.teams_for_linux.desktop': <{'position': <8>}>, 'The Forest.desktop': <{'position': <9>}>, 'ventoy.desktop': <{'position': <10>}>, 'vivaldi-stable.desktop': <{'position': <11>}>, 'Worms Revolution.desktop': <{'position': <12>}>, 'zen.desktop': <{'position': <13>}>}]
 command-history=['reboot', 'polybar', 'poweroff', 'terminator -e tmux', 'xkill', 'xclip', 'r', 'reload']
 disable-user-extensions=false
 disabled-extensions=['pop-shell@system76.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'light-style@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'ubuntu-dock@ubuntu.com', 'ding@rastersoft.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'tiling-assistant@leleat-on-github', 'dash-to-dock@micxgx.gmail.com']
 enabled-extensions=['background-logo@fedorahosted.org', 'no-overview@fthx', 'blur-my-shell@aunetx', 'paperwm@paperwm.github.com', 'awesome-tiles@velitasali.com', 'arrangeWindows@sun.wxg@gmail.com', 'wintile@nowsci.com', 'hidetopbar@mathieu.bidon.ca', 'WallpaperSwitcher@Rishu', 'randomwallpaper@iflow.space', 'fancy-tiling@devroamer.zen', 'unite@hardpixel.eu', 'no-title-bar@franglais125.gmail.com', 'cronomix@zagortenay333', 'color-picker@tuberry', 'tilingshell@ferrarodomenico.com', 'gnome-ui-tune@itstime.tech', 'clipboard-history@alexsaveau.dev', 'notification-timeout@chlumskyvaclav.gmail.com', 'window-app-switcher-on-active-monitor@NiKnights.com', 'hibernate-status@dromi', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'pomodoro@arun.codito.in', 'undecorate@sun.wxg@gmail.com', 'ubuntu-appindicators@ubuntu.com', 'tiling-assistant@ubuntu.com', 'forge@jmmaranan.com', 'appindicatorsupport@rgcjonas.gmail.com', 'Bluetooth-Battery-Meter@maniacx.github.com']
 favorite-apps=['org.gnome.Nautilus.desktop']
-last-selected-power-profile='power-saver'
+last-selected-power-profile='performance'
 welcome-dialog-last-shown-version='43.0'
 
 [org/gnome/shell/app-switcher]
@@ -1570,14 +1574,14 @@ toggle-quick-settings=@as []
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1758268701
+check-timestamp=int64 1759319918
 first-run=false
-flatpak-purge-timestamp=int64 1758270370
-install-timestamp=int64 1757000400
+flatpak-purge-timestamp=int64 1759323210
+install-timestamp=int64 1759094225
 online-updates-timestamp=int64 1695972091
-packagekit-historical-updates-timestamp=uint64 1757000400
+packagekit-historical-updates-timestamp=uint64 1759085708
 security-timestamp=int64 1758268760919909
-update-notification-timestamp=int64 1757920328
+update-notification-timestamp=int64 1759094315
 upgrade-notification-timestamp=int64 1745476677
 
 [org/gnome/system/location]
@@ -1930,7 +1934,7 @@ sort-column='modified'
 sort-directories-first=false
 sort-order='descending'
 type-format='category'
-window-position=(143, 143)
+window-position=(26, 23)
 window-size=(1124, 822)
 
 [org/nemo/desktop]
