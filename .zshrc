@@ -154,6 +154,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 #      ------------------------------------------------------------------------------
 
 alias clr="clear"
+alias la="ls -lah"
 alias gadd="git add -A"
 alias gcommit="git commit -a"
 alias gpush="git push origin -u @"
