@@ -150,18 +150,18 @@ window-maximized=false
 window-width=945
 
 [org/gnome/Loupe]
-show-properties=true
+show-properties=false
 
 [org/gnome/Ptyxis]
 default-profile-uuid='0498c998bd68b3a1505701d667c2e985'
 profile-uuids=['0498c998bd68b3a1505701d667c2e985']
-window-size=(uint32 103, uint32 48)
+window-size=(uint32 280, uint32 31)
 
 [org/gnome/Snapshot]
 capture-mode='picture'
 is-maximized=false
-window-height=640
-window-width=800
+window-height=1684
+window-width=1521
 
 [org/gnome/TextEditor]
 last-save-directory='file:///home/hubertas/Downloads'
@@ -221,7 +221,7 @@ size=(870, 690)
 
 [org/gnome/control-center]
 last-panel='keyboard'
-window-state=(626, 1036, false)
+window-state=(3052, 1684, false)
 
 [org/gnome/deja-dup]
 backend='google'
@@ -261,8 +261,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/hubertas/Pictures/Wallpapers/Prague_5.jpg'
-picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Prague_5.jpg'
+picture-uri='file:///home/hubertas/Pictures/Wallpapers/Barcelona_2.jpg'
+picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Barcelona_2.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -688,8 +688,8 @@ show-sidebar=false
 sidebar-page='thumbnails'
 sidebar-size=132
 sizing-mode='free'
-window-ratio=(0.984375, 1.0611111111111111)
-zoom=0.64707275559311894
+window-ratio=(1.5855704697986577, 1.2304038004750595)
+zoom=1.1479778342883695
 
 [org/gnome/evolution-data-server]
 migrated=true
@@ -752,6 +752,7 @@ zoom-level=17
 attach-modal-dialogs=true
 center-new-windows=true
 dynamic-workspaces=false
+output-luminance=[('DP-2', 'AOC', 'AG326UD', '10PR7JA000045', uint32 1, 38.333333333333336)]
 workspaces-only-on-primary=true
 
 [org/gnome/mutter/wayland/keybindings]
@@ -775,8 +776,8 @@ search-filter-time-type='last_modified'
 search-view='list-view'
 
 [org/gnome/nautilus/window-state]
-initial-size=(945, 1036)
-initial-size-file-chooser=(945, 1156)
+initial-size=(1521, 1684)
+initial-size-file-chooser=(1521, 1684)
 maximized=false
 
 [org/gnome/nm-applet/eap/04b0f064-83d8-4e98-aa71-f76ded5d6c45]
@@ -919,6 +920,10 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
+[org/gnome/nm-applet/eap/c38dfa4d-3ff2-40a4-bb12-909a035f0ac0]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
 [org/gnome/nm-applet/eap/df95bc39-acca-4d0d-aa76-72d99cde9340]
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
@@ -952,12 +957,12 @@ pomodoro-duration=900.0
 short-break-duration=300.0
 
 [org/gnome/pomodoro/state]
-timer-date='2025-09-30T17:00:16+0000'
+timer-date='2025-10-16T06:09:10+0000'
 timer-elapsed=0.0
 timer-paused=false
 timer-score=0.0
 timer-state='null'
-timer-state-date='2025-09-30T17:00:16+0000'
+timer-state-date='2025-10-16T06:09:10+0000'
 timer-state-duration=0.0
 
 [org/gnome/portal/filechooser/app.zen_browser.zen]
@@ -976,7 +981,7 @@ last-folder-path='/home/hubertas/Downloads'
 last-folder-path='/home/hubertas/Video'
 
 [org/gnome/portal/filechooser/discord]
-last-folder-path='/home/hubertas/Downloads'
+last-folder-path='/home/hubertas/Documents/backup-folder/Programming/Java/ekosistema'
 
 [org/gnome/portal/filechooser/gnome-background-panel]
 last-folder-path='/home/hubertas/Pictures/Wallpapers'
@@ -992,6 +997,9 @@ last-folder-path='/home/hubertas/Downloads'
 
 [org/gnome/portal/filechooser/org.fedoraproject.MediaWriter]
 last-folder-path='/home/hubertas/Downloads'
+
+[org/gnome/portal/filechooser/org.flameshot.Flameshot]
+last-folder-path='/home/hubertas/Pictures/Screenshots'
 
 [org/gnome/portal/filechooser/org.gnome.Settings]
 last-folder-path='/home/hubertas/Pictures/Wallpapers'
@@ -1042,7 +1050,7 @@ initial-stations-loaded=true
 locations=['file:///home/hubertas/Music']
 
 [org/gnome/settings-daemon/plugins/color]
-night-light-enabled=true
+night-light-enabled=false
 night-light-schedule-automatic=false
 
 [org/gnome/settings-daemon/plugins/media-keys]
@@ -1069,8 +1077,8 @@ command='gnome-screenshot -i'
 name='Launch gnome-screenshots'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
-binding='<Shift><Control><Super>o'
-command='bash -c -- "QT_QPA_PLATFORM=wayland flameshot gui"\n'
+binding='Print'
+command='flatpak run --env=QT_QPA_PLATFORM=wayland org.flameshot.Flameshot gui'
 name='Launch flameshot'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
@@ -1574,14 +1582,14 @@ toggle-quick-settings=@as []
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1759394977
+check-timestamp=int64 1761031962
 first-run=false
-flatpak-purge-timestamp=int64 1759394392
+flatpak-purge-timestamp=int64 1761030637
 install-timestamp=int64 1759094225
 online-updates-timestamp=int64 1695972091
-packagekit-historical-updates-timestamp=uint64 1759085708
-security-timestamp=int64 1758268760919909
-update-notification-timestamp=int64 1759094315
+packagekit-historical-updates-timestamp=uint64 1760559654
+security-timestamp=int64 1760949796839924
+update-notification-timestamp=int64 1760949816
 upgrade-notification-timestamp=int64 1745476677
 
 [org/gnome/system/location]
@@ -1921,7 +1929,7 @@ window-size=(888, 518)
 
 [org/gtk/settings/color-chooser]
 custom-colors=[(0.92941176470588238, 0.83137254901960789, 0.0, 1.0), (0.11764705882352941, 0.12941176470588237, 0.15294117647058825, 1.0), (0.93333333333333335, 0.93333333333333335, 0.92549019607843142, 1.0), (0.36078431372549019, 0.38823529411764707, 0.4392156862745098, 1.0), (0.011666666666666659, 0.11803030303030299, 0.25, 1.0), (0.13722222222222227, 0.26937098255280068, 0.43333333333333335, 1.0), (0.13722222222222222, 0.26937098255280068, 0.43333333333333335, 1.0), (0.029333333333333326, 0.21260606060606055, 0.44, 1.0)]
-selected-color=(true, 0.0, 0.0, 0.0, 1.0)
+selected-color=(true, 1.0, 1.0, 1.0, 1.0)
 
 [org/gtk/settings/file-chooser]
 date-format='regular'
