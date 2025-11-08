@@ -35,6 +35,7 @@ WORDCHARS=${WORDCHARS//[\/;,_=\-]/}
 # Time reporting for all commands that took more than 3s
 REPORTTIME=3
 TIMEFMT=$' '"${CYAN}"'[Took %E; Avg CPU: %P]'${RESET}
+PROMPT_EOL_MARK=''
 
 # ---- Various exports ----
 export VISUAL=nvim
