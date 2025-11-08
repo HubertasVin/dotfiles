@@ -155,7 +155,7 @@ window-maximized=false
 window-width=3052
 
 [org/gnome/Loupe]
-show-properties=false
+show-properties=true
 
 [org/gnome/Ptyxis]
 default-profile-uuid='0498c998bd68b3a1505701d667c2e985'
@@ -186,9 +186,9 @@ window-size=(1521, 1684)
 [org/gnome/boxes]
 first-run=false
 view='icon-view'
-window-maximized=false
-window-position=[45, 45]
-window-size=[1900, 1156]
+window-maximized=true
+window-position=[26, 23]
+window-size=[1710, 1678]
 
 [org/gnome/calculator]
 accuracy=9
@@ -225,12 +225,15 @@ panel-id='world'
 size=(870, 690)
 
 [org/gnome/control-center]
-last-panel='system'
-window-state=(1521, 1678, false)
+last-panel='background'
+window-state=(1710, 1678, false)
 
 [org/gnome/deja-dup]
 backend='google'
 prompt-check='2025-01-12T23:02:25.111498Z'
+
+[org/gnome/desktop/a11y]
+always-show-universal-access-status=false
 
 [org/gnome/desktop/a11y/applications]
 screen-magnifier-enabled=false
@@ -266,8 +269,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/hubertas/Pictures/Wallpapers/Gaztelugatxeko_1.jpg'
-picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Gaztelugatxeko_1.jpg'
+picture-uri='file:///home/hubertas/Pictures/Wallpapers/Amsterdam_5.jpg'
+picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Amsterdam_5.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -761,7 +764,7 @@ attach-modal-dialogs=true
 center-new-windows=true
 dynamic-workspaces=false
 edge-tiling=false
-output-luminance=[('DP-2', 'AOC', 'AG326UD', '10PR7JA000045', uint32 1, 38.333333333333336)]
+output-luminance=[('DP-2', 'AOC', 'AG326UD', '10PR7JA000045', uint32 1, 45.0)]
 workspaces-only-on-primary=true
 
 [org/gnome/mutter/keybindings]
@@ -790,8 +793,8 @@ search-view='list-view'
 
 [org/gnome/nautilus/window-state]
 initial-size=(3052, 1684)
-initial-size-file-chooser=(3052, 1684)
-maximized=false
+initial-size-file-chooser=(1080, 1684)
+maximized=true
 
 [org/gnome/nm-applet/eap/04b0f064-83d8-4e98-aa71-f76ded5d6c45]
 ignore-ca-cert=false
@@ -994,7 +997,7 @@ last-folder-path='/home/hubertas/Downloads'
 last-folder-path='/home/hubertas/Video'
 
 [org/gnome/portal/filechooser/discord]
-last-folder-path='/home/hubertas/Documents/backup-folder/Programming/Java/ekosistema'
+last-folder-path='/home/hubertas/Pictures/Screenshots'
 
 [org/gnome/portal/filechooser/gnome-background-panel]
 last-folder-path='/home/hubertas/Pictures/Wallpapers'
@@ -1544,15 +1547,18 @@ toggle-tiling-popup=@as []
 window-gap=4
 
 [org/gnome/shell/extensions/tilingshell]
+edge-tiling-offset=uint32 201
 enable-autotiling=true
 enable-blur-selected-tilepreview=false
 enable-blur-snap-assistant=false
 inner-gaps=uint32 10
 last-version-name-installed='17.0'
-layouts-json='[{"id":"Layout 1","tiles":[{"x":0,"y":0,"width":0.22,"height":0.5,"groups":[1,2]},{"x":0,"y":0.5,"width":0.22,"height":0.5,"groups":[1,2]},{"x":0.22,"y":0,"width":0.56,"height":1,"groups":[2,3]},{"x":0.78,"y":0,"width":0.22,"height":0.5,"groups":[3,4]},{"x":0.78,"y":0.5,"width":0.22,"height":0.5,"groups":[3,4]}]},{"id":"Layout 2","tiles":[{"x":0,"y":0,"width":0.22,"height":1,"groups":[1]},{"x":0.22,"y":0,"width":0.56,"height":1,"groups":[1,2]},{"x":0.78,"y":0,"width":0.22,"height":1,"groups":[2]}]},{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.67,"height":1,"groups":[1]},{"x":0.67,"y":0,"width":0.33,"height":1,"groups":[1]}]}]'
+layouts-json='[{"id":"Layout 3","tiles":[{"x":0,"y":0,"width":0.33,"height":1,"groups":[1]},{"x":0.33,"y":0,"width":0.67,"height":1,"groups":[1]}]},{"id":"Layout 4","tiles":[{"x":0,"y":0,"width":0.67,"height":1,"groups":[1]},{"x":0.67,"y":0,"width":0.33,"height":1,"groups":[1]}]},{"id":"32209843","tiles":[{"x":0,"y":0,"width":0.5,"height":1,"groups":[1]},{"x":0.5,"y":0,"width":0.5,"height":1,"groups":[1]}]},{"id":"102355418","tiles":[{"x":0,"y":0,"width":1,"height":0.5,"groups":[1]},{"x":0,"y":0.5,"width":1,"height":0.5,"groups":[1]}]}]'
 outer-gaps=uint32 10
 overridden-settings="{\"org.gnome.mutter.keybindings\":{\"toggle-tiled-right\":\"['<Super>Right']\",\"toggle-tiled-left\":\"['<Super>Left']\"},\"org.gnome.desktop.wm.keybindings\":{\"maximize\":\"['<Super>w']\",\"unmaximize\":\"@as []\"},\"org.gnome.mutter\":{\"edge-tiling\":\"true\"}}"
-selected-layouts=[['Layout 1', 'Layout 1'], ['Layout 1', 'Layout 1'], ['Layout 1', 'Layout 1'], ['Layout 1', 'Layout 1'], ['Layout 1', 'Layout 1'], ['Layout 1', 'Layout 1']]
+quarter-tiling-threshold=uint32 20
+selected-layouts=[['Layout 1', 'Layout 3'], ['Layout 1', 'Layout 3'], ['Layout 1', 'Layout 3'], ['Layout 1', 'Layout 3'], ['Layout 1', 'Layout 3'], ['Layout 1', 'Layout 3']]
+snap-assistant-threshold=56
 
 [org/gnome/shell/extensions/unite]
 autofocus-windows=false
@@ -1598,15 +1604,15 @@ toggle-quick-settings=@as []
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1762330767
+check-timestamp=int64 1762592177
 first-run=false
-flatpak-purge-timestamp=int64 1762330679
+flatpak-purge-timestamp=int64 1762536303
 install-timestamp=int64 1761140011
 online-updates-timestamp=int64 1695972091
 packagekit-historical-updates-timestamp=uint64 1761140011
 security-timestamp=int64 1761133037560751
 update-notification-timestamp=int64 1761140078
-upgrade-notification-timestamp=int64 1761740836
+upgrade-notification-timestamp=int64 1762379524
 
 [org/gnome/system/location]
 enabled=false
