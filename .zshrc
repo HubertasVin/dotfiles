@@ -55,16 +55,17 @@ export HISTFILE="$HOME/.zsh_history"
 #      ------------------------------------------------------------------------------
 
 function rebind-ctrl-arrows() {
-    # Bind Ctrl+Left and Ctrl+Right to move by word
-    bindkey "\e[1;5D" custom-backward-word
-    bindkey "\e[1;5C" custom-forward-word
-    # Bind Home and End to move to line start or end
-    bindkey "\e[1~" beginning-of-line
-    bindkey "\e[4~" end-of-line
-    # Character / word delete
-    bindkey '^H' custom-backward-kill-word
-    bindkey "\e[3;5~" custom-forward-kill-word
-    bindkey "\e[3~" delete-char
+	# Bind Ctrl+Left and Ctrl+Right to move by word
+	bindkey "\e[1;5D" custom-backward-word
+	bindkey "\e[1;5C" custom-forward-word
+	# Bind Home and End to move to line start or end
+	bindkey "\e[1~" beginning-of-line
+	bindkey "\e[4~" end-of-line
+	# Character / word delete
+	bindkey '^H' custom-backward-kill-word
+	bindkey '^?' backward-delete-char
+	bindkey "\e[3;5~" custom-forward-kill-word
+	bindkey "\e[3~" delete-char
 }
 # Bind the up and down arrow keys to search through history with typed context
 bindkey '\e[A' history-beginning-search-backward-end
@@ -112,8 +113,8 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
-    mkdir -p "$(dirname $ZINIT_HOME)"
-    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+	mkdir -p "$(dirname $ZINIT_HOME)"
+	git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
 # Load zinit
@@ -173,39 +174,39 @@ alias sshvps="ssh hubserv@198.7.118.97"
 #      ------------------------------------------------------------------------------
 
 mkcd() {
-    if [ -d "$1" ]; then
-        echo "Error: Directory '$1' already exists."
-    else
-        mkdir "$1" && cd "$1"
-    fi
+	if [ -d "$1" ]; then
+		echo "Error: Directory '$1' already exists."
+	else
+		mkdir "$1" && cd "$1"
+	fi
 }
 
 bman() {
-    local pattern args=()
-    while [[ $# -gt 0 ]]; do
-        case $1 in
-            -p)          pattern=$2; shift 2 ;;
-            -p*)         pattern=${1#-p}; shift ;;
-            *)           args+=("$1"); shift ;;
-        esac
-    done
+	local pattern args=()
+	while [[ $# -gt 0 ]]; do
+		case $1 in
+			-p)          pattern=$2; shift 2 ;;
+			-p*)         pattern=${1#-p}; shift ;;
+			*)           args+=("$1"); shift ;;
+		esac
+	done
 
-    if [[ -n $pattern ]]; then
-        command man -P "less -p '$pattern'" "${args[@]}"
-    else
-        command man "${args[@]}"
-    fi
+	if [[ -n $pattern ]]; then
+		command man -P "less -p '$pattern'" "${args[@]}"
+	else
+		command man "${args[@]}"
+	fi
 }
 
 fcat() {
-    for file in $@; do
-        prefix="--- $file ---"
-        plen=${#prefix}
+	for file in $@; do
+		prefix="--- $file ---"
+		plen=${#prefix}
 		printf '\n======\n'
-        printf '%s\n' "$prefix"
+		printf '%s\n' "$prefix"
 		printf '======\n'
-        cat "$file"
-    done < <(find "${find_args[@]}")
+		cat "$file"
+	done < <(find "${find_args[@]}")
 }
 
 
@@ -232,53 +233,53 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # Helper functions for binds
 function custom-backward-kill-word() {
-    [[ -z "$LBUFFER" ]] && return 0
-    if [[ "${LBUFFER: -1}" =~ [[:alnum:]] ]]; then
-        LBUFFER=${LBUFFER/%([[:alnum:]]#)/}
-    else
-        LBUFFER=${LBUFFER/%([^[:alnum:]]#)/}
-    fi
-    zle -R
+	[[ -z "$LBUFFER" ]] && return 0
+	if [[ "${LBUFFER: -1}" =~ [[:alnum:]] ]]; then
+		LBUFFER=${LBUFFER/%([[:alnum:]]#)/}
+	else
+		LBUFFER=${LBUFFER/%([^[:alnum:]]#)/}
+	fi
+	zle -R
 }
 zle -N custom-backward-kill-word
 
 function custom-forward-kill-word() {
-    [[ -z "$RBUFFER" ]] && return 0
-    if [[ "${RBUFFER:0:1}" =~ [[:alnum:]] ]]; then
-        RBUFFER=${RBUFFER/#([[:alnum:]]#)/}
-    else
-        RBUFFER=${RBUFFER/#([^[:alnum:]]#)/}
-    fi
-    zle -R
+	[[ -z "$RBUFFER" ]] && return 0
+	if [[ "${RBUFFER:0:1}" =~ [[:alnum:]] ]]; then
+		RBUFFER=${RBUFFER/#([[:alnum:]]#)/}
+	else
+		RBUFFER=${RBUFFER/#([^[:alnum:]]#)/}
+	fi
+	zle -R
 }
 zle -N custom-forward-kill-word
 
 # Custom widget for moving the cursor left (Ctrl+Left)
 function custom-backward-word() {
-    [[ -z "$LBUFFER" ]] && return 0
-    local word
-    if [[ "${LBUFFER: -1}" =~ [[:alnum:]] ]]; then
-        word=${LBUFFER##*[^[:alnum:]]}
-    else
-        word=${LBUFFER##*([[:alnum:]])}
-    fi
-    LBUFFER=${LBUFFER%$word}
-    RBUFFER="$word$RBUFFER"
-    zle -R
+	[[ -z "$LBUFFER" ]] && return 0
+	local word
+	if [[ "${LBUFFER: -1}" =~ [[:alnum:]] ]]; then
+		word=${LBUFFER##*[^[:alnum:]]}
+	else
+		word=${LBUFFER##*([[:alnum:]])}
+	fi
+	LBUFFER=${LBUFFER%$word}
+	RBUFFER="$word$RBUFFER"
+	zle -R
 }
 zle -N custom-backward-word
 
 # Custom widget for moving the cursor right (Ctrl+Right)
 function custom-forward-word() {
-    [[ -z "$RBUFFER" ]] && return 0
-    local word
-    if [[ "${RBUFFER:0:1}" =~ [[:alnum:]] ]]; then
-        word=${RBUFFER%%[^[:alnum:]]*}
-    else
-        word=${RBUFFER%%[[:alnum:]]*}
-    fi
-    LBUFFER+=$word
-    RBUFFER=${RBUFFER#$word}
-    zle -R
+	[[ -z "$RBUFFER" ]] && return 0
+	local word
+	if [[ "${RBUFFER:0:1}" =~ [[:alnum:]] ]]; then
+		word=${RBUFFER%%[^[:alnum:]]*}
+	else
+		word=${RBUFFER%%[[:alnum:]]*}
+	fi
+	LBUFFER+=$word
+	RBUFFER=${RBUFFER#$word}
+	zle -R
 }
 zle -N custom-forward-word
