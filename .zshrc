@@ -68,8 +68,8 @@ function rebind-ctrl-arrows() {
 	bindkey "\e[3~" delete-char
 }
 # Bind the up and down arrow keys to search through history with typed context
-bindkey '\e[A' history-beginning-search-backward-end
-bindkey '\e[B' history-beginning-search-forward-end
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
 # Newline bind Ctrl+j
 bindkey '^J' self-insert
 
@@ -79,7 +79,6 @@ bindkey '^J' self-insert
 #      ------------------------------------------------------------------------------
 
 setopt appendhistory
-# setopt SHARE_HISTORY      # Optionally, share history between multiple sessions
 setopt extended_glob
 setopt prompt_subst
 setopt hist_ignore_space
@@ -87,7 +86,6 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
-# Save history, but don't share it between sessions
 setopt inc_append_history_time
 setopt hist_fcntl_lock
 setopt hist_save_by_copy
@@ -97,11 +95,6 @@ autoload -Uz compinit && compinit
 
 zle -N zle-line-init rebind-ctrl-arrows
 zle -N zle-keymap-select rebind-ctrl-arrows
-
-autoload -Uz history-search-end
-
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
 
 
 #NOTE: ------------------------------------------------------------------------------
@@ -225,6 +218,7 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh.toml)"
 # Completion enhancements
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 
 #NOTE: ------------------------------------------------------------------------------
@@ -283,3 +277,5 @@ function custom-forward-word() {
 	zle -R
 }
 zle -N custom-forward-word
+
+export HSA_OVERRIDE_GFX_VERSION=10.3.0
