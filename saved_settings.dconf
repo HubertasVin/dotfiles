@@ -11,6 +11,12 @@ window-height=675
 window-is-maximized=false
 window-width=822
 
+[com/github/babluboy/bookworm]
+pos-x=26
+pos-y=23
+window-height=1329
+window-width=1420
+
 [com/github/calo001/fondo]
 window-height=690
 window-width=1094
@@ -18,8 +24,8 @@ window-x=600
 window-y=303
 
 [com/github/johnfactotum/Foliate/window]
-default-height=1684
-default-width=1521
+default-height=1376
+default-width=1268
 maximized=false
 
 [com/github/maoschanz/DynamicWallpaperEditor]
@@ -199,11 +205,12 @@ number-format='automatic'
 show-thousands=false
 show-zeroes=false
 source-currency=''
-source-units='degree'
+source-units=['degree']
 target-currency=''
-target-units='radian'
+target-units=['radian']
+unit-category='angle'
 window-maximized=false
-window-size=(360, 653)
+window-size=(1268, 1376)
 word-size=64
 
 [org/gnome/calendar]
@@ -287,8 +294,11 @@ xkb-options=@as []
 [org/gnome/desktop/interface]
 accent-color='purple'
 color-scheme='prefer-dark'
+cursor-blink=true
+cursor-blink-time=1000
 cursor-size=24
-cursor-theme='Quintom_Ink'
+cursor-theme='breeze_cursors'
+document-font-name='Noto Sans,  10'
 enable-animations=true
 enable-hot-corners=false
 font-antialiasing='grayscale'
@@ -296,10 +306,11 @@ font-hinting='none'
 font-name='Noto Sans,  10'
 gtk-enable-primary-paste=false
 gtk-theme='Adwaita'
-icon-theme='Tela-circle-purple-light'
+icon-theme='Ant-Dark'
+monospace-font-name='Hack,  10'
 scaling-factor=uint32 1
 show-battery-percentage=true
-text-scaling-factor=1.3
+text-scaling-factor=1.0
 toolbar-style='text'
 toolkit-accessibility=false
 
@@ -632,7 +643,7 @@ idle-delay=uint32 0
 [org/gnome/desktop/sound]
 allow-volume-above-100-percent=true
 event-sounds=true
-theme-name='__custom'
+theme-name='ocean'
 
 [org/gnome/desktop/wm/keybindings]
 close=['<Control><Super>q']
@@ -674,7 +685,7 @@ unmaximize=@as []
 
 [org/gnome/desktop/wm/preferences]
 auto-raise=false
-button-layout='appmenu:minimize,maximize,close'
+button-layout='icon:minimize,maximize,close'
 focus-mode='mouse'
 focus-new-windows='smart'
 num-workspaces=6
@@ -682,7 +693,7 @@ theme='Graphite-teal-Dark'
 workspace-names=['web', 'code1', 'code2', 'game', 'comm', 'misc']
 
 [org/gnome/eog/ui]
-sidebar=false
+sidebar=true
 
 [org/gnome/evince]
 document-directory=@ms 'file:///home/hubertas/Documents/BackupFolder/Fizika%20IT'
@@ -699,8 +710,8 @@ show-sidebar=false
 sidebar-page='thumbnails'
 sidebar-size=132
 sizing-mode='free'
-window-ratio=(2.5563025210084032, 2.0)
-zoom=3.75
+window-ratio=(2.1301043549546761, 1.6344177980496264)
+zoom=0.62793370627572032
 
 [org/gnome/evolution-data-server]
 migrated=true
@@ -719,15 +730,15 @@ reminders-snoozed=@as []
 
 [org/gnome/file-roller/listing]
 list-mode='as-folder'
-name-column-width=68
+name-column-width=718
 show-path=false
 sort-method='name'
 sort-type='ascending'
 
 [org/gnome/file-roller/ui]
 sidebar-width=200
-window-height=480
-window-width=600
+window-height=1376
+window-width=1268
 
 [org/gnome/gedit/state/window]
 bottom-panel-size=140
@@ -786,15 +797,15 @@ default-visible-columns=['name', 'size', 'date_modified']
 default-zoom-level='small'
 
 [org/gnome/nautilus/preferences]
-default-folder-viewer='icon-view'
+default-folder-viewer='list-view'
 migrated-gtk-settings=true
 search-filter-time-type='last_modified'
 search-view='list-view'
 
 [org/gnome/nautilus/window-state]
-initial-size=(3052, 1684)
+initial-size=(2540, 1376)
 initial-size-file-chooser=(1080, 1684)
-maximized=true
+maximized=false
 
 [org/gnome/nm-applet/eap/04b0f064-83d8-4e98-aa71-f76ded5d6c45]
 ignore-ca-cert=false
@@ -1604,7 +1615,7 @@ toggle-quick-settings=@as []
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1762592177
+check-timestamp=int64 1763904352
 first-run=false
 flatpak-purge-timestamp=int64 1762536303
 install-timestamp=int64 1761140011
@@ -1956,7 +1967,7 @@ selected-color=(true, 1.0, 1.0, 1.0, 1.0)
 [org/gtk/settings/file-chooser]
 date-format='regular'
 location-mode='path-bar'
-show-hidden=false
+show-hidden=true
 show-size-column=true
 show-type-column=true
 sidebar-width=212
