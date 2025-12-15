@@ -163,6 +163,19 @@ alias sshvps="ssh hubserv@198.7.118.97"
 
 
 #NOTE: ------------------------------------------------------------------------------
+#       Git diff stats variable setup to display in oh-my-posh
+#      ------------------------------------------------------------------------------
+
+function update_git_diff_stats() {
+	export POSH_GIT_DIFF_STATS=$(~/tools/get-git-diff-stats.sh)
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd update_git_diff_stats
+add-zsh-hook chpwd update_git_diff_stats
+
+
+#NOTE: ------------------------------------------------------------------------------
 #       Custom QoL functions
 #      ------------------------------------------------------------------------------
 
