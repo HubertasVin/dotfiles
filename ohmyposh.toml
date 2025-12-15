@@ -29,20 +29,17 @@ final_space = true
     template = ' <b>({{ .HEAD }})</b>'
     foreground = '#D78700'
     background = 'transparent'
+
     [blocks.segments.properties]
       branch_icon = ''
       cache_duration = 'none'
       fetch_status = false
-  
-  [[blocks.segments]]
-    type = "command"
-    style = "plain"
-    template = " {{ .Output }}"
 
-    [blocks.segments.properties]
-      shell = "bash"
-      command = "~/tools/get-git-diff-stats.sh"
-      fallback = ""
+	[[blocks.segments]]
+		type = 'text'
+		style = 'plain'
+		template = '{{ .Env.POSH_GIT_DIFF_STATS }}'
+		background = 'transparent'
 
 [[blocks]]
   type = 'prompt'
