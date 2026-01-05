@@ -158,6 +158,7 @@ alias restoreDevice="~/tools/backup/borg-restore.sh"
 alias xr144="xrandr --output DP-1 --mode 1920x1080 --rate 144"
 alias prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
 alias ..="cd .."
+alias -- -="cd -"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd $LASTDIR'
 alias sshvps="ssh hubserv@198.7.118.97"
 
@@ -167,7 +168,7 @@ alias sshvps="ssh hubserv@198.7.118.97"
 #      ------------------------------------------------------------------------------
 
 function update_git_diff_stats() {
-	export POSH_GIT_DIFF_STATS=$(~/tools/get-git-diff-stats.sh)
+	export POSH_GIT_DIFF_STATS=$($HOME/tools/get-git-diff-stats.sh)
 }
 
 autoload -Uz add-zsh-hook
