@@ -233,7 +233,7 @@ panel-id='world'
 size=(870, 690)
 
 [org/gnome/control-center]
-last-panel='display'
+last-panel='keyboard'
 window-state=(1710, 1080, true)
 
 [org/gnome/deja-dup]
@@ -277,8 +277,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/hubertas/Pictures/Wallpapers/Amsterdam_5.jpg'
-picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Amsterdam_5.jpg'
+picture-uri='file:///home/hubertas/Pictures/Wallpapers/Stockholm_2.jpg'
+picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Stockholm_2.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -287,7 +287,7 @@ automatic-timezone=true
 
 [org/gnome/desktop/input-sources]
 current=uint32 0
-mru-sources=[('xkb', 'lt'), ('xkb', 'us')]
+mru-sources=[('xkb', 'us'), ('xkb', 'lt')]
 per-window=false
 sources=[('xkb', 'us'), ('xkb', 'lt')]
 xkb-options=@as []
@@ -1008,12 +1008,12 @@ pomodoro-duration=900.0
 short-break-duration=300.0
 
 [org/gnome/pomodoro/state]
-timer-date='2026-01-07T18:59:47+0000'
+timer-date='2026-01-18T16:18:19+0000'
 timer-elapsed=0.0
 timer-paused=false
 timer-score=0.0
 timer-state='null'
-timer-state-date='2026-01-07T18:59:47+0000'
+timer-state-date='2026-01-18T16:18:19+0000'
 timer-state-duration=0.0
 
 [org/gnome/portal/filechooser/app.zen_browser.zen]
@@ -1107,14 +1107,15 @@ initial-stations-loaded=true
 locations=['file:///home/hubertas/Music']
 
 [org/gnome/settings-daemon/plugins/color]
-night-light-enabled=false
+night-light-enabled=true
 night-light-schedule-automatic=false
+night-light-temperature=uint32 3923
 
 [org/gnome/settings-daemon/plugins/housekeeping]
 donation-reminder-last-shown=int64 1765654766892361
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
 email=@as []
 home=@as []
 screenreader=@as []
@@ -1138,7 +1139,7 @@ name='Launch gnome-screenshots'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='Print'
-command='flatpak run --env=QT_QPA_PLATFORM=wayland org.flameshot.Flameshot gui'
+command='/home/hubertas/tools/flameshot-gui.sh'
 name='Launch flameshot'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
@@ -1163,7 +1164,7 @@ sleep-inactive-battery-timeout=1800
 overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
 
 [org/gnome/shell]
-app-picker-layout=[{'org.fedoraproject.MediaWriter.desktop': <{'position': <0>}>, 'org.gnome.Contacts.desktop': <{'position': <1>}>, 'org.gnome.Weather.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Maps.desktop': <{'position': <4>}>, 'org.gnome.SimpleScan.desktop': <{'position': <5>}>, 'org.gnome.Characters.desktop': <{'position': <6>}>, 'org.gnome.Calculator.desktop': <{'position': <7>}>, 'org.gnome.Showtime.desktop': <{'position': <8>}>, 'org.gnome.Settings.desktop': <{'position': <9>}>, 'org.gnome.Boxes.desktop': <{'position': <10>}>, 'Utilities': <{'position': <11>}>, 'org.gnome.Yelp.desktop': <{'position': <12>}>, 'org.gnome.Ptyxis.desktop': <{'position': <13>}>, 'org.gnome.TextEditor.desktop': <{'position': <14>}>, 'org.gnome.Tour.desktop': <{'position': <15>}>}, {'org.gnome.Calendar.desktop': <{'position': <0>}>, 'code.desktop': <{'position': <1>}>, 'org.dosbox-staging.dosbox-staging.desktop': <{'position': <2>}>, 'nvim.desktop': <{'position': <3>}>, 'org.gnome.Snapshot.desktop': <{'position': <4>}>, 'discord.desktop': <{'position': <5>}>, 'java-21-openjdk-jconsole.desktop': <{'position': <6>}>, 'org.gnome.Extensions.desktop': <{'position': <7>}>, 'org.flameshot.Flameshot.desktop': <{'position': <8>}>, 'htop.desktop': <{'position': <9>}>, 'org.gnome.Loupe.desktop': <{'position': <10>}>, 'java-25-openjdk-jconsole.desktop': <{'position': <11>}>, 'org.gnome.font-viewer.desktop': <{'position': <12>}>, 'wine-notepad.desktop': <{'position': <13>}>, 'org.gnome.Decibels.desktop': <{'position': <14>}>, 'org.mozilla.firefox.desktop': <{'position': <15>}>, 'org.freedesktop.MalcontentControl.desktop': <{'position': <16>}>, 'org.gnome.Papers.desktop': <{'position': <17>}>, 'org.gnome.Logs.desktop': <{'position': <18>}>}, {'org.gnome.Pomodoro.desktop': <{'position': <0>}>, 'putty.desktop': <{'position': <1>}>, 'org.qbittorrent.qBittorrent.desktop': <{'position': <2>}>, 'ranger.desktop': <{'position': <3>}>, 'wine-regedit.desktop': <{'position': <4>}>, 'btop.desktop': <{'position': <5>}>, 'org.gnome.Software.desktop': <{'position': <6>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <7>}>, 'vlc.desktop': <{'position': <8>}>, 'wine-wineboot.desktop': <{'position': <9>}>, 'wine-winecfg.desktop': <{'position': <10>}>, 'wine-winefile.desktop': <{'position': <11>}>, 'wine-winhelp.desktop': <{'position': <12>}>, 'wine-oleview.desktop': <{'position': <13>}>, 'wine-uninstaller.desktop': <{'position': <14>}>, 'obsidian.desktop': <{'position': <15>}>, 'wine-wordpad.desktop': <{'position': <16>}>, 'wine-winemine.desktop': <{'position': <17>}>, 'org.onlyoffice.desktopeditors.desktop': <{'position': <18>}>}, {'steam.desktop': <{'position': <0>}>, 'Alacritty.desktop': <{'position': <1>}>, 'arandr.desktop': <{'position': <2>}>}, {'remote-viewer.desktop': <{'position': <0>}>, 'virt-manager.desktop': <{'position': <1>}>, 'org.pulseaudio.pavucontrol.desktop': <{'position': <2>}>}]
+app-picker-layout=[{'org.fedoraproject.MediaWriter.desktop': <{'position': <0>}>, 'org.gnome.Contacts.desktop': <{'position': <1>}>, 'org.gnome.Weather.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Maps.desktop': <{'position': <4>}>, 'org.gnome.SimpleScan.desktop': <{'position': <5>}>, 'org.gnome.Characters.desktop': <{'position': <6>}>, 'org.gnome.Calculator.desktop': <{'position': <7>}>, 'org.gnome.Showtime.desktop': <{'position': <8>}>, 'org.gnome.Settings.desktop': <{'position': <9>}>, 'org.gnome.Boxes.desktop': <{'position': <10>}>, 'Utilities': <{'position': <11>}>, 'org.gnome.Yelp.desktop': <{'position': <12>}>, 'org.gnome.Ptyxis.desktop': <{'position': <13>}>, 'org.gnome.TextEditor.desktop': <{'position': <14>}>, 'org.gnome.Tour.desktop': <{'position': <15>}>}, {'org.gnome.Calendar.desktop': <{'position': <0>}>, 'code.desktop': <{'position': <1>}>, 'org.dosbox-staging.dosbox-staging.desktop': <{'position': <2>}>, 'nvim.desktop': <{'position': <3>}>, 'org.gnome.Snapshot.desktop': <{'position': <4>}>, 'discord.desktop': <{'position': <5>}>, 'java-21-openjdk-jconsole.desktop': <{'position': <6>}>, 'org.gnome.Extensions.desktop': <{'position': <7>}>, 'org.flameshot.Flameshot.desktop': <{'position': <8>}>, 'htop.desktop': <{'position': <9>}>, 'org.gnome.Loupe.desktop': <{'position': <10>}>, 'java-25-openjdk-jconsole.desktop': <{'position': <11>}>, 'org.gnome.font-viewer.desktop': <{'position': <12>}>, 'wine-notepad.desktop': <{'position': <13>}>, 'org.gnome.Decibels.desktop': <{'position': <14>}>, 'org.mozilla.firefox.desktop': <{'position': <15>}>, 'org.freedesktop.MalcontentControl.desktop': <{'position': <16>}>, 'org.gnome.Papers.desktop': <{'position': <17>}>, 'org.gnome.Logs.desktop': <{'position': <18>}>, 'android-studio_android-studio.desktop': <{'position': <19>}>, 'chromium-browser.desktop': <{'position': <20>}>, 'Heave Ho.desktop': <{'position': <21>}>, 'outlook-for-linux_outlook-for-linux.desktop': <{'position': <22>}>, 'proton.vpn.app.gtk.desktop': <{'position': <23>}>}, {'org.gnome.Pomodoro.desktop': <{'position': <0>}>, 'putty.desktop': <{'position': <1>}>, 'org.qbittorrent.qBittorrent.desktop': <{'position': <2>}>, 'ranger.desktop': <{'position': <3>}>, 'wine-regedit.desktop': <{'position': <4>}>, 'btop.desktop': <{'position': <5>}>, 'org.gnome.Software.desktop': <{'position': <6>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <7>}>, 'vlc.desktop': <{'position': <8>}>, 'wine-wineboot.desktop': <{'position': <9>}>, 'wine-winecfg.desktop': <{'position': <10>}>, 'wine-winefile.desktop': <{'position': <11>}>, 'wine-winhelp.desktop': <{'position': <12>}>, 'wine-oleview.desktop': <{'position': <13>}>, 'wine-uninstaller.desktop': <{'position': <14>}>, 'obsidian.desktop': <{'position': <15>}>, 'wine-wordpad.desktop': <{'position': <16>}>, 'wine-winemine.desktop': <{'position': <17>}>, 'org.onlyoffice.desktopeditors.desktop': <{'position': <18>}>, 'The Witcher 3 Wild Hunt.desktop': <{'position': <19>}>, 'zen.desktop': <{'position': <20>}>}, {'steam.desktop': <{'position': <0>}>, 'Alacritty.desktop': <{'position': <1>}>, 'arandr.desktop': <{'position': <2>}>}, {'remote-viewer.desktop': <{'position': <0>}>, 'virt-manager.desktop': <{'position': <1>}>, 'org.pulseaudio.pavucontrol.desktop': <{'position': <2>}>}]
 command-history=['reboot', 'polybar', 'poweroff', 'terminator -e tmux', 'xkill', 'xclip', 'r', 'reload']
 disable-user-extensions=false
 disabled-extensions=['pop-shell@system76.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'light-style@gnome-shell-extensions.gcampax.github.com', 'ubuntu-dock@ubuntu.com', 'ding@rastersoft.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'forge@jmmaranan.com']
@@ -1651,9 +1652,9 @@ toggle-quick-settings=@as []
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1767863282
+check-timestamp=int64 1768753185
 first-run=false
-flatpak-purge-timestamp=int64 1767864578
+flatpak-purge-timestamp=int64 1768763405
 install-timestamp=int64 1767812328
 online-updates-timestamp=int64 1695972091
 packagekit-historical-updates-timestamp=uint64 1767812328
