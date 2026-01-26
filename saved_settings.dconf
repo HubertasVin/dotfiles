@@ -166,7 +166,7 @@ show-properties=true
 [org/gnome/Ptyxis]
 default-profile-uuid='0498c998bd68b3a1505701d667c2e985'
 profile-uuids=['0498c998bd68b3a1505701d667c2e985']
-window-size=(uint32 278, uint32 65)
+window-size=(uint32 159, uint32 54)
 
 [org/gnome/Snapshot]
 capture-mode='picture'
@@ -233,7 +233,7 @@ panel-id='world'
 size=(870, 690)
 
 [org/gnome/control-center]
-last-panel='keyboard'
+last-panel='display'
 window-state=(1710, 1080, true)
 
 [org/gnome/deja-dup]
@@ -277,8 +277,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/hubertas/Pictures/Wallpapers/Stockholm_2.jpg'
-picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Stockholm_2.jpg'
+picture-uri='file:///home/hubertas/Pictures/Wallpapers/Prague_6.jpg'
+picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Prague_6.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -1008,12 +1008,12 @@ pomodoro-duration=900.0
 short-break-duration=300.0
 
 [org/gnome/pomodoro/state]
-timer-date='2026-01-18T16:18:19+0000'
+timer-date='2026-01-20T16:14:12+0000'
 timer-elapsed=0.0
 timer-paused=false
 timer-score=0.0
 timer-state='null'
-timer-state-date='2026-01-18T16:18:19+0000'
+timer-state-date='2026-01-20T16:14:12+0000'
 timer-state-duration=0.0
 
 [org/gnome/portal/filechooser/app.zen_browser.zen]
@@ -1652,14 +1652,14 @@ toggle-quick-settings=@as []
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1768753185
+check-timestamp=int64 1769418718
 first-run=false
-flatpak-purge-timestamp=int64 1768763405
+flatpak-purge-timestamp=int64 1769419647
 install-timestamp=int64 1767812328
 online-updates-timestamp=int64 1695972091
 packagekit-historical-updates-timestamp=uint64 1767812328
 security-timestamp=int64 1761133037560751
-update-notification-timestamp=int64 1767717182
+update-notification-timestamp=int64 1769182182
 upgrade-notification-timestamp=int64 1762379524
 
 [org/gnome/system/location]
