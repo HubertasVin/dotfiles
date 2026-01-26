@@ -43,7 +43,7 @@ export EDITOR=nvim
 # PATH setup
 export PATH="$HOME/.npm-global/bin:$PATH:$HOME/.dotnet/tools:$HOME/go/bin:$HOME/.local/bin"
 # Set JAVA_HOME to fix mvn Java version error
-export JAVA_HOME=/usr/lib/jvm/temurin-17-jdk
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 # Custom cursor
 export XCURSOR_THEME=Quintom_Ink
 # History file
@@ -152,15 +152,18 @@ alias clr="clear"
 alias la="ls -lah"
 alias gadd="git add -A"
 alias gcommit="git commit -a"
+alias gpull="git pull --rebase"
 alias gpush="git push origin -u @"
-alias backupDevice="~/tools/backup/borg-backup.sh"
-alias restoreDevice="~/tools/backup/borg-restore.sh"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias backup-device="~/tools/backup/borg-backup.sh"
+alias restore-device="~/tools/backup/borg-restore.sh"
 alias xr144="xrandr --output DP-1 --mode 1920x1080 --rate 144"
 alias prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
 alias ..="cd .."
 alias -- -="cd -"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd $LASTDIR'
 alias sshvps="ssh hubserv@198.7.118.97"
+alias zsh-reload="source ~/.zshrc"
 
 
 #NOTE: ------------------------------------------------------------------------------
