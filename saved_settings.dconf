@@ -25,7 +25,7 @@ window-y=303
 
 [com/github/johnfactotum/Foliate/window]
 default-height=1376
-default-width=1268
+default-width=1317
 maximized=false
 
 [com/github/maoschanz/DynamicWallpaperEditor]
@@ -233,7 +233,7 @@ panel-id='world'
 size=(870, 690)
 
 [org/gnome/control-center]
-last-panel='display'
+last-panel='power'
 window-state=(1710, 1080, true)
 
 [org/gnome/deja-dup]
@@ -277,8 +277,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/hubertas/Pictures/Wallpapers/Prague_6.jpg'
-picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Prague_6.jpg'
+picture-uri='file:///home/hubertas/Pictures/Wallpapers/Amsterdam_3.jpg'
+picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Amsterdam_3.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -319,7 +319,7 @@ toolkit-accessibility=false
 disable-lock-screen=false
 
 [org/gnome/desktop/notifications]
-application-children=['org-gnome-software', 'firefox', 'org-gnome-terminal', 'org-freedesktop-problems-applet', 'steam', 'org-gnome-evolution-alarm-notify', 'org-gnome-eog', 'com-spotify-client', 'code', 'gnome-network-panel', 'libreoffice-calc', 'jetbrains-toolbox', 'org-qbittorrent-qbittorrent', 'gnome-power-panel', 'org-gnome-nautilus', 'org-gnome-settings', 'wine-programs-roblox-roblox-studio', 'xdg-desktop-portal-gnome', 'gimp', 'jetbrains-idea', 'org-gnome-evince', 'libreoffice-writer', 'org-gnome-shell-extensions', 'discord', 'org-gnome-totem', 'org-gnome-characters', 'jetbrains-rider-cd8072ed-4b54-4492-8354-2159d99d8b90', 'com-github-ismaelmartinez-teams-for-linux', 'alacritty', 'com-discordapp-discord', 'spotify-spotify', 'thunar', 'org-kde-drkonqi', 'flameshot', 'org-kde-dolphin', 'jetbrains-rider-d5961df4-e1ad-4122-bdd1-2a03751ba22f', 'org-gnome-shell-portalhelper', 'zoom', 'libreoffice-impress', 'org-gnome-extensions-desktop', 'org-wireshark-wireshark', 'org-fedoraproject-mediawriter', 'io-snapcraft-sessionagent', 'virtualbox', 'terminator', 'org-gnome-pomodoro', 'org-mozilla-firefox', 'org-gnome-loupe', 'com-uploadedlobster-peek', 'vlc', 'signal-desktop-signal-desktop', 'org-flameshot-flameshot', 'org-gnome-boxes', 'one-ablaze-floorp', 'supertuxkart', 'android-studio-android-studio', 'org-gnome-extensions', 'virt-manager', 'teams-for-linux-teams-for-linux', 'org-freedesktop-piper', 'intellij-idea-community-intellij-idea-community', 'intellij-idea-ultimate-intellij-idea-ultimate', 'gnome-printers-panel', 'org-gnome-baobab', 'zen', 'discord-discord', 'snapd-desktop-integration-snapd-desktop-integration', 'thunderbird-thunderbird', 'org-gnome-texteditor', 'firefox-firefox', 'brave-browser', 'net-thunderbird-thunderbird', 'clickup', 'yelp', 'chromium-browser', 'shutter', 'org-gnome-screenshot', 'vivaldi-stable', 'caprine', 'app-zen-browser-zen', 'org-onlyoffice-desktopeditors', 'org-gnome-ptyxis', 'com-github-johnfactotum-foliate', 'gnome-about-panel']
+application-children=['org-gnome-software', 'firefox', 'org-gnome-terminal', 'org-freedesktop-problems-applet', 'steam', 'org-gnome-evolution-alarm-notify', 'org-gnome-eog', 'com-spotify-client', 'code', 'gnome-network-panel', 'libreoffice-calc', 'jetbrains-toolbox', 'org-qbittorrent-qbittorrent', 'gnome-power-panel', 'org-gnome-nautilus', 'org-gnome-settings', 'wine-programs-roblox-roblox-studio', 'xdg-desktop-portal-gnome', 'gimp', 'jetbrains-idea', 'org-gnome-evince', 'libreoffice-writer', 'org-gnome-shell-extensions', 'discord', 'org-gnome-totem', 'org-gnome-characters', 'jetbrains-rider-cd8072ed-4b54-4492-8354-2159d99d8b90', 'com-github-ismaelmartinez-teams-for-linux', 'alacritty', 'com-discordapp-discord', 'spotify-spotify', 'thunar', 'org-kde-drkonqi', 'flameshot', 'org-kde-dolphin', 'jetbrains-rider-d5961df4-e1ad-4122-bdd1-2a03751ba22f', 'org-gnome-shell-portalhelper', 'zoom', 'libreoffice-impress', 'org-gnome-extensions-desktop', 'org-wireshark-wireshark', 'org-fedoraproject-mediawriter', 'io-snapcraft-sessionagent', 'virtualbox', 'terminator', 'org-gnome-pomodoro', 'org-mozilla-firefox', 'org-gnome-loupe', 'com-uploadedlobster-peek', 'vlc', 'signal-desktop-signal-desktop', 'org-flameshot-flameshot', 'org-gnome-boxes', 'one-ablaze-floorp', 'supertuxkart', 'android-studio-android-studio', 'org-gnome-extensions', 'virt-manager', 'teams-for-linux-teams-for-linux', 'org-freedesktop-piper', 'intellij-idea-community-intellij-idea-community', 'intellij-idea-ultimate-intellij-idea-ultimate', 'gnome-printers-panel', 'org-gnome-baobab', 'zen', 'discord-discord', 'snapd-desktop-integration-snapd-desktop-integration', 'thunderbird-thunderbird', 'org-gnome-texteditor', 'firefox-firefox', 'brave-browser', 'net-thunderbird-thunderbird', 'clickup', 'yelp', 'chromium-browser', 'shutter', 'org-gnome-screenshot', 'vivaldi-stable', 'caprine', 'app-zen-browser-zen', 'org-onlyoffice-desktopeditors', 'org-gnome-ptyxis', 'com-github-johnfactotum-foliate', 'gnome-about-panel', 'calibre-gui']
 show-banners=true
 
 [org/gnome/desktop/notifications/application/alacritty]
@@ -339,6 +339,9 @@ application-id='balena-etcher.desktop'
 
 [org/gnome/desktop/notifications/application/brave-browser]
 application-id='brave-browser.desktop'
+
+[org/gnome/desktop/notifications/application/calibre-gui]
+application-id='calibre-gui.desktop'
 
 [org/gnome/desktop/notifications/application/caprine]
 application-id='caprine.desktop'
@@ -951,6 +954,10 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=true
 ignore-phase2-ca-cert=false
 
+[org/gnome/nm-applet/eap/be46d673-7221-4d20-b1ce-377e719c5ca9]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
 [org/gnome/nm-applet/eap/c0fa9314-5e01-47d9-945f-30a3ff4cb4f8]
 ignore-ca-cert=true
 ignore-phase2-ca-cert=false
@@ -997,6 +1004,7 @@ dual-page=false
 dual-page-odd-left=false
 enable-spellchecking=true
 show-sidebar=true
+sidebar-page='thumbnails'
 sizing-mode='automatic'
 
 [org/gnome/pomodoro/plugins/sounds]
@@ -1008,12 +1016,12 @@ pomodoro-duration=900.0
 short-break-duration=300.0
 
 [org/gnome/pomodoro/state]
-timer-date='2026-01-20T16:14:12+0000'
+timer-date='2026-02-09T12:44:16+0000'
 timer-elapsed=0.0
 timer-paused=false
 timer-score=0.0
 timer-state='null'
-timer-state-date='2026-01-20T16:14:12+0000'
+timer-state-date='2026-02-09T12:44:16+0000'
 timer-state-duration=0.0
 
 [org/gnome/portal/filechooser/app.zen_browser.zen]
@@ -1056,7 +1064,7 @@ last-folder-path='/home/hubertas/Pictures/Screenshots'
 last-folder-path='/home/hubertas/Pictures'
 
 [org/gnome/portal/filechooser/org.gnome.Settings]
-last-folder-path='/home/hubertas/Pictures/Wallpapers'
+last-folder-path='/home/hubertas/Downloads'
 
 [org/gnome/portal/filechooser/org.qbittorrent.qBittorrent]
 last-folder-path='/home/hubertas/Downloads/The Walking Dead'
@@ -1563,7 +1571,7 @@ enable-tiling-popup=true
 focus-hint=0
 focus-hint-color='rgb(53,132,228)'
 import-layout-examples=false
-last-version-installed=53
+last-version-installed=54
 maximize-with-gap=true
 overridden-settings={'org.gnome.mutter.edge-tiling': <false>}
 restore-window=@as []
@@ -1652,14 +1660,14 @@ toggle-quick-settings=@as []
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1769418718
+check-timestamp=int64 1770540697
 first-run=false
-flatpak-purge-timestamp=int64 1769419647
-install-timestamp=int64 1767812328
+flatpak-purge-timestamp=int64 1770547831
+install-timestamp=int64 1769540020
 online-updates-timestamp=int64 1695972091
-packagekit-historical-updates-timestamp=uint64 1767812328
+packagekit-historical-updates-timestamp=uint64 1769540020
 security-timestamp=int64 1761133037560751
-update-notification-timestamp=int64 1769182182
+update-notification-timestamp=int64 1769525546
 upgrade-notification-timestamp=int64 1762379524
 
 [org/gnome/system/location]
