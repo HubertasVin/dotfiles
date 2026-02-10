@@ -277,8 +277,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/hubertas/Pictures/Wallpapers/Amsterdam_3.jpg'
-picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Amsterdam_3.jpg'
+picture-uri='file:///home/hubertas/Pictures/Wallpapers/Saint_Petersburg_8.jpg'
+picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Saint_Petersburg_8.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -1016,12 +1016,12 @@ pomodoro-duration=900.0
 short-break-duration=300.0
 
 [org/gnome/pomodoro/state]
-timer-date='2026-02-09T12:44:16+0000'
+timer-date='2026-02-10T16:10:29+0000'
 timer-elapsed=0.0
 timer-paused=false
 timer-score=0.0
 timer-state='null'
-timer-state-date='2026-02-09T12:44:16+0000'
+timer-state-date='2026-02-10T16:10:29+0000'
 timer-state-duration=0.0
 
 [org/gnome/portal/filechooser/app.zen_browser.zen]
@@ -1660,12 +1660,12 @@ toggle-quick-settings=@as []
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1770540697
+check-timestamp=int64 1770739914
 first-run=false
-flatpak-purge-timestamp=int64 1770547831
-install-timestamp=int64 1769540020
+flatpak-purge-timestamp=int64 1770661333
+install-timestamp=int64 1770653977
 online-updates-timestamp=int64 1695972091
-packagekit-historical-updates-timestamp=uint64 1769540020
+packagekit-historical-updates-timestamp=uint64 1770653977
 security-timestamp=int64 1761133037560751
 update-notification-timestamp=int64 1769525546
 upgrade-notification-timestamp=int64 1762379524
