@@ -48,6 +48,8 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 export XCURSOR_THEME=Quintom_Ink
 # History file
 export HISTFILE="$HOME/.zsh_history"
+# Chromium executable for Flutter
+export CHROME_EXECUTABLE="$(command -v chromium-browser || command -v chromium)"
 
 
 #NOTE: ------------------------------------------------------------------------------
