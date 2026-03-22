@@ -233,7 +233,7 @@ panel-id='world'
 size=(870, 690)
 
 [org/gnome/control-center]
-last-panel='power'
+last-panel='wifi'
 window-state=(1710, 1080, true)
 
 [org/gnome/deja-dup]
@@ -277,8 +277,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/hubertas/Pictures/Wallpapers/Mountains_3.png'
-picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Mountains_3.png'
+picture-uri='file:///home/hubertas/Pictures/Wallpapers/Dubrovnik_1.jpg'
+picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Dubrovnik_1.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -816,7 +816,7 @@ default-visible-columns=['name', 'size', 'date_modified']
 default-zoom-level='small'
 
 [org/gnome/nautilus/preferences]
-default-folder-viewer='list-view'
+default-folder-viewer='icon-view'
 migrated-gtk-settings=true
 search-filter-time-type='last_modified'
 search-view='list-view'
@@ -1040,12 +1040,12 @@ pomodoro-duration=900.0
 short-break-duration=300.0
 
 [org/gnome/pomodoro/state]
-timer-date='2026-03-09T09:56:00+0000'
+timer-date='2026-03-22T11:10:59+0000'
 timer-elapsed=0.0
 timer-paused=false
 timer-score=0.0
 timer-state='null'
-timer-state-date='2026-03-09T09:56:00+0000'
+timer-state-date='2026-03-22T11:10:59+0000'
 timer-state-duration=0.0
 
 [org/gnome/portal/filechooser/app.zen_browser.zen]
@@ -1064,7 +1064,7 @@ last-folder-path='/home/hubertas/Downloads'
 last-folder-path='/home/hubertas/Video'
 
 [org/gnome/portal/filechooser/discord]
-last-folder-path='/home/hubertas/Downloads'
+last-folder-path='/home/hubertas/Pictures/Wallpapers'
 
 [org/gnome/portal/filechooser/gnome-background-panel]
 last-folder-path='/home/hubertas/Pictures/Wallpapers'
@@ -1106,7 +1106,7 @@ last-folder-path='/home/hubertas/Downloads'
 last-folder-path='/home/hubertas/Downloads'
 
 [org/gnome/portal/filechooser/steam]
-last-folder-path='/home/hubertas/Downloads'
+last-folder-path='/mnt/games/SteamLibrary/steamapps/common/ELDEN RING/Game'
 
 [org/gnome/portal/filechooser/vivaldi-stable]
 last-folder-path='/home/hubertas/Downloads'
@@ -1684,9 +1684,9 @@ toggle-quick-settings=@as []
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1773252808
+check-timestamp=int64 1774177942
 first-run=false
-flatpak-purge-timestamp=int64 1773256409
+flatpak-purge-timestamp=int64 1774108758
 install-timestamp=int64 1772999406
 online-updates-timestamp=int64 1695972091
 packagekit-historical-updates-timestamp=uint64 1772281978
