@@ -166,6 +166,10 @@ alias -- -="cd -"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd $LASTDIR'
 alias sshvps="ssh hubserv@198.7.118.97"
 alias zsh-reload="source ~/.zshrc"
+alias poweroff="/usr/sbin/poweroff"
+alias reboot="/usr/sbin/reboot"
+alias suspend="systemctl suspend -i"
+alias logout="kill -9 -1"
 
 
 #NOTE: ------------------------------------------------------------------------------
