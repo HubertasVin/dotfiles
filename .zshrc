@@ -177,7 +177,7 @@ alias logout="kill -9 -1"
 #      ------------------------------------------------------------------------------
 
 function update_git_diff_stats() {
-	export POSH_GIT_DIFF_STATS=$($HOME/tools/get-git-diff-stats.sh)
+	export POSH_GIT_DIFF_STATS=$("$HOME/tools/get-git-diff-stats.sh")
 }
 
 autoload -Uz add-zsh-hook
@@ -195,6 +195,27 @@ mkcd() {
 	else
 		mkdir "$1" && cd "$1"
 	fi
+}
+
+gtag() {
+	case "${1:-}" in
+		push)
+			if [[ -n "${2:-}" ]]; then
+				git push origin "refs/tags/$2"
+			else
+				git push origin --tags
+			fi
+			;;
+		"")
+			echo "Usage:"
+			echo "  gtag <tag-name> [commit-hash]   - Tag commit (defaults to HEAD)"
+			echo "  gtag push [tag-name]            - Push tag(s) to origin"
+			;;
+		*)
+			git tag "$1" "${2:-HEAD}"
+			echo "Tag '$1' created. Use 'gtag push' to push it."
+			;;
+	esac
 }
 
 bman() {
