@@ -42,6 +42,9 @@ tmux_conf_theme_colour_14="#FF9800"   # orange
 tmux_conf_theme_colour_15="#D64933"   # chili red
 tmux_conf_theme_colour_16="#E53935"   # red
 
+# copy-mode selection colour
+set -g copy-mode-selection-style "bg=$tmux_conf_theme_colour_14,fg=$tmux_conf_theme_colour_1"
+
 # pane border style, possible values are:
 #   - thin (default)
 #   - fat
