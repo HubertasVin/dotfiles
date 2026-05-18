@@ -206,14 +206,54 @@ gtag() {
 				git push origin --tags
 			fi
 			;;
-		"")
+		""|-h|--help)
 			echo "Usage:"
-			echo "  gtag <tag-name> [commit-hash]   - Tag commit (defaults to HEAD)"
-			echo "  gtag push [tag-name]            - Push tag(s) to origin"
+			echo "  gtag [-m message] <tag-name> [commit-hash]   - Tag commit (defaults to HEAD)"
+			echo "  gtag push [tag-name]                         - Push tag(s) to origin"
 			;;
 		*)
-			git tag "$1" "${2:-HEAD}"
-			echo "Tag '$1' created. Use 'gtag push' to push it."
+			local message=""
+
+			while [[ $# -gt 0 ]]; do
+				case "$1" in
+					-m|--message)
+						if [[ -z "${2:-}" ]]; then
+							echo "Error: missing message after $1"
+							return 1
+						fi
+						message="$2"
+						shift 2
+						;;
+					--)
+						shift
+						break
+						;;
+					-*)
+						echo "Error: unknown option '$1'"
+						return 1
+						;;
+					*)
+						break
+						;;
+				esac
+			done
+
+			local tag="${1:-}"
+			local commit="${2:-HEAD}"
+
+			if [[ -z "$tag" ]]; then
+				echo "Error: missing tag name"
+				echo "Usage: gtag [-m message] <tag-name> [commit-hash]"
+				return 1
+			fi
+
+			if [[ -n "$message" ]]; then
+				git tag -a "$tag" "$commit" -m "$message"
+			else
+				git tag "$tag" "$commit"
+			fi
+
+			echo "Tag '$tag' created. Use 'gtag push' to push it."
 			;;
 	esac
 }
