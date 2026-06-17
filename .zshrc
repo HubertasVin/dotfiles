@@ -41,7 +41,7 @@ PROMPT_EOL_MARK=''
 export VISUAL=nvim
 export EDITOR=nvim
 # PATH setup
-export PATH="$HOME/.npm-global/bin:$PATH:$HOME/.dotnet/tools:$HOME/go/bin:$HOME/.local/bin"
+export PATH="$HOME/.npm-global/bin:$PATH:$HOME/.dotnet/tools:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.local/bin"
 # Set JAVA_HOME to fix mvn Java version error
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 # Custom cursor
