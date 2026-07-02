@@ -25,22 +25,22 @@ tmux_conf_theme=enabled
 
 # default theme
 tmux_conf_theme_colour_0="%COLORCODE"    # default
-tmux_conf_theme_colour_1="#1D1D1D"    # dark gray
+tmux_conf_theme_colour_1="#1d1d1d"    # dark gray
 tmux_conf_theme_colour_2="#303030"    # gray
-tmux_conf_theme_colour_3="#BEBFC5"    # light gray
-tmux_conf_theme_colour_4="#E4E4E4"    # white
+tmux_conf_theme_colour_3="#bebfc5"    # light gray
+tmux_conf_theme_colour_4="#e4e4e4"    # white
 tmux_conf_theme_colour_5="#009688"    # persian green
-tmux_conf_theme_colour_6="#E53935"    # default
-tmux_conf_theme_colour_7="#1098F7"    # light blue
-tmux_conf_theme_colour_8="#0B4F6C"    # dark blue
-tmux_conf_theme_colour_9="#48233C"    # dark purple
-tmux_conf_theme_colour_10="#822E81"   # purple
+tmux_conf_theme_colour_6="#e53935"    # default
+tmux_conf_theme_colour_7="#1098f7"    # light blue
+tmux_conf_theme_colour_8="#0b4f6c"    # dark blue
+tmux_conf_theme_colour_9="#48233c"    # dark purple
+tmux_conf_theme_colour_10="#822e81"   # purple
 tmux_conf_theme_colour_11=""   # 
 tmux_conf_theme_colour_12=""   # 
-tmux_conf_theme_colour_13="#FFBC42"   # yellow
-tmux_conf_theme_colour_14="#FF9800"   # orange
-tmux_conf_theme_colour_15="#D64933"   # chili red
-tmux_conf_theme_colour_16="#E53935"   # red
+tmux_conf_theme_colour_13="#ffbc42"   # yellow
+tmux_conf_theme_colour_14="#ff9800"   # orange
+tmux_conf_theme_colour_15="#d64933"   # chili red
+tmux_conf_theme_colour_16="#e53935"   # red
 
 # pane border style, possible values are:
 #   - thin (default)
