@@ -26,7 +26,7 @@ window-y=303
 [com/github/johnfactotum/Foliate/window]
 default-height=1376
 default-width=1317
-maximized=false
+maximized=true
 
 [com/github/maoschanz/DynamicWallpaperEditor]
 display-mode='list'
@@ -240,7 +240,7 @@ panel-id='world'
 size=(870, 690)
 
 [org/gnome/control-center]
-last-panel='sound'
+last-panel='wifi'
 window-state=(1710, 1080, true)
 
 [org/gnome/deja-dup]
@@ -284,8 +284,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/hubertas/Pictures/Wallpapers/Fantasy_5.avif'
-picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Fantasy_5.avif'
+picture-uri='file:///home/hubertas/Pictures/Wallpapers/Florence_1.avif'
+picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Florence_1.avif'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -870,6 +870,10 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
+[org/gnome/nm-applet/eap/0fa90bc3-ce6c-4694-9422-0264d631b3dc]
+ignore-ca-cert=true
+ignore-phase2-ca-cert=false
+
 [org/gnome/nm-applet/eap/133f9c18-991a-43a7-a3d9-794a84fcb970]
 ignore-ca-cert=true
 ignore-phase2-ca-cert=false
@@ -895,6 +899,10 @@ ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
 [org/gnome/nm-applet/eap/26ebbe6c-4cbe-4c6a-9268-953b55adf711]
+ignore-ca-cert=true
+ignore-phase2-ca-cert=false
+
+[org/gnome/nm-applet/eap/27bbe229-c7e6-4615-8fcc-63e401512356]
 ignore-ca-cert=true
 ignore-phase2-ca-cert=false
 
@@ -927,6 +935,10 @@ ignore-ca-cert=true
 ignore-phase2-ca-cert=false
 
 [org/gnome/nm-applet/eap/614421c6-423b-4634-9e52-709aaf3cea1a]
+ignore-ca-cert=true
+ignore-phase2-ca-cert=false
+
+[org/gnome/nm-applet/eap/61d52d4d-04ff-4c53-97b7-cde7dab114de]
 ignore-ca-cert=true
 ignore-phase2-ca-cert=false
 
@@ -1115,6 +1127,9 @@ last-folder-path='/home/hubertas/Downloads'
 [org/gnome/portal/filechooser/gnome-background-panel]
 last-folder-path='/home/hubertas/Pictures/Wallpapers'
 
+[org/gnome/portal/filechooser/net.sapples.LiveCaptions]
+last-folder-path='/home/hubertas/Downloads'
+
 [org/gnome/portal/filechooser/one.ablaze.floorp]
 last-folder-path='/home/hubertas/Downloads'
 
@@ -1143,7 +1158,7 @@ last-folder-path='/home/hubertas/Downloads'
 last-folder-path='/home/hubertas/Downloads'
 
 [org/gnome/portal/filechooser/org.mozilla.firefox]
-last-folder-path='/home/hubertas/Downloads'
+last-folder-path='/home/hubertas/Documents/backup-folder/Programming/DetourPilot/deployment/ingress-nginx'
 
 [org/gnome/portal/filechooser/org.qbittorrent.qBittorrent]
 last-folder-path='/home/hubertas/Downloads/The Walking Dead'
@@ -1255,7 +1270,7 @@ app-picker-layout=[{'org.fedoraproject.MediaWriter.desktop': <{'position': <0>}>
 command-history=['reboot', 'polybar', 'poweroff', 'terminator -e tmux', 'xclip', 'r', 'reload', 'xkill']
 disable-user-extensions=false
 disabled-extensions=['pop-shell@system76.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'light-style@gnome-shell-extensions.gcampax.github.com', 'ubuntu-dock@ubuntu.com', 'ding@rastersoft.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'forge@jmmaranan.com', 'background-logo@fedorahosted.org']
-enabled-extensions=['no-overview@fthx', 'blur-my-shell@aunetx', 'paperwm@paperwm.github.com', 'awesome-tiles@velitasali.com', 'arrangeWindows@sun.wxg@gmail.com', 'wintile@nowsci.com', 'hidetopbar@mathieu.bidon.ca', 'WallpaperSwitcher@Rishu', 'randomwallpaper@iflow.space', 'fancy-tiling@devroamer.zen', 'unite@hardpixel.eu', 'no-title-bar@franglais125.gmail.com', 'cronomix@zagortenay333', 'color-picker@tuberry', 'gnome-ui-tune@itstime.tech', 'clipboard-history@alexsaveau.dev', 'notification-timeout@chlumskyvaclav.gmail.com', 'window-app-switcher-on-active-monitor@NiKnights.com', 'hibernate-status@dromi', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'pomodoro@arun.codito.in', 'undecorate@sun.wxg@gmail.com', 'ubuntu-appindicators@ubuntu.com', 'tiling-assistant@ubuntu.com', 'appindicatorsupport@rgcjonas.gmail.com', 'Bluetooth-Battery-Meter@maniacx.github.com', 'simple-tiling@domoel', 'tilingshell@ferrarodomenico.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'gSnap@micahosborne', 'tiling-assistant@leleat-on-github', 'keyboard-reset@galets']
+enabled-extensions=['no-overview@fthx', 'blur-my-shell@aunetx', 'paperwm@paperwm.github.com', 'awesome-tiles@velitasali.com', 'arrangeWindows@sun.wxg@gmail.com', 'wintile@nowsci.com', 'hidetopbar@mathieu.bidon.ca', 'WallpaperSwitcher@Rishu', 'randomwallpaper@iflow.space', 'fancy-tiling@devroamer.zen', 'unite@hardpixel.eu', 'no-title-bar@franglais125.gmail.com', 'cronomix@zagortenay333', 'color-picker@tuberry', 'gnome-ui-tune@itstime.tech', 'clipboard-history@alexsaveau.dev', 'notification-timeout@chlumskyvaclav.gmail.com', 'window-app-switcher-on-active-monitor@NiKnights.com', 'hibernate-status@dromi', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'pomodoro@arun.codito.in', 'undecorate@sun.wxg@gmail.com', 'ubuntu-appindicators@ubuntu.com', 'tiling-assistant@ubuntu.com', 'appindicatorsupport@rgcjonas.gmail.com', 'Bluetooth-Battery-Meter@maniacx.github.com', 'simple-tiling@domoel', 'tilingshell@ferrarodomenico.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'gSnap@micahosborne', 'tiling-assistant@leleat-on-github', 'keyboard-reset@galets', 'livecaptions@sapples.net']
 favorite-apps=['org.gnome.Nautilus.desktop']
 last-selected-power-profile='performance'
 remember-mount-password=false
@@ -1741,14 +1756,14 @@ toggle-quick-settings=@as []
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1781713382
+check-timestamp=int64 1784270742
 first-run=false
-flatpak-purge-timestamp=int64 1781597909
-install-timestamp=int64 1781541460
+flatpak-purge-timestamp=int64 1784251348
+install-timestamp=int64 1783699471
 online-updates-timestamp=int64 1695972091
-packagekit-historical-updates-timestamp=uint64 1781649517
-security-timestamp=int64 1781713382386502
-update-notification-timestamp=int64 1781713471
+packagekit-historical-updates-timestamp=uint64 1783699471
+security-timestamp=int64 1784104271315413
+update-notification-timestamp=int64 1784182787
 upgrade-notification-timestamp=int64 1779954487
 
 [org/gnome/system/location]
