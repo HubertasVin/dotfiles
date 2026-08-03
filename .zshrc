@@ -177,7 +177,7 @@ alias logout="kill -9 -1"
 #      ------------------------------------------------------------------------------
 
 function update_git_diff_stats() {
-	export POSH_GIT_DIFF_STATS=$("$HOME/tools/get-git-diff-stats.sh")
+	eval "$("$HOME/tools/get-git-diff-stats.sh")"
 }
 
 autoload -Uz add-zsh-hook

@@ -36,10 +36,28 @@ final_space = true
       fetch_status = false
 
 	[[blocks.segments]]
-		type = 'text'
-		style = 'plain'
-		template = '{{ .Env.POSH_GIT_DIFF_STATS }}'
-		background = 'transparent'
+    type = 'text'
+    style = 'plain'
+    template = '<#afd700>{{ if ne .Env.POSH_GIT_TRACKED "0" }} ✓{{ .Env.POSH_GIT_TRACKED }}{{ end }}</>'
+    background = 'transparent'
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    template = '<#ff87d7>{{ if ne .Env.POSH_GIT_UNTRACKED "0" }} ?{{ .Env.POSH_GIT_UNTRACKED }}{{ end }}</>'
+    background = 'transparent'
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    template = '<#5fff00>{{ if ne .Env.POSH_GIT_ADDED "0" }} ↑{{ .Env.POSH_GIT_ADDED }}{{ end }}</>'
+    background = 'transparent'
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    template = '<#ff005f>{{ if ne .Env.POSH_GIT_DELETED "0" }} ↓{{ .Env.POSH_GIT_DELETED }}{{ end }}</>'
+    background = 'transparent'
 
 [[blocks]]
   type = 'prompt'
