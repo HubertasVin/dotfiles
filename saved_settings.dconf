@@ -122,7 +122,7 @@ preload-engines=['xkb:gb::eng', 'xkb:lt::lit']
 version='1.5.29'
 
 [desktop/ibus/panel/emoji]
-favorites=['€', '¬', 'ȁ', 'é']
+favorites=['€', '¬', 'ȁ', 'é', '']
 
 [net/launchpad/plank/docks/dock1]
 dock-items=['libreoffice-writer.dockitem', 'libreoffice-calc.dockitem', 'firefox_firefox.dockitem', 'nemo.dockitem']
@@ -199,10 +199,11 @@ window-size=(1521, 1410)
 
 [org/gnome/boxes]
 first-run=false
+shared-folders="[<{'uuid': <'cb52eeb8-c2ea-4b68-beae-f75efe938b3c'>, 'path': <'/home/hubertas/Public'>, 'name': <'Public'>}>]"
 view='icon-view'
 window-maximized=true
 window-position=[26, 23]
-window-size=[1710, 1678]
+window-size=[2575, 1421]
 
 [org/gnome/calculator]
 accuracy=9
@@ -240,7 +241,7 @@ panel-id='world'
 size=(870, 690)
 
 [org/gnome/control-center]
-last-panel='wifi'
+last-panel='display'
 window-state=(1710, 1080, true)
 
 [org/gnome/deja-dup]
@@ -284,8 +285,8 @@ translate=true
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/hubertas/Pictures/Wallpapers/Florence_1.avif'
-picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Florence_1.avif'
+picture-uri='file:///home/hubertas/Pictures/Wallpapers/Spaceship_1.avif'
+picture-uri-dark='file:///home/hubertas/Pictures/Wallpapers/Spaceship_1.avif'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -646,7 +647,7 @@ numlock-state=false
 
 [org/gnome/desktop/peripherals/mouse]
 accel-profile='flat'
-speed=-0.56825396825396823
+speed=-0.36809815950920244
 
 [org/gnome/desktop/peripherals/touchpad]
 send-events='enabled'
@@ -986,6 +987,10 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=true
 ignore-phase2-ca-cert=false
 
+[org/gnome/nm-applet/eap/9be05beb-01f8-4ca9-a0d4-9b3184f5b956]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
 [org/gnome/nm-applet/eap/9ebee55a-68fc-49e6-ad26-abf0fd2fc912]
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
@@ -1074,6 +1079,10 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
+[org/gnome/nm-applet/eap/fab1eb06-5665-41eb-a2eb-8f15f7733179]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
 [org/gnome/papers]
 night-mode=false
 
@@ -1081,13 +1090,13 @@ night-mode=false
 annot-color='yellow'
 continuous=true
 dual-page=false
-dual-page-odd-left=false
+dual-page-odd-left=true
 enable-spellchecking=true
 show-sidebar=true
 sidebar-page='thumbnails'
 sizing-mode='free'
 window-maximized=true
-zoom=0.4301841568707323
+zoom=0.61946518589385446
 
 [org/gnome/pomodoro/plugins/sounds]
 ticking-sound=''
@@ -1158,10 +1167,13 @@ last-folder-path='/home/hubertas/Downloads'
 last-folder-path='/home/hubertas/Downloads'
 
 [org/gnome/portal/filechooser/org.mozilla.firefox]
-last-folder-path='/home/hubertas/Documents/backup-folder/Programming/DetourPilot/deployment/ingress-nginx'
+last-folder-path='/home/hubertas/Downloads'
 
 [org/gnome/portal/filechooser/org.qbittorrent.qBittorrent]
 last-folder-path='/home/hubertas/Downloads/The Walking Dead'
+
+[org/gnome/portal/filechooser/signal]
+last-folder-path='/home/hubertas/Downloads'
 
 [org/gnome/portal/filechooser/snap.obsidian]
 last-folder-path='/home/hubertas/Downloads'
@@ -1209,7 +1221,7 @@ initial-stations-loaded=true
 locations=['file:///home/hubertas/Music']
 
 [org/gnome/settings-daemon/plugins/color]
-night-light-enabled=false
+night-light-enabled=true
 night-light-schedule-automatic=false
 night-light-temperature=uint32 3485
 
@@ -1266,8 +1278,8 @@ sleep-inactive-battery-timeout=1800
 overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
 
 [org/gnome/shell]
-app-picker-layout=[{'org.fedoraproject.MediaWriter.desktop': <{'position': <0>}>, 'org.gnome.Contacts.desktop': <{'position': <1>}>, 'org.gnome.Weather.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Maps.desktop': <{'position': <4>}>, 'org.gnome.SimpleScan.desktop': <{'position': <5>}>, 'org.gnome.Characters.desktop': <{'position': <6>}>, 'org.gnome.Calculator.desktop': <{'position': <7>}>, 'org.gnome.Showtime.desktop': <{'position': <8>}>, 'org.gnome.Settings.desktop': <{'position': <9>}>, 'org.gnome.Boxes.desktop': <{'position': <10>}>, 'Utilities': <{'position': <11>}>, 'org.gnome.Yelp.desktop': <{'position': <12>}>, 'org.gnome.Ptyxis.desktop': <{'position': <13>}>, 'org.gnome.TextEditor.desktop': <{'position': <14>}>, 'org.gnome.Tour.desktop': <{'position': <15>}>}, {'org.gnome.Calendar.desktop': <{'position': <0>}>, 'code.desktop': <{'position': <1>}>, 'org.dosbox-staging.dosbox-staging.desktop': <{'position': <2>}>, 'nvim.desktop': <{'position': <3>}>, 'org.gnome.Snapshot.desktop': <{'position': <4>}>, 'org.gnome.Extensions.desktop': <{'position': <5>}>, 'org.flameshot.Flameshot.desktop': <{'position': <6>}>, 'htop.desktop': <{'position': <7>}>, 'org.gnome.Loupe.desktop': <{'position': <8>}>, 'java-25-openjdk-jconsole.desktop': <{'position': <9>}>, 'org.gnome.font-viewer.desktop': <{'position': <10>}>, 'wine-notepad.desktop': <{'position': <11>}>, 'org.gnome.Decibels.desktop': <{'position': <12>}>, 'org.mozilla.firefox.desktop': <{'position': <13>}>, 'org.freedesktop.MalcontentControl.desktop': <{'position': <14>}>, 'org.gnome.Papers.desktop': <{'position': <15>}>, 'Overcooked! 2.desktop': <{'position': <16>}>, 'org.gnome.Logs.desktop': <{'position': <17>}>, 'Anno 1800.desktop': <{'position': <18>}>, 'chromium-browser.desktop': <{'position': <19>}>, 'ELDEN RING.desktop': <{'position': <20>}>, 'Age of Empires IV Anniversary Edition.desktop': <{'position': <21>}>, 'Kingdom Come Deliverance II.desktop': <{'position': <22>}>}, {'org.gnome.Pomodoro.desktop': <{'position': <0>}>, 'putty.desktop': <{'position': <1>}>, 'org.qbittorrent.qBittorrent.desktop': <{'position': <2>}>, 'ranger.desktop': <{'position': <3>}>, 'wine-regedit.desktop': <{'position': <4>}>, 'btop.desktop': <{'position': <5>}>, 'org.gnome.Software.desktop': <{'position': <6>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <7>}>, 'vlc.desktop': <{'position': <8>}>, 'wine-wineboot.desktop': <{'position': <9>}>, 'wine-winecfg.desktop': <{'position': <10>}>, 'wine-winefile.desktop': <{'position': <11>}>, 'wine-winhelp.desktop': <{'position': <12>}>, 'wine-oleview.desktop': <{'position': <13>}>, 'wine-uninstaller.desktop': <{'position': <14>}>, 'obsidian.desktop': <{'position': <15>}>, 'wine-wordpad.desktop': <{'position': <16>}>, 'wine-winemine.desktop': <{'position': <17>}>, 'org.onlyoffice.desktopeditors.desktop': <{'position': <18>}>, 'zen.desktop': <{'position': <19>}>, 'com.mojang.Minecraft.desktop': <{'position': <20>}>, 'spotify_spotify.desktop': <{'position': <21>}>, 'wine-Programs-YouTube Playlist Downloader-YouTube Playlist Downloader.desktop': <{'position': <22>}>}, {'steam.desktop': <{'position': <0>}>, 'Alacritty.desktop': <{'position': <1>}>, 'arandr.desktop': <{'position': <2>}>, 'dev.zed.Zed.desktop': <{'position': <3>}>, 'calibre-gui.desktop': <{'position': <4>}>, 'com.github.johnfactotum.Foliate.desktop': <{'position': <5>}>, 'mpv.desktop': <{'position': <6>}>, 'com.obsproject.Studio.desktop': <{'position': <7>}>, 'signal.desktop': <{'position': <8>}>, 'gparted.desktop': <{'position': <9>}>, 'Counter-Strike 2.desktop': <{'position': <10>}>, 'Split Fiction.desktop': <{'position': <11>}>, 'android-studio.desktop': <{'position': <12>}>}, {'remote-viewer.desktop': <{'position': <0>}>, 'virt-manager.desktop': <{'position': <1>}>, 'org.pulseaudio.pavucontrol.desktop': <{'position': <2>}>}]
-command-history=['reboot', 'polybar', 'poweroff', 'terminator -e tmux', 'xclip', 'r', 'reload', 'xkill']
+app-picker-layout=[{'org.fedoraproject.MediaWriter.desktop': <{'position': <0>}>, 'org.gnome.Contacts.desktop': <{'position': <1>}>, 'org.gnome.Weather.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Maps.desktop': <{'position': <4>}>, 'org.gnome.SimpleScan.desktop': <{'position': <5>}>, 'org.gnome.Characters.desktop': <{'position': <6>}>, 'org.gnome.Calculator.desktop': <{'position': <7>}>, 'org.gnome.Showtime.desktop': <{'position': <8>}>, 'org.gnome.Settings.desktop': <{'position': <9>}>, 'org.gnome.Boxes.desktop': <{'position': <10>}>, 'Utilities': <{'position': <11>}>, 'org.gnome.Yelp.desktop': <{'position': <12>}>, 'org.gnome.Ptyxis.desktop': <{'position': <13>}>, 'org.gnome.TextEditor.desktop': <{'position': <14>}>, 'org.gnome.Tour.desktop': <{'position': <15>}>}, {'org.gnome.Calendar.desktop': <{'position': <0>}>, 'code.desktop': <{'position': <1>}>, 'org.dosbox-staging.dosbox-staging.desktop': <{'position': <2>}>, 'nvim.desktop': <{'position': <3>}>, 'org.gnome.Snapshot.desktop': <{'position': <4>}>, 'org.gnome.Extensions.desktop': <{'position': <5>}>, 'org.flameshot.Flameshot.desktop': <{'position': <6>}>, 'htop.desktop': <{'position': <7>}>, 'org.gnome.Loupe.desktop': <{'position': <8>}>, 'java-25-openjdk-jconsole.desktop': <{'position': <9>}>, 'org.gnome.font-viewer.desktop': <{'position': <10>}>, 'wine-notepad.desktop': <{'position': <11>}>, 'org.gnome.Decibels.desktop': <{'position': <12>}>, 'org.mozilla.firefox.desktop': <{'position': <13>}>, 'org.freedesktop.MalcontentControl.desktop': <{'position': <14>}>, 'org.gnome.Papers.desktop': <{'position': <15>}>, 'Overcooked! 2.desktop': <{'position': <16>}>, 'org.gnome.Logs.desktop': <{'position': <17>}>, 'Cyberpunk 2077.desktop': <{'position': <18>}>, 'chromium-browser.desktop': <{'position': <19>}>, 'org.jellyfin.JellyfinDesktop.desktop': <{'position': <20>}>, 'Age of Empires IV Anniversary Edition.desktop': <{'position': <21>}>, 'Kingdom Come Deliverance II.desktop': <{'position': <22>}>, 'Life is Strange 2.desktop': <{'position': <23>}>}, {'org.gnome.Pomodoro.desktop': <{'position': <0>}>, 'putty.desktop': <{'position': <1>}>, 'org.qbittorrent.qBittorrent.desktop': <{'position': <2>}>, 'ranger.desktop': <{'position': <3>}>, 'wine-regedit.desktop': <{'position': <4>}>, 'btop.desktop': <{'position': <5>}>, 'org.gnome.Software.desktop': <{'position': <6>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <7>}>, 'vlc.desktop': <{'position': <8>}>, 'wine-wineboot.desktop': <{'position': <9>}>, 'wine-winecfg.desktop': <{'position': <10>}>, 'wine-winefile.desktop': <{'position': <11>}>, 'wine-winhelp.desktop': <{'position': <12>}>, 'wine-oleview.desktop': <{'position': <13>}>, 'wine-uninstaller.desktop': <{'position': <14>}>, 'obsidian.desktop': <{'position': <15>}>, 'wine-wordpad.desktop': <{'position': <16>}>, 'wine-winemine.desktop': <{'position': <17>}>, 'org.onlyoffice.desktopeditors.desktop': <{'position': <18>}>, 'zen.desktop': <{'position': <19>}>, 'com.mojang.Minecraft.desktop': <{'position': <20>}>, 'spotify_spotify.desktop': <{'position': <21>}>, 'wine-Programs-YouTube Playlist Downloader-YouTube Playlist Downloader.desktop': <{'position': <22>}>, 'net.sapples.LiveCaptions.desktop': <{'position': <23>}>}, {'steam.desktop': <{'position': <0>}>, 'Alacritty.desktop': <{'position': <1>}>, 'arandr.desktop': <{'position': <2>}>, 'dev.zed.Zed.desktop': <{'position': <3>}>, 'calibre-gui.desktop': <{'position': <4>}>, 'com.github.johnfactotum.Foliate.desktop': <{'position': <5>}>, 'mpv.desktop': <{'position': <6>}>, 'com.obsproject.Studio.desktop': <{'position': <7>}>, 'signal.desktop': <{'position': <8>}>, 'gparted.desktop': <{'position': <9>}>, 'Counter-Strike 2.desktop': <{'position': <10>}>, 'Split Fiction.desktop': <{'position': <11>}>, 'android-studio.desktop': <{'position': <12>}>, 'Resident Evil 4 Chainsaw Demo.desktop': <{'position': <13>}>}, {'remote-viewer.desktop': <{'position': <0>}>, 'virt-manager.desktop': <{'position': <1>}>, 'org.pulseaudio.pavucontrol.desktop': <{'position': <2>}>}]
+command-history=['reboot', 'polybar', 'terminator -e tmux', 'xclip', 'r', 'reload', 'xkill', 'poweroff']
 disable-user-extensions=false
 disabled-extensions=['pop-shell@system76.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'light-style@gnome-shell-extensions.gcampax.github.com', 'ubuntu-dock@ubuntu.com', 'ding@rastersoft.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'forge@jmmaranan.com', 'background-logo@fedorahosted.org']
 enabled-extensions=['no-overview@fthx', 'blur-my-shell@aunetx', 'paperwm@paperwm.github.com', 'awesome-tiles@velitasali.com', 'arrangeWindows@sun.wxg@gmail.com', 'wintile@nowsci.com', 'hidetopbar@mathieu.bidon.ca', 'WallpaperSwitcher@Rishu', 'randomwallpaper@iflow.space', 'fancy-tiling@devroamer.zen', 'unite@hardpixel.eu', 'no-title-bar@franglais125.gmail.com', 'cronomix@zagortenay333', 'color-picker@tuberry', 'gnome-ui-tune@itstime.tech', 'clipboard-history@alexsaveau.dev', 'notification-timeout@chlumskyvaclav.gmail.com', 'window-app-switcher-on-active-monitor@NiKnights.com', 'hibernate-status@dromi', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'pomodoro@arun.codito.in', 'undecorate@sun.wxg@gmail.com', 'ubuntu-appindicators@ubuntu.com', 'tiling-assistant@ubuntu.com', 'appindicatorsupport@rgcjonas.gmail.com', 'Bluetooth-Battery-Meter@maniacx.github.com', 'simple-tiling@domoel', 'tilingshell@ferrarodomenico.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'gSnap@micahosborne', 'tiling-assistant@leleat-on-github', 'keyboard-reset@galets', 'livecaptions@sapples.net']
@@ -1367,7 +1379,7 @@ sigma=30
 history-size=100
 
 [org/gnome/shell/extensions/color-picker]
-color-history=[uint32 2434341, 2434341, 16777215, 16777215, 2770025, 2572904, 2434341, 10148095]
+color-history=[uint32 2001125, 2572904, 2572904, 2434341, 2434341, 16777215, 16777215, 2770025]
 
 [org/gnome/shell/extensions/dash-to-dock]
 apply-custom-theme=true
@@ -1756,14 +1768,14 @@ toggle-quick-settings=@as []
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1784270742
+check-timestamp=int64 1790325658
 first-run=false
-flatpak-purge-timestamp=int64 1784251348
-install-timestamp=int64 1783699471
+flatpak-purge-timestamp=int64 1790326679
+install-timestamp=int64 1788639658
 online-updates-timestamp=int64 1695972091
-packagekit-historical-updates-timestamp=uint64 1783699471
-security-timestamp=int64 1784104271315413
-update-notification-timestamp=int64 1784182787
+packagekit-historical-updates-timestamp=uint64 1788900565
+security-timestamp=int64 1790325705966045
+update-notification-timestamp=int64 1788852180
 upgrade-notification-timestamp=int64 1779954487
 
 [org/gnome/system/location]
