@@ -193,7 +193,7 @@ mkcd() {
 	if [ -d "$1" ]; then
 		echo "Error: Directory '$1' already exists."
 	else
-		mkdir "$1" && cd "$1"
+		mkdir "$1" && cd "$1" || return
 	fi
 }
 
@@ -258,32 +258,12 @@ gtag() {
 	esac
 }
 
-bman() {
-	local pattern args=()
-	while [[ $# -gt 0 ]]; do
-		case $1 in
-			-p)          pattern=$2; shift 2 ;;
-			-p*)         pattern=${1#-p}; shift ;;
-			*)           args+=("$1"); shift ;;
-		esac
-	done
-
-	if [[ -n $pattern ]]; then
-		command man -P "less -p '$pattern'" "${args[@]}"
-	else
-		command man "${args[@]}"
-	fi
-}
-
-fcat() {
-	for file in $@; do
-		prefix="--- $file ---"
-		plen=${#prefix}
-		printf '\n======\n'
-		printf '%s\n' "$prefix"
-		printf '======\n'
-		cat "$file"
-	done < <(find "${find_args[@]}")
+pdata() {
+	local pid="${1:?usage: pdata <pid>}"
+	local -a d
+	d=($(ps -o pid=,comm=,etime=,nlwp=,rss= -p "$pid"))
+	local mem=$(numfmt --to=iec $(( d[5] * 1024 )))
+	echo "Program \"${d[2]}\" has taken ${d[3]} and is assigned ${d[4]} threads and $mem of RAM."
 }
 
 
