@@ -150,7 +150,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 #      ------------------------------------------------------------------------------
 
 alias clr="clear"
-alias la="ls -lah"
+alias ll="ls -lah"
 alias gadd="git add -A"
 alias gcommit="git commit -a"
 alias gcheck="git checkout"
@@ -159,13 +159,10 @@ alias gpush="git push origin -u @"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias backup-device="~/tools/backup/borg-backup.sh"
 alias restore-device="~/tools/backup/borg-restore.sh"
-alias xr144="xrandr --output DP-1 --mode 1920x1080 --rate 144"
-alias prime-run="__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia"
 alias ..="cd .."
 alias -- -="cd -"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd $LASTDIR'
-alias sshvps="ssh hubserv@198.7.118.97"
-alias zsh-reload="source ~/.zshrc"
+alias restart-adb="adb kill-server && adb start-server"
 alias poweroff="/usr/sbin/poweroff"
 alias reboot="/usr/sbin/reboot"
 alias suspend="systemctl suspend -i"
