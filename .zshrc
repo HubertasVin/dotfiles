@@ -259,8 +259,9 @@ pdata() {
 	local pid="${1:?usage: pdata <pid>}"
 	local -a d
 	d=($(ps -o pid=,comm=,etime=,nlwp=,rss= -p "$pid"))
-	local mem=$(numfmt --to=iec $(( d[5] * 1024 )))
-	echo "Program \"${d[2]}\" has taken ${d[3]} and is assigned ${d[4]} threads and $mem of RAM."
+	[[ ${#d[@]} -eq 5 ]] || { echo "pdata: no such pid $pid" >&2; return 1; }
+	local mem=$(numfmt --to=iec $(( d[4] * 1024 )))
+	echo "Program \"${d[1]}\" has taken ${d[2]} and is assigned ${d[3]} threads and $mem of RAM."
 }
 
 
