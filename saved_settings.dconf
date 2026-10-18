@@ -1101,8 +1101,10 @@ enable-spellchecking=true
 show-sidebar=true
 sidebar-page='thumbnails'
 sizing-mode='free'
-window-maximized=true
-zoom=0.61946518589385446
+window-height=1080
+window-maximized=false
+window-width=1920
+zoom=0.74335822307262533
 
 [org/gnome/pomodoro/plugins/sounds]
 ticking-sound=''
@@ -1173,7 +1175,7 @@ last-folder-path='/home/hubertas/Downloads'
 last-folder-path='/home/hubertas/Downloads'
 
 [org/gnome/portal/filechooser/org.mozilla.firefox]
-last-folder-path='/home/hubertas/Documents/backup-folder/Programming/RoamerMaps'
+last-folder-path='/home/hubertas/Downloads'
 
 [org/gnome/portal/filechooser/org.qbittorrent.qBittorrent]
 last-folder-path='/home/hubertas/Downloads/The Walking Dead'
